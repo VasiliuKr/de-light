@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'PT Sans Caption';
+    src: url('../fonts/PTSansCaption/ptsanscaption-400-normal.woff2') format('woff2'),
+    url('../fonts/PTSansCaption/ptsanscaption-400-normal.woff') format('woff'),
+    url('../fonts/PTSansCaption/ptsanscaption-400-normal.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PT Serif Caption';
+    src: url('../fonts/PTSerifCaption/ptserifcaption-400-normal.woff2') format('woff2'),
+    url('../fonts/PTSerifCaption/ptserifcaption-400-normal.woff') format('woff'),
+    url('../fonts/PTSerifCaption/ptserifcaption-400-normal.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PT Serif Caption';
+    src: url('../fonts/PTSerifCaptionItalic/ptserifcaption-400-italic.woff2') format('woff2'),
+    url('../fonts/PTSerifCaptionItalic/ptserifcaption-400-italic.woff') format('woff'),
+    url('../fonts/PTSerifCaptionItalic/ptserifcaption-400-italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
