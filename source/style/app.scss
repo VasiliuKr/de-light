@@ -1,0 +1,12 @@
+@import 'helpers/variables';
+@import 'helpers/mixins';
+
+body {
+  margin: 0;
+}
+
+@import 'layout/header';
+@import 'common/greating';
+@import 'layout/footer';
+@import 'common/fonts';
+@import 'common/sprite';
