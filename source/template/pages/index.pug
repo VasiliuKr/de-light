@@ -4,4 +4,59 @@ block variables
 	- var title = 'De-light.ru'
 
 block content
-	include ../common/_greating
+	.container
+		.logo
+			img(src="assets/img/logo.png")
+		h1.main-heading Интернет-магазин дизайнерских светильников, мебели и предметов интерьера
+		.search
+			form.search-form
+				input.search-field(
+					type="text"
+					placeholder="Найти"
+					autofocus
+				)
+				button.seach-submit(
+					type="submit"
+					title="Найти"
+					value=""
+				)
+
+	.slider-main
+		.slider-main-item
+			img(src="assets/img/userfiles/1.jpg")
+		.slider-main-item
+			img(src="assets/img/userfiles/4.jpg")
+		.slider-main-item
+			img(src="assets/img/userfiles/5.jpg")
+			
+	.container
+		.slider-text
+			.slider-text-item
+				div reiciendis non similique aut adipisci! Qui, omnis nihil ab. Quaerat qui aliquid, ex temporibus.
+				a(href="#").slider-link Выбрать
+			.slider-text-item
+				div  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam fuga minus, suscipit voluptates amet. Sed possimus officia illo corporis? Numquam corporis accusantium dolor perferendis laudantium iure tempore, quibusdam asperiores nostrum.
+				a(href="#").slider-link Выбрать
+			.slider-text-item
+				div  Lorem ipsum 
+				a(href="#").slider-link Выбрать
+
+	.features
+		.container
+			ul.features__list
+				li.features__item
+					.features__img.icon-lamp
+					.features__title Большой выбор
+					.features__desc 5653 моделей в наличии
+				li.features__item
+					.features__img.icon-geo
+					.features__title 4 салона
+					.features__desc 3 салона в Москве и один в Барвихе
+				li.features__item
+					.features__img.icon-rouble
+					.features__title Удобная оплата
+					.features__desc на сайте, курьеру или в салонах
+				li.features__item
+					.features__img.icon-shipment
+					.features__title Бережная доставка
+					.features__desc по всей России, по Москве 0 рублей

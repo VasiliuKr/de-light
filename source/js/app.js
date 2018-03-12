@@ -1,7 +1,12 @@
-(function() {
-  'use strict';
-
-  setTimeout(function() {
-    document.querySelector('.greating_picture').classList.add('m--show');
-  }, 1000);
-})();
+$(document).ready(function() {
+	$('.slider-main').slick({
+		dots: true,
+		autoplay: false,
+		autoplaySpeed: 3000,
+		adaptiveHeight: true,
+		asNavFor: '.slider-text'
+	});
+	$('.slider-text').slick({
+		asNavFor: '.slider-main'
+	});
+});

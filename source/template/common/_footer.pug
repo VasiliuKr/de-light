@@ -1,1 +1,31 @@
-footer.footer Footer
+footer.footer
+	.container
+		nav.footer-nav
+			each val in ['de-light.ru', 'Покупателю', 'Интернет-магазин', 'Доставка и оплата', 'DL collection', 'Возврат и обмен', 'Проектный отдел', 'Монтаж', 'Ликвидация', 'Реквизиты', 'Журнал', 'Сотрудничество', 'Пользовательское соглашение']
+				a(href="#").footer-nav-link= val
+		.company-info
+			a(href="#") О компании
+			a(href="tel:+74957872477") 8 (495) 787-2477
+			a(href="mailto:info@de-light.ru") info@de-light.ru
+		.salons
+			.salons__title Салоны Delight
+			ul.salons__list
+				li.salons__item Салон на Artplay, Нижняя Сыромятническая ул., 10, корпус 9B, 2-ой этаж. <br> 8 (495) 152-8513
+				li.salons__item Салон света в ТВК Экспострой, павильон 1, место 6, Нахимовский пр-кт, 24с5. <br> 8 (495) 152-8513
+				li.salons__item Салон Eichholtz в ТВК Экспострой, павильон 1, место 33, Нахимовский пр-кт, 24с5. <br> 8 (495) 152-8513
+				li.salons__item Салон света и интреьра в ТК Твинстор, 1-ый этаж, стенд B44-B47,<br>1-й Щипковский пер., 4/ 8 (495) 926-7063
+				li.salons__item Салон JNL Collection в ТЦ Dream House, 2-ой этаж, Барвиха, Рублево-Успенское ш., 85/1 8 (499) 372-1722
+				li.salons__item Проектный отдел, Ермолаевский пер., 10/7
+		ul.socials__list
+			li.socials__item
+				a(href="#").socials__link
+					.icon-fb
+			li.socials__item
+				a(href="#").socials__link
+					.icon-inst
+			li.socials__item
+				a(href="#").socials__link
+					.icon-houzz
+			li.socials__item
+				a(href="#").socials__link
+					.icon-vk
