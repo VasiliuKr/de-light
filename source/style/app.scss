@@ -56,10 +56,13 @@ a {
 	font-size: 12px;
 	font-weight: normal;
 	text-align: center;
+	margin-top: 2px;
+	margin-bottom: 18px;
 }
 .search {
 	border: 1px solid #7f7f7f;
 	height: 50px;
+	margin-bottom: 24px;
 }
 .search-field,
 .seach-submit {
@@ -111,19 +114,66 @@ a {
 }
 .slider-text {
 	font-size: 14px;
+	margin-top: 10px;
+	margin-bottom: 11px;
 }
-
+.slider-text-item div {
+	line-height: 1.25;
+}
 .features {
 	background-color: $main-color;
+	margin-bottom: 32px;
 }
 .features__list {
+	@extend %clearfix;
 	padding-left: 0;
-	margin-right: -16px;
-	margin-left: -16px;
+	margin: 14px -16px 7px -16px;
 }
 .features__item {
 	width: 50%;
 	float: left;
 	padding-left: 8px;
 	padding-right: 8px;
+	text-align: center;
+	margin-bottom: 12px;
+}
+.features__img {
+	margin: 0 auto 3px auto;
+}
+.features__title {
+	font: bold 12px $main-font;
+	text-transform: uppercase;
+}
+.features__desc {
+	font-size: 12px;
+}
+
+.top-products {
+	text-align: center;
+}
+.tile_black {
+	text-transform: uppercase;
+	background-color: #000;
+	color: #fff;
+	font-size: 12px;
+	display: inline-block;
+	padding: 3px 12px
+}
+.top-products__list {
+	padding-left: 0;
+	padding-top: 10px;
+	margin-top: 0;
+	margin-bottom: 0;
+	border-top: 1px solid #000;
+}
+.product {
+	position: relative;
+}
+.product__star {
+	position: absolute;
+	right: 6px;
+	padding-top: 13px;
+	text-transform: uppercase;
+	font-size: 9px;
+	color: #fff;
 }
