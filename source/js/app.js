@@ -18,6 +18,15 @@ $(document).ready(function() {
 
 	});
 	$('.social-gallery__slider').slick({
-		slidesToShow: 3
+		slidesToShow: 3,
+		variableWidth: true,
+		slidesToScroll: 2
 	});
+});
+
+$(document).on('click', '.js-menu-link', function(event) {
+	event.preventDefault();
+	/* Act on the event */
+	$(this).toggleClass('active');
+	$('.header-nav-wrap').toggle();
 });

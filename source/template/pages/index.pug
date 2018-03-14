@@ -4,9 +4,22 @@ block variables
 	- var title = 'De-light.ru'
 
 block content
+	
+	.logo
+		img(src="assets/img/logo.png")
+	
+	.header-nav-wrap
+		.header-nav-icons
+			.icon-mail
+			.icon-lk
+		nav.header-nav
+			each val in ['Светильники', 'Мебель', 'Декор', 'Бренды', 'Акции', 'Ликвидация', 'Проектный отдел', 'Салоны de-light']
+				a(href="#").header-nav-link= val
+			nav.header-nav-minor
+				each val in ['Оплата / Доставка', 'Журнал', 'Сотрудничество', 'О компании']
+					a(href="#").header-nav-minor-link= val
+
 	.container
-		.logo
-			img(src="assets/img/logo.png")
 		h1.main-heading Интернет-магазин дизайнерских светильников, мебели и предметов интерьера
 		.search
 			form.search-form
@@ -25,9 +38,9 @@ block content
 		.slider-main-item
 			img(src="assets/img/userfiles/1.jpg")
 		.slider-main-item
-			img(src="assets/img/userfiles/4.jpg")
+			img(src="assets/img/userfiles/1.jpg")
 		.slider-main-item
-			img(src="assets/img/userfiles/5.jpg")
+			img(src="assets/img/userfiles/1.jpg")
 			
 	.container
 		.slider-text
@@ -65,132 +78,148 @@ block content
 		.section-title.tile_black Хиты продаж
 		ul.top-products__list
 			li.top-products__item
-				.product
-					.product__star.product__star_hit.icon-star-black Хит
-					img(src="assets/img/userfiles/2.jpg").product__img
-					.product__tile В наличии
-					.product__title Настенный светильник Eichholtz 114783
-					.product__price 10 300 ₽
+				a(href="#").product__link
+					.product
+						.product__star.product__star_hit.icon-star-black Хит
+						img(src="assets/img/userfiles/2.jpg").product__img
+						.product__tile В наличии
+						.product__title Настенный светильник Eichholtz 114783
+						.product__price 10 300 ₽
 			li.top-products__item
-				.product
-					.product__star.product__star_hit.icon-star-black Хит
-					img(src="assets/img/userfiles/3.jpg").product__img
-					.product__tile Скоро в продаже
-					.product__title Бра Schuller 50-9327
-					.product__price 10 300 ₽
+				a(href="#").product__link
+					.product
+						.product__star.product__star_hit.icon-star-black Хит
+						img(src="assets/img/userfiles/3.jpg").product__img
+						.product__tile Скоро в продаже
+						.product__title Бра Schuller 50-9327
+						.product__price 10 300 ₽
 			li.top-products__item
-				.product
-					.product__star.product__star_hit.icon-star-black Хит
-					img(src="assets/img/userfiles/2.jpg").product__img
-					.product__tile В наличии
-					.product__title Настенный светильник Eichholtz 114783
-					.product__price 10 300 ₽
+				a(href="#").product__link
+					.product
+						.product__star.product__star_hit.icon-star-black Хит
+						img(src="assets/img/userfiles/2.jpg").product__img
+						.product__tile В наличии
+						.product__title Настенный светильник Eichholtz 114783
+						.product__price 10 300 ₽
 
 	.top-products
 		.section-title.tile_black Рекомендации
 		ul.top-products__list
 			li.top-products__item
-				.product
-					img(src="assets/img/userfiles/2.jpg").product__img
-					.product__tile В наличии
-					.product__recom Delight рекомендует
-					.product__title Настенный светильник Eichholtz 114783
-					.product__price 10 300 ₽
+				a(href="#").product__link
+					.product
+						img(src="assets/img/userfiles/2.jpg").product__img
+						.product__tile В наличии
+						.product__recom Delight рекомендует
+						.product__title Настенный светильник Eichholtz 114783
+						.product__price 10 300 ₽
 			li.top-products__item
-				.product
-					img(src="assets/img/userfiles/3.jpg").product__img
-					.product__title Бра Schuller 50-9327
-					.product__recom Выбор дизайнера
-					.product__price 10 300 ₽
+				a(href="#").product__link
+					.product
+						img(src="assets/img/userfiles/3.jpg").product__img
+						.product__recom Выбор дизайнера
+						.product__title Бра Schuller 50-9327
+						.product__price 10 300 ₽
 			li.top-products__item
-				.product
-					img(src="assets/img/userfiles/2.jpg").product__img
-					.product__tile В наличии
-					.product__recom Delight рекомендует
-					.product__title Настенный светильник Eichholtz 114783
-					.product__price 10 300 ₽
+				a(href="#").product__link
+					.product
+						img(src="assets/img/userfiles/2.jpg").product__img
+						.product__tile В наличии
+						.product__recom Delight рекомендует
+						.product__title Настенный светильник Eichholtz 114783
+						.product__price 10 300 ₽
 
 	.top-products
 		.section-title.tile_black Sale
 		ul.top-products__list
 			li.top-products__item
-				.product
-					.product__star.product__star_sale -14%
-					img(src="assets/img/userfiles/2.jpg").product__img
-					.product__tile В наличии
-					.product__title Настенный светильник Eichholtz 114783
-					.product__price.product__price_old 10 300 ₽
-					.product__price.product__price_new 8 200 ₽
+				a(href="#").product__link
+					.product
+						.product__star.product__star_sale -14%
+						img(src="assets/img/userfiles/2.jpg").product__img
+						.product__tile В наличии
+						.product__title Настенный светильник Eichholtz 114783
+						.product__price.product__price_old 10 300 ₽
+						.product__price.product__price_new 8 200 ₽
 			li.top-products__item
-				.product
-					.product__star.product__star_sale -20%
-					img(src="assets/img/userfiles/3.jpg").product__img
-					.product__tile В наличии
-					.product__title Бра Schuller 50-9327
-					.product__price.product__price_old 255 300 ₽
-					.product__price.product__price_new 205 700 ₽
+				a(href="#").product__link
+					.product
+						.product__star.product__star_sale -20%
+						img(src="assets/img/userfiles/3.jpg").product__img
+						.product__tile В наличии
+						.product__title Бра Schuller 50-9327
+						.product__price.product__price_old 255 300 ₽
+						.product__price.product__price_new 205 700 ₽
 			li.top-products__item
-				.product
-					.product__star.product__star_sale -10%
-					img(src="assets/img/userfiles/2.jpg").product__img
-					.product__tile В наличии
-					.product__title Настенный светильник Eichholtz 114783
-					.product__price.product__price_old 10 300 ₽
-					.product__price.product__price_new 9 300 ₽
+				a(href="#").product__link
+					.product
+						.product__star.product__star_sale -10%
+						img(src="assets/img/userfiles/2.jpg").product__img
+						.product__tile В наличии
+						.product__title Настенный светильник Eichholtz 114783
+						.product__price.product__price_old 10 300 ₽
+						.product__price.product__price_new 9 300 ₽
 		
-		.slider-collections
-			.coll-slide
-				img(src="assets/img/userfiles/1.jpg").coll-slide__img
-				.coll-slide__tile.tile_black Подборки
-				.coll-slide__info
+	.slider-collections
+		.coll-slide
+			img(src="assets/img/userfiles/4.jpg").coll-slide__img
+			.coll-slide__tile
+				.tile_black Подборки
+			.coll-slide__info
+				.container
 					.coll-slide__title Светильник обезьяна Seletti
 					.coll-slide__desc Забавная и стильная серия светильников Seletti Monkey Lamp в виде обезьян, держащих в лапах лампочки
 					a(href="#").coll-slide__link посмотреть
-			.coll-slide
-				img(src="assets/img/userfiles/4.jpg").coll-slide__img
-				.coll-slide__tile.tile_black Подборки
-				.coll-slide__info
+		.coll-slide
+			img(src="assets/img/userfiles/4.jpg").coll-slide__img
+			.coll-slide__tile
+				.tile_black Подборки
+			.coll-slide__info
+				.container
 					.coll-slide__title Светильник обезьяна Seletti
 					.coll-slide__desc Забавная и стильная серия светильников Seletti Monkey Lamp в виде обезьян, держащих в лапах лампочки
 					a(href="#").coll-slide__link посмотреть
 
-		.brands
-			.brands__title Популярные бренды
-			.brands__list
-				.brand
-					img(src="assets/img/userfiles/5.jpg").brand__img
-					img(src="assets/img/userfiles/brand-1.png").brand__logo
-					.brand__text Eichholtz: вы можете купить светильники и предметы интерьера Eichholtz в нашем интернет-магазине
-				.brand
-					img(src="assets/img/userfiles/6.jpg").brand__img
-					img(src="assets/img/userfiles/brand-2.png").brand__logo
-					.brand__text Eichholtz: вы можете купить светильники и предметы интерьера Eichholtz в нашем интернет-магазине
-				.brand
-					img(src="assets/img/userfiles/5.jpg").brand__img
-					img(src="assets/img/userfiles/brand-3.png").brand__logo
-					.brand__text Eichholtz: вы можете купить светильники и предметы интерьера Eichholtz в нашем интернет-магазине
-				.brand
-					img(src="assets/img/userfiles/6.jpg").brand__img
-					img(src="assets/img/userfiles/brand-4.png").brand__logo
-					.brand__text Eichholtz: вы можете купить светильники и предметы интерьера Eichholtz в нашем интернет-магазине
-				.brand
-					img(src="assets/img/userfiles/brand-1.png").brand__logo
-				.brand
-					img(src="assets/img/userfiles/brand-2.png").brand__logo
-				.brand
-					img(src="assets/img/userfiles/brand-3.png").brand__logo
-				.brand
-					img(src="assets/img/userfiles/brand-4.png").brand__logo
+	.brands
+		.brands__title Популярные бренды
+		.brands__list
+			.brand
+				img(src="assets/img/userfiles/5.jpg").brand__img
+				img(src="assets/img/userfiles/brand-1.png").brand__logo
+				.brand__text Eichholtz: вы можете купить светильники и предметы интерьера Eichholtz в нашем интернет-магазине
+			.brand
+				img(src="assets/img/userfiles/5.jpg").brand__img
+				img(src="assets/img/userfiles/brand-2.png").brand__logo
+				.brand__text Eichholtz: вы можете купить светильники и предметы интерьера Eichholtz в нашем интернет-магазине
+			.brand
+				img(src="assets/img/userfiles/5.jpg").brand__img
+				img(src="assets/img/userfiles/brand-3.png").brand__logo
+				.brand__text Eichholtz: вы можете купить светильники и предметы интерьера Eichholtz в нашем интернет-магазине
+			.brand
+				img(src="assets/img/userfiles/5.jpg").brand__img
+				img(src="assets/img/userfiles/brand-4.png").brand__logo
+				.brand__text Eichholtz: вы можете купить светильники и предметы интерьера Eichholtz в нашем интернет-магазине
+			.brand
+				img(src="assets/img/userfiles/brand-1.png").brand__logo
+			.brand
+				img(src="assets/img/userfiles/brand-2.png").brand__logo
+			.brand
+				img(src="assets/img/userfiles/brand-3.png").brand__logo
+			.brand
+				img(src="assets/img/userfiles/brand-4.png").brand__logo
 
-		.partnership
-			img(src="assets/img/userfiles/1.jpg").partnership__img
-			.partnership__info
+	.partnership
+		img(src="assets/img/userfiles/1.jpg").partnership__img
+		.partnership__info
+			.container
 				.partnership__title Сотрудничество
 				.partnership__desc DeLight приглашает к сотрудничеству дизайнеров, ритейлеров и региональных дилеров
-				a(href="#").partnership__btn Дизайнерам
-				a(href="#").partnership__btn Ритейлерам
+				.partnership__btns-wrap
+					a(href="#").partnership__btn Дизайнерам
+					a(href="#").partnership__btn Ритейлерам
 
-		.extracts
+	.extracts
+		.container
 			.extract
 				.extract__title Дизайнерские светильники
 				.extract__text Основное направлениеDeLight – продажа светильников сегмента премиум таких брендов, как Eichholtz, Schonbek, Schuller, Artemide и многих других. В нашем интернет-магазине вы найдете: изысканные хрустальные люстры, дизайнерские светильники, подвесные, потолочные, напольные светильники, бра, настольные лампы и торшеры
@@ -204,33 +233,38 @@ block content
 				.extract__title интернет-магазин
 				.extract__text Основное направление, с которого более 20 лет назад компания начала свою деятельность – оптовая и розничная продажа светильников класса люкс и премиум от ведущих европейских брендов, таких как Eichholtz, Schonbek, MM Lampadari, Schuller, Artemide и др.
 
-		.social-gallery
-			.section-title.tile_black @delight_lighting
-			.social-gallery__slider
-				a(href="#")
-					img(src="assets/img/userfiles/1.jpg").social-gallery__img
-				a(href="#")
-					img(src="assets/img/userfiles/4.jpg").social-gallery__img
-				a(href="#")
-					img(src="assets/img/userfiles/5.jpg").social-gallery__img
-				a(href="#")
-					img(src="assets/img/userfiles/6.jpg").social-gallery__img
+	.social-gallery
+		.section-title.tile_black @delight_lighting
+		.social-gallery__slider-wrap
+			.container
+				.social-gallery__slider
+					a(href="#")
+						img(src="assets/img/userfiles/1.jpg" height="90").social-gallery__img
+					a(href="#")
+						img(src="assets/img/userfiles/4.jpg" height="90").social-gallery__img
+					a(href="#")
+						img(src="assets/img/userfiles/5.jpg" height="90").social-gallery__img
+					a(href="#")
+						img(src="assets/img/userfiles/6.jpg" height="90").social-gallery__img
 
-		.social-gallery
-			.section-title.tile_black @EICHHOLTZ.PROJECT
-			.social-gallery__slider
-				a(href="#")
-					img(src="assets/img/userfiles/1.jpg").social-gallery__img
-				a(href="#")
-					img(src="assets/img/userfiles/4.jpg").social-gallery__img
-				a(href="#")
-					img(src="assets/img/userfiles/5.jpg").social-gallery__img
-				a(href="#")
-					img(src="assets/img/userfiles/6.jpg").social-gallery__img
+	.social-gallery
+		.section-title.tile_black @EICHHOLTZ.PROJECT
+		.social-gallery__slider-wrap
+			.container
+				.social-gallery__slider
+					a(href="#")
+						img(src="assets/img/userfiles/1.jpg" height="90").social-gallery__img
+					a(href="#")
+						img(src="assets/img/userfiles/4.jpg" height="90").social-gallery__img
+					a(href="#")
+						img(src="assets/img/userfiles/5.jpg" height="90").social-gallery__img
+					a(href="#")
+						img(src="assets/img/userfiles/6.jpg" height="90").social-gallery__img
 
-		.subscribe
+	.subscribe
+		.container
 			p Подпишитесь на новости и закрытые распродажи DeLight
 			form.subscribe__form
-				input(type="email" name="email").subscribe__input
-				input(type="text" name="name").subscribe__input
-				button(type="submit") Подписаться
+				input(type="email" name="email" placeholder="e-mail *").subscribe__input
+				input(type="text" name="name" placeholder="имя").subscribe__input
+				button(type="submit").subscribe__btn Подписаться

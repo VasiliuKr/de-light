@@ -26,9 +26,10 @@
     top: 50%;
 
     display: block;
+    z-index: 10;
 
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     padding: 0;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
@@ -66,51 +67,48 @@
 .slick-prev:before,
 .slick-next:before
 {
-    font-family: 'slick';
-    font-size: 20px;
-    line-height: 1;
-
-    opacity: .75;
-    color: white;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    background-image: url(../../img/sprite.png);
+    width: 30px;
+    height: 30px;
+    display: block;
 }
 
 .slick-prev
 {
-    left: -25px;
+    left: 2px;
 }
 [dir='rtl'] .slick-prev
 {
-    right: -25px;
+    right: 2px;
     left: auto;
 }
 .slick-prev:before
 {
-    content: '←';
+    content: '';
+    background-position: -60px -84px;
 }
 [dir='rtl'] .slick-prev:before
 {
-    content: '→';
+    content: '';
 }
 
 .slick-next
 {
-    right: -25px;
+    right: 2px;
 }
 [dir='rtl'] .slick-next
 {
     right: auto;
-    left: -25px;
+    left: 2px;
 }
 .slick-next:before
 {
-    content: '→';
+    content: '';
+    background-position: -30px -84px;
 }
 [dir='rtl'] .slick-next:before
 {
-    content: '←';
+    content: '';
 }
 
 /* Dots */
