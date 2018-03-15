@@ -6,7 +6,22 @@ header.header
 					span.menu-link__line
 			.phone-top
 				a(href="tel:+74957872477") 8 (495) 787-2477
+			.mail-top
+				a(href="mailto:info@de-light.ru") info@de-light.ru
 			.cart-top
 				a(href="#")
 					.icon-cart
 						.cart-amount 3
+					.cart-value 12 987 456 ₽
+			.user-top.authorized
+				a(href="#").js-user-auth
+					.icon-lk
+					.user-top__name Елена
+			.search-top
+				a(href="#")
+					.icon-search
+			.authorization
+				form.authorization__form
+					input(type="email" placeholder="e-mail" name="user-email")
+					input(type="password" placeholder="пароль" name="user-password")
+					button(type="submit") Войти

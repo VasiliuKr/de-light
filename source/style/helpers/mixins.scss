@@ -13,17 +13,12 @@
 // media queries
 
 @mixin desktop {
-	@media screen and (min-width: 1200px) {
+	@media screen and (min-width: 769px) {
 		@content;
 	}
 }
 @mixin tablets {
 	@media screen and (min-width: 321px) {
-		@content;
-	}
-}
-@mixin phones {
-	@media screen and (max-width: 320px) {
 		@content;
 	}
 }

@@ -76,3 +76,12 @@ $(document).on('click', '.js-nav-link', function(event) {
 	
 });
 /*************** Mobile menu (end) ****************/
+
+/*************** User authorization (start) ****************/
+$(document).on('click', '.js-user-auth', function(event) {
+	if (!$(this).parent(".user-top").hasClass('authorized')) {
+		event.preventDefault();
+		console.log('auth');
+	}
+});
+/*************** User authorization (end) ****************/

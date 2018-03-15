@@ -38,15 +38,20 @@ a {
 	margin: 0 auto;
 	@extend %clearfix;
 	@include tablets {
-		max-width: 1000px;
+		max-width: 100%;
 		padding-right: 15px;
 		padding-left: 15px;
+	}
+	
+	@include desktop {
+		max-width: 1040px;
+		padding-right: 20px;
+		padding-left: 20px;
 	}
 }
 
 
 @import 'layout/header';
-@import 'common/greating';
 @import 'layout/footer';
 @import 'common/fonts';
 @import 'common/sprite';

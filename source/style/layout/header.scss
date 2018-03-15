@@ -7,6 +7,13 @@
 	height: 50px;
 	width: 100%;
 	z-index: 1000;
+	@include desktop {
+		position: relative;
+		height: 40px;
+	}
+	.container {
+		position: relative;
+	}
 }
 .menu-link-wrap {
 	float: left;
@@ -15,6 +22,9 @@
 	padding-left: 2px;
 	padding-top: 18px;
 	border-right: 1px solid rgba(255,255,255,0.5);
+	@include desktop {
+		display: none;
+	}
 }
 .menu-link {
 	float: left;
@@ -79,14 +89,67 @@
 	float: left;
 	margin-left: 18px;
 	line-height: 50px;
+	@include desktop {
+		line-height: 40px;
+	}
+}
+.mail-top {
+	display: none;
+	@include desktop {
+		float: left;
+		display: block;
+		line-height: 40px;
+	}
 }
 .cart-top {
 	float: right;
 	padding-top: 14px;
 	margin-right: 5px;
+	.icon-cart {
+		display: inline-block;
+	}
 }
 .cart-amount {
 	font-size: 9px;
 	text-align: center;
 	padding-top: 7px;
+}
+.cart-value {
+	display: none;
+	font-size: 14px;
+	@include desktop {
+		display: inline-block;
+	}
+}
+.user-top {
+	display: none;
+	@include desktop {
+		display: block;
+		float: right;
+		padding-top: 10px;
+		div {
+			display: inline-block;
+		}
+		.user-top__name {
+			display: none;
+		}
+		&.authorized {
+			.user-top__name {
+				display: inline-block;
+			}
+		}
+	}
+}
+.search-top {
+	display: none;
+	@include desktop {
+		display: block;
+		float: right;
+	}
+}
+.authorization {
+	position: absolute;
+	top: 40px;
+	right: 0;
+	background-color: $main-color;
 }
