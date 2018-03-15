@@ -9,15 +9,82 @@ block content
 		img(src="assets/img/logo.png")
 	
 	.header-nav-wrap
-		.header-nav-icons
-			.icon-mail
-			.icon-lk
-		nav.header-nav
-			each val in ['Светильники', 'Мебель', 'Декор', 'Бренды', 'Акции', 'Ликвидация', 'Проектный отдел', 'Салоны de-light']
-				a(href="#").header-nav-link= val
+		.header-nav-menu
+			a(href="back").nav-back-link.js-nav-link Назад
+			a(href="mailto:info@de-light.ru")
+				.icon-mail
+			a(href="#")
+				.icon-lk
+		nav.header-nav.active.header-nav_main
+			a(href="light").header-nav-link.parent.js-nav-link Светильники
+			a(href="furniture").header-nav-link.parent.js-nav-link Мебель
+			a(href="decor").header-nav-link.parent.js-nav-link Декор
+			a(href="brands").header-nav-link.parent.js-nav-link Бренды
+			a(href="#").header-nav-link Акции
+			a(href="#").header-nav-link Ликвидация
+			a(href="#").header-nav-link Проектный отдел
+			a(href="#").header-nav-link Салоны de-light
 			nav.header-nav-minor
 				each val in ['Оплата / Доставка', 'Журнал', 'Сотрудничество', 'О компании']
 					a(href="#").header-nav-minor-link= val
+		nav.header-nav.header-nav_light
+			a(href="#").header-nav-link.header-nav-link_all Посмотреть все светильники
+			a(href="#").header-nav-link.header-nav-link_highligted Светильник Loft
+			a(href="#").header-nav-link.header-nav-link_highligted Хрустальные люстры
+			a(href="#").header-nav-link.header-nav-link_highligted Дизайнерский свет
+			a(href="#").header-nav-link.header-nav-link_highligted Современные люстры
+			a(href="#").header-nav-link На потолок
+			a(href="#").header-nav-link На стену
+			a(href="#").header-nav-link На стол
+			a(href="#").header-nav-link На пол
+			a(href="#").header-nav-link Технический свет
+			a(href="#").header-nav-link На улицу
+			a(href="#").header-nav-link Детали
+			a(href="#").header-nav-link Лампочки
+		nav.header-nav.header-nav_furniture
+			a(href="#").header-nav-link.header-nav-link_all Посмотреть всю мебель
+			a(href="#").header-nav-link.header-nav-link_highligted Мягкая мебель
+			a(href="#").header-nav-link.header-nav-link_highligted Мебель Eichholtz
+			a(href="#").header-nav-link.header-nav-link_highligted Мебель Garda Decor
+			a(href="#").header-nav-link Кровать
+			a(href="#").header-nav-link Мягкая мебель
+			a(href="#").header-nav-link столы и консоли
+			a(href="#").header-nav-link Стулья
+			a(href="#").header-nav-link Мебель для хранения
+			a(href="#").header-nav-link Ширмы
+			a(href="#").header-nav-link детская мебель
+			a(href="#").header-nav-link Уличная мебель
+		nav.header-nav.header-nav_decor
+			a(href="#").header-nav-link.header-nav-link_all Посмотреть весь декор
+			a(href="#").header-nav-link.header-nav-link_highligted Новый год
+			a(href="#").header-nav-link.header-nav-link_highligted Зеркала
+			a(href="#").header-nav-link.header-nav-link_highligted Ковры
+			a(href="#").header-nav-link Ваза
+			a(href="#").header-nav-link Зеркало
+			a(href="#").header-nav-link Ковер
+			a(href="#").header-nav-link Напольный декор
+			a(href="#").header-nav-link Настенный декор
+			a(href="#").header-nav-link Подарки
+			a(href="#").header-nav-link Посуда, сервировка
+			a(href="#").header-nav-link Рамка для фото
+			a(href="#").header-nav-link Подсвечник
+			a(href="#").header-nav-link Статуэтки и фигурки
+			a(href="#").header-nav-link Текстиль
+			a(href="#").header-nav-link Хранение и порядок
+			a(href="#").header-nav-link Цветы
+			a(href="#").header-nav-link Часы
+			a(href="#").header-nav-link Для вина и сигар
+			a(href="#").header-nav-link Для книг и бумаг
+			a(href="#").header-nav-link Разное
+		nav.header-nav.header-nav_brands
+			a(href="#").header-nav-link.header-nav-link_all Список всех брендов
+			a(href="#").header-nav-link.header-nav-link_highligted Eichholtz
+			a(href="#").header-nav-link.header-nav-link_highligted DeLight Collection
+			a(href="#").header-nav-link.header-nav-link_highligted Seletti
+			a(href="#").header-nav-link.header-nav-link_highligted Schuller
+			a(href="#").header-nav-link.header-nav-link_highligted Illuminati
+			a(href="#").header-nav-link.header-nav-link_highligted Fabbian
+			a(href="#").header-nav-link.header-nav-link_highligted MM Lampadari
 
 	.container
 		h1.main-heading Интернет-магазин дизайнерских светильников, мебели и предметов интерьера
@@ -80,7 +147,7 @@ block content
 			li.top-products__item
 				a(href="#").product__link
 					.product
-						.product__star.product__star_hit.icon-star-black Хит
+						.product__star.icon-star-black Хит
 						img(src="assets/img/userfiles/2.jpg").product__img
 						.product__tile В наличии
 						.product__title Настенный светильник Eichholtz 114783
@@ -88,7 +155,7 @@ block content
 			li.top-products__item
 				a(href="#").product__link
 					.product
-						.product__star.product__star_hit.icon-star-black Хит
+						.product__star.icon-star-black Хит
 						img(src="assets/img/userfiles/3.jpg").product__img
 						.product__tile Скоро в продаже
 						.product__title Бра Schuller 50-9327
@@ -96,7 +163,7 @@ block content
 			li.top-products__item
 				a(href="#").product__link
 					.product
-						.product__star.product__star_hit.icon-star-black Хит
+						.product__star.icon-star-black Хит
 						img(src="assets/img/userfiles/2.jpg").product__img
 						.product__tile В наличии
 						.product__title Настенный светильник Eichholtz 114783
@@ -110,14 +177,16 @@ block content
 					.product
 						img(src="assets/img/userfiles/2.jpg").product__img
 						.product__tile В наличии
-						.product__recom Delight рекомендует
+						.product__recom-wrap
+							.product__recom Delight рекомендует
 						.product__title Настенный светильник Eichholtz 114783
 						.product__price 10 300 ₽
 			li.top-products__item
 				a(href="#").product__link
 					.product
 						img(src="assets/img/userfiles/3.jpg").product__img
-						.product__recom Выбор дизайнера
+						.product__recom-wrap
+							.product__recom Выбор дизайнера
 						.product__title Бра Schuller 50-9327
 						.product__price 10 300 ₽
 			li.top-products__item
@@ -125,7 +194,8 @@ block content
 					.product
 						img(src="assets/img/userfiles/2.jpg").product__img
 						.product__tile В наличии
-						.product__recom Delight рекомендует
+						.product__recom-wrap
+							.product__recom Delight рекомендует
 						.product__title Настенный светильник Eichholtz 114783
 						.product__price 10 300 ₽
 
@@ -135,7 +205,7 @@ block content
 			li.top-products__item
 				a(href="#").product__link
 					.product
-						.product__star.product__star_sale -14%
+						.product__star.icon-star -14%
 						img(src="assets/img/userfiles/2.jpg").product__img
 						.product__tile В наличии
 						.product__title Настенный светильник Eichholtz 114783
@@ -144,7 +214,7 @@ block content
 			li.top-products__item
 				a(href="#").product__link
 					.product
-						.product__star.product__star_sale -20%
+						.product__star.icon-star -20%
 						img(src="assets/img/userfiles/3.jpg").product__img
 						.product__tile В наличии
 						.product__title Бра Schuller 50-9327
@@ -153,7 +223,7 @@ block content
 			li.top-products__item
 				a(href="#").product__link
 					.product
-						.product__star.product__star_sale -10%
+						.product__star.icon-star -10%
 						img(src="assets/img/userfiles/2.jpg").product__img
 						.product__tile В наличии
 						.product__title Настенный светильник Eichholtz 114783
