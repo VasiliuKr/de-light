@@ -28,6 +28,9 @@ a {
 	flex-direction: column;
 	height: 100%;
 	margin-top: 50px;
+	@include desktop {
+		margin-top: 40px;
+	}
 }
 .content {
 	flex: 1 0 auto;
@@ -55,6 +58,7 @@ a {
 @import 'layout/footer';
 @import 'common/fonts';
 @import 'common/sprite';
+@import 'common/elements';
 
 .logo {
 	text-align: center;
@@ -70,6 +74,31 @@ a {
 	padding-top: 18px;
 	padding-left: 17px;
 	display: none;
+	@include desktop {
+		background-color: transparent;
+		position: relative;
+		top: 0;
+		color: #000;
+		width: auto;
+		display: block;
+		padding-top: 0;
+		max-width: 1000px;
+		margin: 0 auto;
+		padding-left: 0;
+		border-top: 1px solid #000;
+		.is-sticky {
+			color: #fff;
+			.header-nav_main {
+				max-width: 500px;
+			}
+			.header-nav-link {
+				display: none;
+				&.parent {
+					display: block;
+				}
+			}
+		}
+	}
 }
 .header-nav-menu {
 	margin-bottom: 17px;
@@ -105,6 +134,9 @@ a {
 			display: block;
 		}
 	}
+	@include desktop {
+		display: none;
+	}
 }
 .header-nav-link,
 .header-nav-minor-link {
@@ -112,6 +144,9 @@ a {
 	position: relative;
 	font-size: 15px;
 	margin-bottom: 14px;
+	@include desktop {
+		margin-bottom: 0;
+	}
 }
 .header-nav-link {
 	text-transform: uppercase;
@@ -127,6 +162,9 @@ a {
 			position: absolute;
 			top: 6px;
 			right: -15px;
+			@include desktop {
+				transform: rotate(270deg);
+			}
 		}
 	}
 	&.header-nav-link_all {
@@ -139,12 +177,24 @@ a {
 }
 .header-nav-minor {
 	margin-top: 50px;
+	@include desktop {
+		display: none;
+	}
 }
 .header-nav {
 	display: none;
 }
 .header-nav.active {
 	display: block;
+}
+.header-nav.header-nav_main {
+	@include desktop {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 40px;
+		padding-left: 30px;
+	}
 }
 .main-heading {
 	font-size: 12px;
@@ -196,6 +246,20 @@ a {
 		width: 21px;
 		height: 21px;
 		margin: 0 auto;
+	}
+}
+.slider-main {
+	@include desktop {
+		max-width: 1000px;
+		margin: 0 auto;
+		&.slick-dotted.slick-slider {
+			margin-bottom: 10px;
+		}
+		.slick-dots {
+			top: 10px;
+			bottom: auto;
+			text-align: right;
+		}
 	}
 }
 .slider-main-item img {
@@ -459,29 +523,7 @@ a {
 	}
 }
 .subscribe__input {
-	outline: none;
-	width: 100%;
-	border: 2px solid #000;
-	height: 35px;
 	margin-bottom: 15px;
-	padding-left: 15px;
-	font-size: 12px;
-	&::-webkit-input-placeholder {
-		color: #000;
-		text-transform: uppercase;
-	}
-	&::-moz-placeholder {
-		color: #000;
-		text-transform: uppercase;
-	}
-	&:-moz-placeholder {
-		color: #000;
-		text-transform: uppercase;
-	}
-	&:-ms-input-placeholder {
-		color: #000;
-		text-transform: uppercase;
-	}
 }
 .subscribe__btn {
 	background-color: #000;

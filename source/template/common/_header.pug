@@ -4,24 +4,29 @@ header.header
 			.menu-link-wrap
 				a.menu-link.js-menu-link(href="#")
 					span.menu-link__line
-			.phone-top
-				a(href="tel:+74957872477") 8 (495) 787-2477
-			.mail-top
-				a(href="mailto:info@de-light.ru") info@de-light.ru
 			.cart-top
 				a(href="#")
 					.icon-cart
 						.cart-amount 3
 					.cart-value 12 987 456 ₽
-			.user-top.authorized
-				a(href="#").js-user-auth
+			.user-top
+				a(href="#").js-user-auth.authorized
 					.icon-lk
 					.user-top__name Елена
 			.search-top
 				a(href="#")
 					.icon-search
+			.phone-top
+				a(href="tel:+74957872477") 8 (495) 787-2477
+			.mail-top
+				a(href="mailto:info@de-light.ru") info@de-light.ru
 			.authorization
 				form.authorization__form
-					input(type="email" placeholder="e-mail" name="user-email")
-					input(type="password" placeholder="пароль" name="user-password")
-					button(type="submit") Войти
+					input(type="email" placeholder="e-mail" name="user-email").text-input.authorization__input
+					input(type="password" placeholder="пароль" name="user-password").text-input.authorization__input
+					button(type="submit").authorization__btn Войти
+					a(href="#").authorization__social
+						.icon-fb
+					.authorization__error Неверный e-mail или пароль
+					a(href="#").authorization__link Для новых пользователей
+					a(href="#").authorization__link Забыли пароль?
