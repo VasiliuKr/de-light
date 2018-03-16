@@ -14,7 +14,16 @@ $(document).ready(function() {
 		arrows: false
 	});
 	$('.top-products__list').slick({
-		slidesToShow: 2
+		slidesToShow: 3,
+		responsive: [
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 2,
+					arrows: true
+				}
+			}
+		]
 	});
 	$('.slider-collections').slick({
 
