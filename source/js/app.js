@@ -1,4 +1,19 @@
 
+$(document).ready(function() {
+	$('body').restive({
+		breakpoints: ['769', '10000'],
+		classes: ['mobile', 'desktop']
+	});
+});
+
+/*************** Page rebuilding (start) ****************/
+$(document).ready(function() {
+	if($('body').hasClass('desktop')) {
+		$('.top-products-wrap').find('.section-title').prependTo('.top-products-wrap');
+	}
+});
+/*************** Page rebuilding (end) ****************/
+
 /*************** Slick sliders (start) ****************/
 $(document).ready(function() {
 	$('.slider-main').slick({
@@ -14,19 +29,29 @@ $(document).ready(function() {
 		arrows: false
 	});
 	$('.top-products__list').slick({
-		slidesToShow: 3,
+		slidesToShow: 2,
+		mobileFirst: true,
 		responsive: [
 			{
-				breakpoint: 480,
-				settings: {
-					slidesToShow: 2,
-					arrows: true
-				}
+				breakpoint: 769,
+				settings: 'unslick'
 			}
 		]
 	});
 	$('.slider-collections').slick({
-
+		mobileFirst: true,
+		responsive: [
+			{
+				breakpoint: 769,
+				settings: {
+					centerMode: true,
+					slidesToShow: 1,
+					centerPadding: '250px'
+				}
+			}
+		]
+		
+		
 	});
 	$('.social-gallery__slider').slick({
 		slidesToShow: 3,
@@ -95,7 +120,7 @@ $(document).on('click', '.js-user-auth', function(event) {
 });
 /**************** User authorization (end) *****************/
 
-/*************** Sticky desctop menu (start) ****************/
+/*************** Sticky desktop menu (start) ****************/
 $(document).ready(function() {
 	if(document.body.offsetWidth > 768) {
 		$('.header-nav.header-nav_main').sticky({
@@ -109,4 +134,22 @@ $(document).ready(function() {
 		});
 	}
 });	
-/**************** Sticky desctop menu (end) *****************/
+/**************** Sticky desktop menu (end) *****************/
+
+/*************** Products tabs (start) ****************/
+
+$(document).on('click', '.js-products-tab', function(event) {
+	if ($('body').hasClass('desktop')) {
+		event.preventDefault();
+		var tabButton = $(this),
+				tabContainer = tabButton.parent('.top-products-wrap'),
+				tabBtns = tabButton.siblings('.section-title'),
+				tabContent = tabContainer.find('.top-products');
+		tabContent.removeClass('active');
+		tabContent.eq(tabButton.index()).addClass('active');
+		
+		tabBtns.removeClass('active');
+		tabButton.addClass('active');
+	}
+});
+/*************** Products tabs (end) ****************/
