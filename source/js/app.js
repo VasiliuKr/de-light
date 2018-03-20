@@ -10,6 +10,7 @@ $(document).ready(function() {
 $(document).ready(function() {
 	if($('body').hasClass('desktop')) {
 		$('.top-products-wrap').find('.section-title').prependTo('.top-products-wrap');
+		$('.social-galleries-wrap').find('.section-title').prependTo('.social-galleries-wrap');
 	}
 });
 /*************** Page rebuilding (end) ****************/
@@ -33,6 +34,12 @@ $(document).ready(function() {
 		mobileFirst: true,
 		responsive: [
 			{
+				breakpoint: 481,
+				settings: {
+					slidesToShow: 3
+				}
+			},
+			{
 				breakpoint: 769,
 				settings: 'unslick'
 			}
@@ -50,13 +57,19 @@ $(document).ready(function() {
 				}
 			}
 		]
-		
-		
 	});
 	$('.social-gallery__slider').slick({
 		slidesToShow: 3,
-		variableWidth: true,
-		slidesToScroll: 2
+		mobileFirst: true,
+		slidesToScroll: 2,
+		responsive: [
+			{
+				breakpoint: 769,
+				settings: {
+					slidesToShow: 6,
+				}
+			}
+		]
 	});
 });
 /**************** Slick sliders (end) *****************/
@@ -64,7 +77,6 @@ $(document).ready(function() {
 /*************** Mobile menu (start) ****************/
 $(document).on('click', '.js-menu-link', function(event) {
 	event.preventDefault();
-	/* Act on the event */
 	$(this).toggleClass('active');
 	$('.header-nav-wrap').toggle();
 });
@@ -136,20 +148,33 @@ $(document).ready(function() {
 });	
 /**************** Sticky desktop menu (end) *****************/
 
-/*************** Products tabs (start) ****************/
+/*************** Tabs (start) ****************/
 
-$(document).on('click', '.js-products-tab', function(event) {
+$(document).on('click', '.js-tab-btn', function(event) {
 	if ($('body').hasClass('desktop')) {
 		event.preventDefault();
 		var tabButton = $(this),
-				tabContainer = tabButton.parent('.top-products-wrap'),
+				tabContainer = tabButton.parent('.tabs-wrap'),
 				tabBtns = tabButton.siblings('.section-title'),
-				tabContent = tabContainer.find('.top-products');
+				tabContent = tabContainer.find('.tab-content');
 		tabContent.removeClass('active');
 		tabContent.eq(tabButton.index()).addClass('active');
 		
 		tabBtns.removeClass('active');
 		tabButton.addClass('active');
+		// if (tabContainer.hasClass('social-galleries-wrap')) {
+		// 	$('#eicholtz-tab').slick('getSlick');
+		// }
 	}
 });
-/*************** Products tabs (end) ****************/
+/*************** Tabs (end) ****************/
+
+/*************** Header search (start) ****************/
+$(document).on('click', '.js-search-modal', function(event) {
+	event.preventDefault();
+	var searchContainer = $('.search.search_top'),
+			searchInput = searchContainer.find('.search-field');
+	searchContainer.toggleClass('active');
+	searchInput.focus();
+});
+/*************** Header search (end) ****************/

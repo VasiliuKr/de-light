@@ -14,7 +14,7 @@ header.header
 					.icon-lk
 					.user-top__name Елена
 			.search-top
-				a(href="#")
+				a(href="#").js-search-modal
 					.icon-search
 			.phone-top
 				a(href="tel:+74957872477") 8 (495) 787-2477
@@ -30,3 +30,15 @@ header.header
 					.authorization__error Неверный e-mail или пароль
 					a(href="#").authorization__link Для новых пользователей
 					a(href="#").authorization__link Забыли пароль?
+
+			.search.search_top
+				form.search-form
+					input.search-field(
+						type="text"
+						placeholder="Поиск"
+					)
+					button.seach-submit(
+						type="submit"
+						title="Найти"
+						value=""
+					)

@@ -1,8 +1,23 @@
 .footer {
-  flex: 0 0 auto;
-  background-color: #222;
-  color: #fff;
-  padding-top: 12px;
+	flex: 0 0 auto;
+	background-color: #222;
+	color: #fff;
+	padding-top: 12px;
+	.container {
+		@extend %clearfix;
+	}
+}
+.footer-left {
+	@include desktop {
+		width: 50%;
+		float: left;
+	}
+}
+.footer-right {
+	@include desktop {
+		width: 50%;
+		float: right;
+	}
 }
 .footer-nav {
 	margin-bottom: 25px;
@@ -47,8 +62,15 @@
 	justify-content: space-between;
 	margin: 0 auto 22px auto;
 	width: 190px;
+	@include desktop {
+		float: left;
+		margin-right: 75px;
+	}
 }
 .copyright {
 	text-align: center;
 	font-size: 13px;
+	@include desktop {
+		float: left;
+	}
 }

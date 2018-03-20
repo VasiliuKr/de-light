@@ -209,3 +209,25 @@
 		text-decoration: underline;
 	}
 }
+
+.search.search_top {
+	height: 65px;
+	width: 440px;
+	position: absolute;
+	right: 20px;
+	top: 50px;
+	margin-bottom: 0;
+	display: none;
+	&.active {
+		display: block;
+	}
+	.search-field {
+		height: 63px;
+		width: calc(100% - 65px);
+	}
+	.seach-submit {
+		width: 65px;
+		height: 63px;
+		background-color: $second-color;
+	}
+}

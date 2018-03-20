@@ -148,9 +148,9 @@ block content
 						.features__title Бережная доставка
 						.features__desc по всей России, по Москве 0 рублей
 
-	.top-products-wrap
-		.section-title.active.tile_black.js-products-tab Хиты продаж
-		.top-products.active
+	.top-products-wrap.tabs-wrap
+		.section-title.active.tile_black.js-tab-btn Хиты продаж
+		.top-products.tab-content.active
 			ul.top-products__list
 				li.top-products__item
 					a(href="#").product__link
@@ -201,8 +201,8 @@ block content
 							.product__title Настенный светильник Eichholtz 114783
 							.product__price 10 300 ₽
 
-		.section-title.tile_black.js-products-tab Рекомендации
-		.top-products
+		.section-title.tile_black.js-tab-btn Рекомендации
+		.top-products.tab-content
 			ul.top-products__list
 				li.top-products__item
 					a(href="#").product__link
@@ -257,8 +257,8 @@ block content
 							.product__title Настенный светильник Eichholtz 114783
 							.product__price 10 300 ₽
 
-		.section-title.tile_black.js-products-tab Sale
-		.top-products
+		.section-title.tile_black.js-tab-btn Sale
+		.top-products.tab-content
 			ul.top-products__list
 				li.top-products__item
 					a(href="#").product__link
@@ -327,7 +327,7 @@ block content
 						.coll-slide__desc Забавная и стильная серия светильников Seletti Monkey Lamp в виде обезьян, держащих в лапах лампочки
 						a(href="#").coll-slide__link посмотреть
 		.coll-slide
-			img(src="assets/img/userfiles/4.jpg").coll-slide__img
+			img(src="assets/img/userfiles/1.jpg").coll-slide__img
 			.coll-slide-inner
 				.coll-slide__tile
 					.tile_black Подборки
@@ -348,32 +348,33 @@ block content
 						a(href="#").coll-slide__link посмотреть
 
 	.brands
-		.brands__title Популярные бренды
-		.brands__list
-			.brand
-				img(src="assets/img/userfiles/5.jpg").brand__img
-				img(src="assets/img/userfiles/brand-1.png").brand__logo
-				.brand__text Eichholtz: вы можете купить светильники и предметы интерьера Eichholtz в нашем интернет-магазине
-			.brand
-				img(src="assets/img/userfiles/5.jpg").brand__img
-				img(src="assets/img/userfiles/brand-2.png").brand__logo
-				.brand__text Eichholtz: вы можете купить светильники и предметы интерьера Eichholtz в нашем интернет-магазине
-			.brand
-				img(src="assets/img/userfiles/5.jpg").brand__img
-				img(src="assets/img/userfiles/brand-3.png").brand__logo
-				.brand__text Eichholtz: вы можете купить светильники и предметы интерьера Eichholtz в нашем интернет-магазине
-			.brand
-				img(src="assets/img/userfiles/5.jpg").brand__img
-				img(src="assets/img/userfiles/brand-4.png").brand__logo
-				.brand__text Eichholtz: вы можете купить светильники и предметы интерьера Eichholtz в нашем интернет-магазине
-			.brand
-				img(src="assets/img/userfiles/brand-1.png").brand__logo
-			.brand
-				img(src="assets/img/userfiles/brand-2.png").brand__logo
-			.brand
-				img(src="assets/img/userfiles/brand-3.png").brand__logo
-			.brand
-				img(src="assets/img/userfiles/brand-4.png").brand__logo
+		.container
+			.brands__title Популярные бренды
+			.brands__list
+				.brand
+					img(src="assets/img/userfiles/5.jpg").brand__img
+					img(src="assets/img/userfiles/brand-1.png").brand__logo
+					.brand__text Eichholtz: вы можете купить светильники и предметы интерьера Eichholtz в нашем интернет-магазине
+				.brand
+					img(src="assets/img/userfiles/5.jpg").brand__img
+					img(src="assets/img/userfiles/brand-2.png").brand__logo
+					.brand__text Eichholtz: вы можете купить светильники и предметы интерьера Eichholtz в нашем интернет-магазине
+				.brand
+					img(src="assets/img/userfiles/5.jpg").brand__img
+					img(src="assets/img/userfiles/brand-3.png").brand__logo
+					.brand__text Eichholtz: вы можете купить светильники и предметы интерьера Eichholtz в нашем интернет-магазине
+				.brand
+					img(src="assets/img/userfiles/5.jpg").brand__img
+					img(src="assets/img/userfiles/brand-4.png").brand__logo
+					.brand__text Eichholtz: вы можете купить светильники и предметы интерьера Eichholtz в нашем интернет-магазине
+				.brand
+					img(src="assets/img/userfiles/brand-1.png").brand__logo
+				.brand
+					img(src="assets/img/userfiles/brand-2.png").brand__logo
+				.brand
+					img(src="assets/img/userfiles/brand-3.png").brand__logo
+				.brand
+					img(src="assets/img/userfiles/brand-4.png").brand__logo
 
 	.partnership
 		img(src="assets/img/userfiles/1.jpg").partnership__img
@@ -400,33 +401,50 @@ block content
 				.extract__title интернет-магазин
 				.extract__text Основное направление, с которого более 20 лет назад компания начала свою деятельность – оптовая и розничная продажа светильников класса люкс и премиум от ведущих европейских брендов, таких как Eichholtz, Schonbek, MM Lampadari, Schuller, Artemide и др.
 
-	.social-gallery
-		.section-title.tile_black @delight_lighting
-		.social-gallery__slider-wrap
-			.container
-				.social-gallery__slider
-					a(href="#")
-						img(src="assets/img/userfiles/1.jpg" height="90").social-gallery__img
-					a(href="#")
-						img(src="assets/img/userfiles/4.jpg" height="90").social-gallery__img
-					a(href="#")
-						img(src="assets/img/userfiles/5.jpg" height="90").social-gallery__img
-					a(href="#")
-						img(src="assets/img/userfiles/6.jpg" height="90").social-gallery__img
+	.social-galleries-wrap.tabs-wrap
+		.social-gallery.tab-content.active
+			.section-title.tile_black.js-tab-btn.active @delight_lighting
+			.social-gallery__slider-wrap
+				.container
+					.social-gallery__slider
+						a(href="#").social-gallery__link
+							img(src="assets/img/userfiles/1.jpg" height="90").social-gallery__img
+						a(href="#").social-gallery__link
+							img(src="assets/img/userfiles/4.jpg" height="90").social-gallery__img
+						a(href="#").social-gallery__link
+							img(src="assets/img/userfiles/5.jpg" height="90").social-gallery__img
+						a(href="#").social-gallery__link
+							img(src="assets/img/userfiles/6.jpg" height="90").social-gallery__img
+						a(href="#").social-gallery__link
+							img(src="assets/img/userfiles/1.jpg" height="90").social-gallery__img
+						a(href="#").social-gallery__link
+							img(src="assets/img/userfiles/4.jpg" height="90").social-gallery__img
+						a(href="#").social-gallery__link
+							img(src="assets/img/userfiles/5.jpg" height="90").social-gallery__img
+						a(href="#").social-gallery__link
+							img(src="assets/img/userfiles/6.jpg" height="90").social-gallery__img
 
-	.social-gallery
-		.section-title.tile_black @EICHHOLTZ.PROJECT
-		.social-gallery__slider-wrap
-			.container
-				.social-gallery__slider
-					a(href="#")
-						img(src="assets/img/userfiles/1.jpg" height="90").social-gallery__img
-					a(href="#")
-						img(src="assets/img/userfiles/4.jpg" height="90").social-gallery__img
-					a(href="#")
-						img(src="assets/img/userfiles/5.jpg" height="90").social-gallery__img
-					a(href="#")
-						img(src="assets/img/userfiles/6.jpg" height="90").social-gallery__img
+		.social-gallery.tab-content
+			.section-title.tile_black.js-tab-btn @EICHHOLTZ.PROJECT
+			.social-gallery__slider-wrap
+				.container
+					.social-gallery__slider#eicholtz-tab
+						a(href="#").social-gallery__link
+							img(src="assets/img/userfiles/1.jpg" height="90").social-gallery__img
+						a(href="#").social-gallery__link
+							img(src="assets/img/userfiles/4.jpg" height="90").social-gallery__img
+						a(href="#").social-gallery__link
+							img(src="assets/img/userfiles/5.jpg" height="90").social-gallery__img
+						a(href="#").social-gallery__link
+							img(src="assets/img/userfiles/6.jpg" height="90").social-gallery__img
+						a(href="#").social-gallery__link
+							img(src="assets/img/userfiles/1.jpg" height="90").social-gallery__img
+						a(href="#").social-gallery__link
+							img(src="assets/img/userfiles/4.jpg" height="90").social-gallery__img
+						a(href="#").social-gallery__link
+							img(src="assets/img/userfiles/5.jpg" height="90").social-gallery__img
+						a(href="#").social-gallery__link
+							img(src="assets/img/userfiles/6.jpg" height="90").social-gallery__img
 
 	.subscribe
 		.container
