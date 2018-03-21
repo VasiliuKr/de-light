@@ -83,7 +83,6 @@ $(document).on('click', '.js-menu-link', function(event) {
 
 $(document).on('click', '.js-nav-link', function(event) {
 	event.preventDefault();
-	/* Act on the event */
 	var $this = $(this),
 			menuButton = $this.attr('href'),
 			menuMain = $('.header-nav_main'),
@@ -118,10 +117,38 @@ $(document).on('click', '.js-nav-link', function(event) {
 			menuMain.parent('.header-nav-wrap').find('.header-nav.active').toggleClass('active');
 			menuMain.toggleClass('active');
 			btnBack.toggleClass('active');
+			break;
 	}
 	
 });
 /**************** Mobile menu (end) *****************/
+
+/**************** Desktop menu (start) *****************/
+$(document).on('mouseenter', 'body.desktop .js-nav-link', function(event) {
+	event.preventDefault();
+	var $this = $(this),
+			menuButton = $this.attr('href'),
+			menuLight = $('.header-nav_light'),
+			menuFurniture = $('.header-nav_furniture'),
+			menuDecor = $('.header-nav_decor'),
+			menuBrands = $('.header-nav_brands');
+	
+	switch(menuButton) {
+		case "light":
+			menuLight.show();
+			break;
+		case "furniture":
+			menuFurniture.show();
+			break;
+		case "decor":
+			menuDecor.show();
+			break;
+		case "brands":
+			menuBrands.show();
+			break;
+	}
+});
+/**************** Desktop menu (end) *****************/
 
 /*************** User authorization (start) ****************/
 $(document).on('click', '.js-user-auth', function(event) {
@@ -178,3 +205,21 @@ $(document).on('click', '.js-search-modal', function(event) {
 	searchInput.focus();
 });
 /*************** Header search (end) ****************/
+
+/*************** Menu brands equal height columns (start)  ****************/
+function setEqualHeight(columns) {
+	var tallestcolumn = 0;
+	columns.each(
+		function() {
+			currentHeight = $(this).height();
+			if(currentHeight > tallestcolumn) {
+				tallestcolumn = currentHeight;
+			}
+		}
+	);
+	columns.height(tallestcolumn);
+}
+$(document).ready(function() {
+	setEqualHeight($(".header-nav_brands .header-nav-column"));
+});
+/*************** Menu brands equal height columns (end)  ****************/

@@ -146,6 +146,7 @@ a {
 	margin-bottom: 14px;
 	@include desktop {
 		margin-bottom: 0;
+		font-size: 13px;
 	}
 }
 .header-nav-link {
@@ -169,6 +170,9 @@ a {
 	}
 	&.header-nav-link_all {
 		text-transform: none;
+		@include desktop {
+			font-size: 12px;
+		}
 	}
 	&.header-nav-link_highligted {
 		text-transform: none;
@@ -183,7 +187,101 @@ a {
 }
 .header-nav {
 	display: none;
+	@include desktop {
+		&.header-nav_desktop {
+			height: 450px;
+			width: 100%;
+			border: 1px solid #000;
+			box-sizing: content-box;
+			.header-nav-banner {
+				height: 220px;
+				margin-left: -10px;
+				margin-right: -10px;
+			}
+		}
+		.header-nav-column {
+			width: 20%;
+			float: left;
+			border-left: 1px solid rgba(0,0,0,0.1);
+			padding-left: 10px;
+			padding-right: 10px;
+			padding-top: 30px;
+			&:first-child {
+				border-left: none;
+				.header-nav-section {
+					margin-bottom: 60px;
+				}
+			}
+			.header-nav-section:not(:first-child) {
+				margin-top: 35px;
+			}
+		}
+		.header-nav-section .header-nav-link {
+			margin-bottom: 5px;
+		}
+		.header-nav-banner {
+			display: block;
+			background-color: $second-color;
+			margin-bottom: 10px;
+			& + .header-nav-link {
+				display: block;
+				text-align: center;
+				color: #000;
+			}
+		}
+		.header-nav-banner_wide {
+			display: block;
+			width: 400px;
+			float: left;
+			background-color: $main-color;
+		}
+		&.header-nav_light {
+			.header-nav-column {
+				min-height: 275px;
+			}
+			.header-nav-banner_wide {
+				height: 175px;
+			}
+		}
+		&.header-nav_furniture {
+			.header-nav-column {
+				min-height: 325px;
+			}
+			.header-nav-banner_wide {
+				height: 125px;
+			}
+		}
+		&.header-nav_decor {
+			.header-nav-column {
+				min-height: 450px;
+			}
+		}
+		&.header-nav_brands {
+			overflow-y: scroll;
+			.header-nav-column {
+				height: auto;
+			}
+		}
+	}
 }
+.header-nav-banner,
+.header-nav-banner_wide {
+	display: none;
+}
+.header-nav-link_prime {
+	@include desktop {
+		font-weight: bold;
+	}
+}
+.header-nav-link_second {
+	text-transform: none;
+	display: none;
+	@include desktop {
+		display: table;
+		margin-left: 10px;
+	}
+}
+
 .header-nav.active {
 	display: block;
 }
