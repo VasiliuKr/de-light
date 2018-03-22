@@ -9,6 +9,7 @@ $(document).ready(function() {
 /*************** Page rebuilding (start) ****************/
 $(document).ready(function() {
 	if($('body').hasClass('desktop')) {
+		$('h1.main-heading').prependTo('.features .container');
 		$('.top-products-wrap').find('.section-title').prependTo('.top-products-wrap');
 		$('.social-galleries-wrap').find('.section-title').prependTo('.social-galleries-wrap');
 	}
@@ -124,27 +125,77 @@ $(document).on('click', '.js-nav-link', function(event) {
 /**************** Mobile menu (end) *****************/
 
 /**************** Desktop menu (start) *****************/
+function setEqualHeight(columns) {
+	var tallestcolumn = 0;
+	columns.each(
+		function() {
+			currentHeight = $(this).height();
+			if(currentHeight > tallestcolumn) {
+				tallestcolumn = currentHeight;
+			}
+		}
+	);
+	columns.height(tallestcolumn);
+}
 $(document).on('mouseenter', 'body.desktop .js-nav-link', function(event) {
 	event.preventDefault();
 	var $this = $(this),
 			menuButton = $this.attr('href'),
-			menuLight = $('.header-nav_light'),
-			menuFurniture = $('.header-nav_furniture'),
-			menuDecor = $('.header-nav_decor'),
-			menuBrands = $('.header-nav_brands');
+			menuWrap = $('.header-nav-wrap'),
+			menuList = menuWrap.find('.header-nav'),
+			menuLight = menuWrap.find('.header-nav_light'),
+			menuFurniture = menuWrap.find('.header-nav_furniture'),
+			menuDecor = menuWrap.find('.header-nav_decor'),
+			menuBrands = menuWrap.find('.header-nav_brands');
 	
 	switch(menuButton) {
 		case "light":
-			menuLight.show();
+			menuList.removeClass('active');
+			menuLight.addClass('active');
 			break;
 		case "furniture":
-			menuFurniture.show();
+			menuList.removeClass('active');
+			menuFurniture.addClass('active');
 			break;
 		case "decor":
-			menuDecor.show();
+			menuList.removeClass('active');
+			menuDecor.addClass('active');
 			break;
 		case "brands":
-			menuBrands.show();
+			menuList.removeClass('active');
+
+			menuBrands.addClass('active').jScrollPane({
+				showArrows: true,
+				verticalDragMaxHeight: 140
+			});
+			setEqualHeight($(".header-nav_brands .header-nav-column"));
+			break;
+	}
+});
+
+/*$(document).on('mouseleave', 'body.desktop .js-nav-link', function(event) {
+	event.preventDefault();
+	var $this = $(this),
+			menuButton = $this.attr('href'),
+			menuWrap = $('.header-nav-wrap'),
+			menuList = menuWrap.find('.header-nav'),
+			menuLight = menuWrap.find('.header-nav_light'),
+			menuFurniture = menuWrap.find('.header-nav_furniture'),
+			menuDecor = menuWrap.find('.header-nav_decor'),
+			menuBrands = menuWrap.find('.header-nav_brands');
+	
+	switch(menuButton) {
+		case "light":
+			menuLight.removeClass('active');
+			break;
+		case "furniture":
+			menuFurniture.removeClass('active');
+			break;
+		case "decor":
+			menuDecor.removeClass('active');
+			break;
+		case "brands":
+			menuBrands.removeClass('active');
 			break;
 	}
 });
@@ -205,21 +256,3 @@ $(document).on('click', '.js-search-modal', function(event) {
 	searchInput.focus();
 });
 /*************** Header search (end) ****************/
-
-/*************** Menu brands equal height columns (start)  ****************/
-function setEqualHeight(columns) {
-	var tallestcolumn = 0;
-	columns.each(
-		function() {
-			currentHeight = $(this).height();
-			if(currentHeight > tallestcolumn) {
-				tallestcolumn = currentHeight;
-			}
-		}
-	);
-	columns.height(tallestcolumn);
-}
-$(document).ready(function() {
-	setEqualHeight($(".header-nav_brands .header-nav-column"));
-});
-/*************** Menu brands equal height columns (end)  ****************/

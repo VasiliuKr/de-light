@@ -89,12 +89,17 @@ a {
 		.is-sticky {
 			color: #fff;
 			.header-nav_main {
-				max-width: 418px;
+				max-width: 428px;
 			}
 			.header-nav-link {
 				display: none;
 				&.parent {
 					display: block;
+					&:after {
+				    background-image: url(../img/arrow.png) !important;
+						top: 15px;
+						right: -6px;
+					}
 				}
 			}
 		}
@@ -193,6 +198,8 @@ a {
 			width: 100%;
 			border: 1px solid #000;
 			box-sizing: content-box;
+			position: absolute;
+			background-color: #fff;
 			.header-nav-banner {
 				height: 220px;
 				margin-left: -10px;
@@ -260,8 +267,33 @@ a {
 			overflow-y: scroll;
 			.header-nav-column {
 				height: auto;
+				.header-nav-section:not(:first-child) {
+					margin-top: 20px;
+				}
+			}
+			.header-nav-link_second {
+				margin-left: 0;
 			}
 		}
+	}
+}
+.header-nav-link.header-nav-link_desktop {
+	display: none;
+	@include desktop {
+		display: table;
+	}
+}
+.header-nav-column.header-nav-column_desktop {
+	display: none;
+	@include desktop {
+		display: block;
+	}
+}
+.sticky-wrapper.is-sticky ~ .header-nav.header-nav_desktop {
+	@include desktop {
+		position: fixed;
+		top: 39px;
+		width: 1000px;
 	}
 }
 .header-nav-banner,
@@ -291,7 +323,18 @@ a {
 		justify-content: space-between;
 		align-items: center;
 		height: 40px;
-		padding-left: 30px;
+		padding-left: 20px;
+		.header-nav-link {
+			padding: 11px;
+			transition: 0.3s;
+			&.parent:after {
+				background-image: none;
+			}
+			&:hover {
+				background-color: #000;
+				color: #fff;
+			}
+		}
 	}
 }
 .main-heading {
@@ -373,6 +416,8 @@ a {
 	display: none;
 	@include desktop {
 		display: inline-block;
+		text-transform: uppercase;
+		outline: none;
 		position: absolute;
 		bottom: 100px;
 		left: 150px;
@@ -388,6 +433,28 @@ a {
 		&:hover {
 			background-color: #fff;
 			color: $alert-color;
+		}
+		&.transparent {
+			background-color: transparent;
+			color: #000;
+			border: 2px solid $alert-color;
+			&:hover {
+				color: #fff;
+				background-color: $alert-color;
+			}
+		}
+		&.green {
+			border: 2px solid $second-color;
+			background-color: $second-color;
+			&:hover {
+				background-color: #fff;
+				color: $second-color;
+				border: 2px solid #fff;
+			}
+		}
+		&.right {
+			right: 150px;
+			left: auto;
 		}
 	}
 }
@@ -410,6 +477,12 @@ a {
 .features {
 	background-color: $main-color;
 	margin-bottom: 32px;
+	@include desktop {
+		padding-top: 20px;
+		.main-heading {
+			font-size: 20px;
+		}
+	}
 }
 .features__list {
 	padding-left: 0;
@@ -418,7 +491,6 @@ a {
 	flex-wrap: wrap;
 	@include desktop {
 		margin: 0;
-		padding-top: 20px;
 		padding-bottom: 20px;
 	}
 }
