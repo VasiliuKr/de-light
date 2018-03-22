@@ -486,8 +486,9 @@ a {
 }
 .features__list {
 	padding-left: 0;
-	margin: 14px -15px 7px -15px;
+	margin: 14px 0 7px 0;
 	display: flex;
+	justify-content: space-between;
 	flex-wrap: wrap;
 	@include desktop {
 		margin: 0;
@@ -495,10 +496,8 @@ a {
 	}
 }
 .features__item {
-	width: 50%;
+	width: 48%;
 	float: left;
-	padding-left: 8px;
-	padding-right: 8px;
 	text-align: center;
 	margin-bottom: 12px;
 	@include desktop {
@@ -612,9 +611,10 @@ body.desktop .tabs-wrap {
 	position: absolute;
 	right: 6px;
 	top: 0;
-	padding-top: 13px;
+	padding-top: 14px;
 	text-transform: uppercase;
 	font-size: 9px;
+	font-weight: bold;
 	color: #fff;
 }
 .product__img {
@@ -657,7 +657,7 @@ body.desktop .tabs-wrap {
 		top: 0;
 		left: -15px;
 		background-image: url(../img/sprite.png);
-		background-position: -127px -83px;
+		background-position: -164px -36px;
 		width: 11px;
 		height: 11px;
 	}
@@ -824,6 +824,7 @@ body.desktop .tabs-wrap {
 .brand__text {
 	font-size: 12px;
 	line-height: 1.5;
+	padding: 0 8px;
 }
 
 .partnership__img {

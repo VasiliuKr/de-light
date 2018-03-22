@@ -35,13 +35,13 @@ $(document).ready(function() {
 		mobileFirst: true,
 		responsive: [
 			{
-				breakpoint: 481,
+				breakpoint: 480,
 				settings: {
 					slidesToShow: 3
 				}
 			},
 			{
-				breakpoint: 769,
+				breakpoint: 768,
 				settings: 'unslick'
 			}
 		]
@@ -50,7 +50,7 @@ $(document).ready(function() {
 		mobileFirst: true,
 		responsive: [
 			{
-				breakpoint: 769,
+				breakpoint: 768,
 				settings: {
 					centerMode: true,
 					slidesToShow: 1,
@@ -65,7 +65,7 @@ $(document).ready(function() {
 		slidesToScroll: 2,
 		responsive: [
 			{
-				breakpoint: 769,
+				breakpoint: 768,
 				settings: {
 					slidesToShow: 6,
 				}
