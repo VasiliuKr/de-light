@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
 	$('body').restive({
-		breakpoints: ['769', '10000'],
+		breakpoints: ['767', '10000'],
 		classes: ['mobile', 'desktop']
 	});
 });
@@ -59,7 +59,7 @@ $(document).ready(function() {
 			}
 		]
 	});
-	$('.social-gallery__slider').slick({
+	$('#soc-gal-delight').slick({
 		slidesToShow: 3,
 		mobileFirst: true,
 		slidesToScroll: 2,
@@ -69,6 +69,17 @@ $(document).ready(function() {
 				settings: {
 					slidesToShow: 6,
 				}
+			}
+		]
+	});
+	$('#eicholtz-tab').slick({
+		slidesToShow: 3,
+		mobileFirst: true,
+		slidesToScroll: 2,
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: 'unslick'
 			}
 		]
 	});
@@ -137,7 +148,7 @@ function setEqualHeight(columns) {
 	);
 	columns.height(tallestcolumn);
 }
-$(document).on('mouseenter', 'body.desktop .js-nav-link', function(event) {
+/*$(document).on('mouseenter', 'body.desktop .js-nav-link', function(event) {
 	event.preventDefault();
 	var $this = $(this),
 			menuButton = $this.attr('href'),
@@ -171,7 +182,7 @@ $(document).on('mouseenter', 'body.desktop .js-nav-link', function(event) {
 			setEqualHeight($(".header-nav_brands .header-nav-column"));
 			break;
 	}
-});
+});*/
 
 /*$(document).on('mouseleave', 'body.desktop .js-nav-link', function(event) {
 	event.preventDefault();
@@ -227,7 +238,6 @@ $(document).ready(function() {
 /**************** Sticky desktop menu (end) *****************/
 
 /*************** Tabs (start) ****************/
-
 $(document).on('click', '.js-tab-btn', function(event) {
 	if ($('body').hasClass('desktop')) {
 		event.preventDefault();
@@ -240,9 +250,11 @@ $(document).on('click', '.js-tab-btn', function(event) {
 		
 		tabBtns.removeClass('active');
 		tabButton.addClass('active');
-		// if (tabContainer.hasClass('social-galleries-wrap')) {
-		// 	$('#eicholtz-tab').slick('getSlick');
-		// }
+		if (tabButton.hasClass('js-tab-btn-eichholtz')) {
+			$('#eicholtz-tab').slick({
+				slidesToShow: 6
+			});
+		}
 	}
 });
 /*************** Tabs (end) ****************/
@@ -256,3 +268,11 @@ $(document).on('click', '.js-search-modal', function(event) {
 	searchInput.focus();
 });
 /*************** Header search (end) ****************/
+
+$(document).ready(function() {
+	$('.coll-slide__title').hover(function() {
+		$(this).parents('.coll-slide__info').addClass('active');
+	}, function() {
+		$(this).parents('.coll-slide__info').removeClass('active');
+	});
+});
