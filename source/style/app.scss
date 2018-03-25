@@ -675,8 +675,8 @@ a {
 		position: absolute;
 		top: 0;
 		left: -15px;
-		background-image: url(../img/sprite.png);
-		background-position: -164px -36px;
+		background-image: url(../img/star2.svg);
+		background-repeat: no-repeat;
 		width: 11px;
 		height: 11px;
 	}
@@ -689,6 +689,8 @@ a {
 		top: 26%;
 		@include desktop {
 			top: 50%;
+			width: 66px;
+			height: 66px;
 		}
 	}
 	@include desktop {
@@ -715,15 +717,17 @@ a {
 		.slick-next {
 			right: 155px;
 		}
+		.slick-prev:before,
+		.slick-next:before {
+			width: 30px;
+			height: 35px;
+		}
 		.slick-prev:before {
-			background-position: -66px 0px;
-			width: 66px;
-			height: 66px;
+			transform: rotate(180deg);
+			margin-left: 14px;
 		}
 		.slick-next:before {
-			background-position: 0px 0px;
-			width: 66px;
-			height: 66px;
+			margin-left: 20px;
 		}
 	}
 }
@@ -934,17 +938,20 @@ a {
 	}
 	@include desktop {
 		.slick-prev,
-		.slick-next,
-		.slick-prev:before,
-		.slick-next:before {
+		.slick-next {
 			width: 66px;
 			height: 66px;
 		}
+		.slick-prev:before,
+		.slick-next:before {
+			width: 30px;
+			height: 35px;
+		}
 		.slick-prev:before {
-			background-position: -66px 0px;
+			margin-left: 14px;
 		}
 		.slick-next:before {
-			background-position: 0px 0px;
+			margin-left: 20px;
 		}
 	}
 }
