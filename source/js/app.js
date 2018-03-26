@@ -1,8 +1,17 @@
 
+// $(document).ready(function() {
+// 	$('body').restive({
+// 		breakpoints: ['768', '10000'],
+// 		classes: ['mobile', 'desktop']
+// 	});
+// });
+
 $(document).ready(function() {
 	$('body').restive({
-		breakpoints: ['767', '10000'],
-		classes: ['mobile', 'desktop']
+		breakpoints: ['768', '10000'],
+		classes: ['mobile', 'desktop'],
+		turbo_classes: 'is_mobile=r_mobi,is_phone=r_phone,is_tablet=r_tablet,is_landscape=r_landscape',
+		force_dip: true
 	});
 });
 
@@ -93,35 +102,40 @@ $(document).on('click', '.js-menu-link', function(event) {
 	$('.header-nav-wrap').toggle();
 });
 
-$(document).on('click', '.js-nav-link', function(event) {
+$(document).on('click', 'body.mobile .js-nav-link', function(event) {
 	event.preventDefault();
 	var $this = $(this),
-			menuButton = $this.attr('href'),
+			menuItem = $this.parent('.header-nav-item'),
+			menuButton = $this.data('section'),
 			menuMain = $('.header-nav_main'),
-			menuLight = menuMain.siblings('.header-nav_light'),
-			menuFurniture = menuMain.siblings('.header-nav_furniture'),
-			menuDecor = menuMain.siblings('.header-nav_decor'),
-			menuBrands = menuMain.siblings('.header-nav_brands'),
+			menuLight = menuMain.find('.header-nav_light'),
+			menuFurniture = menuMain.find('.header-nav_furniture'),
+			menuDecor = menuMain.find('.header-nav_decor'),
+			menuBrands = menuMain.find('.header-nav_brands'),
 			btnBack = menuMain.siblings('.header-nav-menu').find('.nav-back-link');
 
 	switch(menuButton) {
 		case "light":
 			menuMain.toggleClass('active');
+			menuItem.toggleClass('active');
 			menuLight.toggleClass('active');
 			btnBack.toggleClass('active');
 			break;
 		case "furniture":
 			menuMain.toggleClass('active');
+			menuItem.toggleClass('active');
 			menuFurniture.toggleClass('active');
 			btnBack.toggleClass('active');
 			break;
 		case "decor":
 			menuMain.toggleClass('active');
+			menuItem.toggleClass('active');
 			menuDecor.toggleClass('active');
 			btnBack.toggleClass('active');
 			break;
 		case "brands":
 			menuMain.toggleClass('active');
+			menuItem.toggleClass('active');
 			menuBrands.toggleClass('active');
 			btnBack.toggleClass('active');
 			break;
@@ -129,6 +143,7 @@ $(document).on('click', '.js-nav-link', function(event) {
 			menuMain.parent('.header-nav-wrap').find('.header-nav.active').toggleClass('active');
 			menuMain.toggleClass('active');
 			btnBack.toggleClass('active');
+			$('.header-nav-item').removeClass('active');
 			break;
 	}
 	
@@ -148,68 +163,20 @@ function setEqualHeight(columns) {
 	);
 	columns.height(tallestcolumn);
 }
-/*$(document).on('mouseenter', 'body.desktop .js-nav-link', function(event) {
-	event.preventDefault();
-	var $this = $(this),
-			menuButton = $this.attr('href'),
-			menuWrap = $('.header-nav-wrap'),
-			menuList = menuWrap.find('.header-nav'),
-			menuLight = menuWrap.find('.header-nav_light'),
-			menuFurniture = menuWrap.find('.header-nav_furniture'),
-			menuDecor = menuWrap.find('.header-nav_decor'),
-			menuBrands = menuWrap.find('.header-nav_brands');
-	
-	switch(menuButton) {
-		case "light":
-			menuList.removeClass('active');
-			menuLight.addClass('active');
-			break;
-		case "furniture":
-			menuList.removeClass('active');
-			menuFurniture.addClass('active');
-			break;
-		case "decor":
-			menuList.removeClass('active');
-			menuDecor.addClass('active');
-			break;
-		case "brands":
-			menuList.removeClass('active');
 
-			menuBrands.addClass('active').jScrollPane({
-				showArrows: true,
-				verticalDragMaxHeight: 140
-			});
-			setEqualHeight($(".header-nav_brands .header-nav-column"));
-			break;
-	}
-});*/
 
-/*$(document).on('mouseleave', 'body.desktop .js-nav-link', function(event) {
+$(document).on('mouseenter', 'body.desktop .js-nav-item', function(event) {
 	event.preventDefault();
-	var $this = $(this),
-			menuButton = $this.attr('href'),
-			menuWrap = $('.header-nav-wrap'),
-			menuList = menuWrap.find('.header-nav'),
-			menuLight = menuWrap.find('.header-nav_light'),
-			menuFurniture = menuWrap.find('.header-nav_furniture'),
-			menuDecor = menuWrap.find('.header-nav_decor'),
-			menuBrands = menuWrap.find('.header-nav_brands');
-	
-	switch(menuButton) {
-		case "light":
-			menuLight.removeClass('active');
-			break;
-		case "furniture":
-			menuFurniture.removeClass('active');
-			break;
-		case "decor":
-			menuDecor.removeClass('active');
-			break;
-		case "brands":
-			menuBrands.removeClass('active');
-			break;
-	}
+	$(this).find('.header-nav').css('z-index', '100').show();
+	var columns = $(this).find('.header-nav-column');
+	setEqualHeight(columns);
 });
+$(document).on('mouseleave', 'body.desktop .js-nav-item', function(event) {
+	event.preventDefault();
+	$(this).find('.header-nav').css('z-index', '0').hide();
+});
+
+
 /**************** Desktop menu (end) *****************/
 
 /*************** User authorization (start) ****************/
@@ -229,6 +196,8 @@ $(document).ready(function() {
 		});
 		$('.header-nav.header-nav_main').on('sticky-start', function() {
 			$('header.header').toggleClass('sticky_added');
+			var menuWidth = $('.header-nav-wrap').width();
+			$('.js-nav-item').find('.header-nav').width(menuWidth);
 		});
 		$('.header-nav.header-nav_main').on('sticky-end', function() {
 			$('header.header').toggleClass('sticky_added');

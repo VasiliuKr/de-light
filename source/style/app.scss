@@ -77,7 +77,6 @@ a {
 .header-nav-wrap {
 	background-color: #222;
 	position: fixed;
-	z-index: 1000;
 	top: 50px;
 	color: #fff;
 	width: 265px;
@@ -100,6 +99,13 @@ a {
 			color: #fff;
 			.header-nav_main {
 				max-width: 428px;
+				.header-nav-column .header-nav-link {
+					display: block;
+					color: #000;
+					&:hover {
+						background-color: #fff;
+					}
+				}
 			}
 			.header-nav-link {
 				display: none;
@@ -114,6 +120,9 @@ a {
 			}
 		}
 	}
+}
+.header.sticky_added ~ .wrapper .header-nav-wrap {
+	z-index: 1000;
 }
 .header-nav-menu {
 	margin-bottom: 17px;
@@ -204,7 +213,8 @@ a {
 	}
 }
 .header-nav {
-	display: none;
+	// display: none;
+	padding-left: 0;
 	@include desktop {
 		&.header-nav_desktop {
 			height: 450px;
@@ -212,6 +222,7 @@ a {
 			border: 1px solid #000;
 			box-sizing: content-box;
 			position: absolute;
+			left: 0;
 			background-color: #fff;
 			.header-nav-banner {
 				height: 220px;
@@ -229,11 +240,14 @@ a {
 			&:first-child {
 				border-left: none;
 				.header-nav-section {
-					margin-bottom: 60px;
+					margin-bottom: 45px;
 				}
 			}
 			.header-nav-section:not(:first-child) {
 				margin-top: 35px;
+			}
+			.header-nav-section .header-nav-link {
+				padding: 0;
 			}
 		}
 		.header-nav-section .header-nav-link {
@@ -249,9 +263,13 @@ a {
 				color: #000;
 			}
 		}
+		.header-nav-bottom-banners {
+			width: 80%;
+			float: left;
+		}
 		.header-nav-banner_wide {
 			display: block;
-			width: 400px;
+			width: 50%;
 			float: left;
 			background-color: $main-color;
 		}
@@ -331,11 +349,32 @@ a {
 	display: block;
 }
 .header-nav.header-nav_main {
+	&.active {
+		.header-nav-item {
+			display: block;
+		}
+	}
+	.header-nav-item .header-nav,
+	.header-nav-item {
+		display: none;
+	}
+	.header-nav-item.active {
+		display: block;
+		.header-nav {
+			display: block;
+		}
+		.header-nav-link.parent {
+			display: none;
+		}
+
+	} 
 	@include desktop {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		height: 40px;
+		margin-top: 0;
+		margin-bottom: 0;
 		padding-left: 20px;
 		.header-nav-link {
 			padding: 11px;
@@ -347,6 +386,10 @@ a {
 				background-color: #000;
 				color: #fff;
 			}
+		}
+		.header-nav-column .header-nav-link:hover {
+			background-color: #fff;
+			color: #000;
 		}
 	}
 }
