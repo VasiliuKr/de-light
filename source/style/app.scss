@@ -82,6 +82,7 @@ a {
 	width: 265px;
 	padding-top: 18px;
 	padding-left: 17px;
+	z-index: 100;
 	display: none;
 	@include desktop {
 		background-color: transparent;
@@ -217,7 +218,6 @@ a {
 	padding-left: 0;
 	@include desktop {
 		&.header-nav_desktop {
-			height: 450px;
 			width: 100%;
 			border: 1px solid #000;
 			box-sizing: content-box;
@@ -255,7 +255,7 @@ a {
 		}
 		.header-nav-banner {
 			display: block;
-			background-color: $second-color;
+			background-size: cover;
 			margin-bottom: 10px;
 			& + .header-nav-link {
 				display: block;
@@ -271,7 +271,7 @@ a {
 			display: block;
 			width: 50%;
 			float: left;
-			background-color: $main-color;
+			background-size: cover;
 		}
 		&.header-nav_light {
 			.header-nav-column {
@@ -296,6 +296,7 @@ a {
 		}
 		&.header-nav_brands {
 			overflow-y: scroll;
+			height: 450px;
 			.header-nav-column {
 				height: auto;
 				.header-nav-section:not(:first-child) {

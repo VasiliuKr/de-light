@@ -169,7 +169,14 @@ $(document).on('mouseenter', 'body.desktop .js-nav-item', function(event) {
 	event.preventDefault();
 	$(this).find('.header-nav').css('z-index', '100').show();
 	var columns = $(this).find('.header-nav-column');
-	setEqualHeight(columns);
+	if ($(this).find('js-nav-link').data('section') == 'brands') {
+		$('.header-nav_brands').jScrollPane({	
+			showArrows: true,	
+			verticalDragMaxHeight: 140	
+		});
+		setEqualHeight(columns);
+
+	}
 });
 $(document).on('mouseleave', 'body.desktop .js-nav-item', function(event) {
 	event.preventDefault();
