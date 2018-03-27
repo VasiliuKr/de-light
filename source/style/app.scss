@@ -699,6 +699,14 @@ a {
 	font-size: 9px;
 	font-weight: bold;
 	color: #fff;
+	@include desktop {
+		padding-top: 32px;
+		font-size: 11px;
+		&.icon-svg-star,
+		&.icon-svg-star-red {
+			width: 104px;
+		}
+	}
 }
 .product__img {
 	margin: 0 auto;

@@ -64,7 +64,6 @@ $(document).ready(function() {
 	});
 	$('#soc-gal-delight').slick({
 		slidesToShow: 3,
-		centerMode: true,
 		mobileFirst: true,
 		slidesToScroll: 2,
 		responsive: [
@@ -72,13 +71,13 @@ $(document).ready(function() {
 				breakpoint: 768,
 				settings: {
 					slidesToShow: 6,
+					centerMode: true,
 				}
 			}
 		]
 	});
 	$('#eicholtz-tab').slick({
 		slidesToShow: 3,
-		centerMode: true,
 		mobileFirst: true,
 		slidesToScroll: 2,
 		responsive: [
