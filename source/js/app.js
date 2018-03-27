@@ -1,10 +1,4 @@
 
-// $(document).ready(function() {
-// 	$('body').restive({
-// 		breakpoints: ['768', '10000'],
-// 		classes: ['mobile', 'desktop']
-// 	});
-// });
 
 $(document).ready(function() {
 	$('body').restive({
@@ -70,6 +64,7 @@ $(document).ready(function() {
 	});
 	$('#soc-gal-delight').slick({
 		slidesToShow: 3,
+		centerMode: true,
 		mobileFirst: true,
 		slidesToScroll: 2,
 		responsive: [
@@ -83,6 +78,7 @@ $(document).ready(function() {
 	});
 	$('#eicholtz-tab').slick({
 		slidesToShow: 3,
+		centerMode: true,
 		mobileFirst: true,
 		slidesToScroll: 2,
 		responsive: [
@@ -174,8 +170,6 @@ $(document).on('mouseenter', 'body.desktop .js-nav-item', function(event) {
 			showArrows: true,	
 			verticalDragMaxHeight: 140	
 		});
-		var api = $('.header-nav_brands').data('jsp');
-		api.destroy();
 		setEqualHeight(columns);
 	} else if ($(this).find('.js-nav-link').data('section') == 'decor') {
 			setEqualHeight(columns);
@@ -183,8 +177,16 @@ $(document).on('mouseenter', 'body.desktop .js-nav-item', function(event) {
 });
 $(document).on('mouseleave', 'body.desktop .js-nav-item', function(event) {
 	event.preventDefault();
+	
+	if ($(this).find('.js-nav-link').data('section') == 'brands') {
+		$('.header-nav_brands').jScrollPane({	
+			showArrows: true,	
+			verticalDragMaxHeight: 140	
+		});
+		var api = $('.header-nav_brands').data('jsp');
+		api.destroy();
+	}
 	$(this).find('.header-nav').css('z-index', '0').hide();
-
 });
 
 
@@ -256,3 +258,41 @@ $(document).ready(function() {
 		$(this).parents('.coll-slide__info').removeClass('active');
 	});
 });
+
+/*************** Form validation (start) ****************/
+function validateForm(form) {
+	var elements = form.find('input, textarea').not('input[type="file"], input[type="hidden"]'),
+			valid = true;
+		
+		// Пройдемся по всем элементам формы
+		$.each(elements, function (index, val) {
+			var element = $(val),
+				val = element.val();
+
+			if(val.length === 0) {
+				valid = false;
+			}
+
+			if (element.attr('type') == 'email') {
+				var rv_email = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
+				if(val != '' && !val.match(rv_email)) {
+					valid = false;
+				}
+			}
+
+		});
+
+		if (valid) {
+			form.removeClass('error');
+		} else {
+			form.addClass('error');
+		}
+		return valid;
+}
+
+$(document).on('click', '.js-submit', function(event) {
+	event.preventDefault();
+	var form = $(this).parents('form');
+	validateForm(form);
+});
+/*************** Form validation (end) ****************/

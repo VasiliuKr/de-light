@@ -194,6 +194,7 @@
 	margin-bottom: 18px;
 	border: none;
 	outline: none;
+	cursor: pointer;
 	color: #fff;
 	font-size: 13px;
 	border-radius: 20px;
@@ -206,6 +207,10 @@
 .authorization__error {
 	color: $alert-color;
 	margin-bottom: 10px;
+	display: none;
+}
+form.error .authorization__error {
+	display: block;
 }
 .authorization__link {
 	color: #000;

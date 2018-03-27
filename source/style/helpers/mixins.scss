@@ -22,3 +22,8 @@
 		@content;
 	}
 }
+@mixin desktop-w {
+	@media screen and (min-width: 925px) {
+		@content;
+	}
+}

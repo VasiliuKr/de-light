@@ -17,7 +17,7 @@ block content
 				.icon-svg-lk
 		ul.header-nav.active.header-nav_main
 			li.header-nav-item.js-nav-item
-				a(href="#" data-section="light").header-nav-link.parent.js-nav-link Светильники
+				a(href="#" data-section="light").header-nav-link.header-nav-link_main.parent.js-nav-link Светильники
 				nav.header-nav.header-nav_desktop.header-nav_light
 					.header-nav-column
 						.header-nav-section
@@ -70,7 +70,7 @@ block content
 						.header-nav-banner_wide(style="background-image:url(assets/img/userfiles/1.jpg);")
 						.header-nav-banner_wide(style="background-image:url(assets/img/userfiles/slide-1.jpg);")
 			li.header-nav-item.js-nav-item
-				a(href="#" data-section="furniture").header-nav-link.parent.js-nav-link Мебель
+				a(href="#" data-section="furniture").header-nav-link.header-nav-link_main.parent.js-nav-link Мебель
 				nav.header-nav.header-nav_desktop.header-nav_furniture
 					.header-nav-column
 						.header-nav-section
@@ -124,7 +124,7 @@ block content
 						.header-nav-banner_wide(style="background-image:url(assets/img/userfiles/slide-1.jpg);")
 						.header-nav-banner_wide(style="background-image:url(assets/img/userfiles/1.jpg);")
 			li.header-nav-item.js-nav-item
-				a(href="#" data-section="decor").header-nav-link.parent.js-nav-link Декор
+				a(href="#" data-section="decor").header-nav-link.header-nav-link_main.parent.js-nav-link Декор
 				nav.header-nav.header-nav_desktop.header-nav_decor
 					.header-nav-column
 						.header-nav-section
@@ -196,7 +196,7 @@ block content
 						.header-nav-section
 							a(href="#").header-nav-link.header-nav-link_prime Разное
 			li.header-nav-item.js-nav-item
-				a(href="#" data-section="brands").header-nav-link.parent.js-nav-link Бренды
+				a(href="#" data-section="brands").header-nav-link.header-nav-link_main.parent.js-nav-link Бренды
 				nav.header-nav.header-nav_desktop.header-nav_brands
 					.header-nav-column
 						.header-nav-section
@@ -360,13 +360,13 @@ block content
 							a(href="#").header-nav-link.header-nav-link_second B.lux Vanlux
 							a(href="#").header-nav-link.header-nav-link_second Badari
 			li.header-nav-item
-				a(href="#").header-nav-link Акции
+				a(href="#").header-nav-link.header-nav-link_main Акции
 			li.header-nav-item
-				a(href="#").header-nav-link Ликвидация
+				a(href="#").header-nav-link.header-nav-link_main Ликвидация
 			li.header-nav-item
-				a(href="#").header-nav-link Проектный отдел
+				a(href="#").header-nav-link.header-nav-link_main Проектный отдел
 			li.header-nav-item
-				a(href="#").header-nav-link Салоны de-light
+				a(href="#").header-nav-link.header-nav-link_main Салоны delight
 			li.header-nav-item
 				nav.header-nav-minor
 					each val in ['Оплата / Доставка', 'Журнал', 'Сотрудничество', 'О компании']
@@ -411,22 +411,26 @@ block content
 		.container
 			ul.features__list
 				li.features__item
-					.features__img.icon-lamp
+					.features__img-wrap
+						.features__img.icon-lamp
 					.features__info
 						.features__title Большой выбор
 						.features__desc 5653 моделей в наличии
 				li.features__item
-					.features__img.icon-geo
+					.features__img-wrap
+						.features__img.icon-geo
 					.features__info
 						.features__title 4 салона
 						.features__desc 3 салона в Москве и один в Барвихе
 				li.features__item
-					.features__img.icon-rouble
+					.features__img-wrap
+						.features__img.icon-rouble
 					.features__info
 						.features__title Удобная оплата
 						.features__desc на сайте, курьеру или в салонах
 				li.features__item
-					.features__img.icon-shipment
+					.features__img-wrap
+						.features__img.icon-shipment
 					.features__info
 						.features__title Бережная доставка
 						.features__desc по всей России, по Москве 0 рублей
@@ -743,4 +747,4 @@ block content
 			form.subscribe__form
 				input(type="email" name="email" placeholder="e-mail *").subscribe__input.text-input
 				input(type="text" name="name" placeholder="имя").subscribe__input.text-input
-				button(type="submit").subscribe__btn Подписаться
+				button(type="submit").subscribe__btn.js-submit Подписаться

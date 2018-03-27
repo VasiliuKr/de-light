@@ -6,16 +6,19 @@
 	.container {
 		@extend %clearfix;
 	}
+	@include desktop {
+		padding-top: 23px;
+	}
 }
 .footer-left {
 	@include desktop {
-		width: 50%;
+		width: 49%;
 		float: left;
 	}
 }
 .footer-right {
 	@include desktop {
-		width: 50%;
+		width: 51%;
 		float: right;
 	}
 }
@@ -31,6 +34,11 @@
 	&:nth-child(odd) {
 		margin-right: 5%;
 	}
+	@include desktop {
+		margin-bottom: 0;
+		letter-spacing: 0.5px;
+		width: 45.5%;
+	}
 }
 .company-info {
 	margin-bottom: 28px;
@@ -40,6 +48,9 @@
 	font-size: 12px;
 	text-transform: uppercase;
 	line-height: 28px;
+	@include desktop {
+		line-height: 24px;
+	}
 }
 .salons {
 	font-size: 13px;
@@ -55,6 +66,9 @@
 .salons__item {
 	list-style-type: disc;
 	line-height: 22px;
+	@include desktop {
+		line-height: 19px;
+	}
 }
 .socials__list {
 	padding-left: 0;

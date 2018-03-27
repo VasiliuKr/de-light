@@ -63,14 +63,14 @@ a {
 
 .logo {
 	text-align: center;
-	padding-top: 14px;
+	padding-top: 28px;
 	@include desktop {
 		margin-bottom: 16px;
 	}
 	img {
 		width: 125px;
 		@include desktop {
-			width: 190px;
+			width: 185px;
 		}
 	}
 }
@@ -93,7 +93,7 @@ a {
 		display: block;
 		padding-top: 0;
 		max-width: 1000px;
-		margin: 0 auto;
+		margin: 0 auto 43px auto;
 		padding-left: 0;
 		border-top: 1px solid #000;
 		.is-sticky {
@@ -177,6 +177,11 @@ a {
 	@include desktop {
 		margin-bottom: 0;
 		font-size: 13px;
+	}
+}
+.header-nav-link.header-nav-link_main {
+	@include desktop {
+		font-size: 15px;
 	}
 }
 .header-nav-link {
@@ -379,9 +384,9 @@ a {
 		height: 40px;
 		margin-top: 0;
 		margin-bottom: 0;
-		padding-left: 20px;
+		padding-left: 30px;
 		.header-nav-link {
-			padding: 11px;
+			padding: 11px 5px;
 			transition: 0.3s;
 			&.parent:after {
 				background-image: none;
@@ -406,7 +411,7 @@ a {
 .search {
 	border: 1px solid #7f7f7f;
 	height: 50px;
-	margin-bottom: 24px;
+	margin-bottom: 22px;
 }
 .search-form {
 	@extend %clearfix;
@@ -456,10 +461,11 @@ a {
 		max-width: 1000px;
 		margin: 0 auto;
 		&.slick-dotted.slick-slider {
-			margin-bottom: 10px;
+			margin-bottom: 2px;
 		}
 		.slick-dots {
-			top: 10px;
+			top: 8px;
+			padding-right: 5px;
 			bottom: auto;
 			text-align: right;
 		}
@@ -480,15 +486,16 @@ a {
 		text-transform: uppercase;
 		outline: none;
 		position: absolute;
-		bottom: 100px;
+		bottom: 65px;
 		left: 150px;
+		font-size: 13px;
 		background-color: #000;
 		color: #fff;
 		width: 170px;
-		height: 32px;
+		height: 35px;
 		text-align: center;
 		border: 2px solid #fff;
-		line-height: 27px;
+		line-height: 32px;
 		border-radius: 20px;
 		transition: 0.3s;
 		&:hover {
@@ -531,15 +538,17 @@ a {
 	font-size: 14px;
 	margin-top: 10px;
 	margin-bottom: 11px;
-}
-.slider-text-item div {
-	line-height: 1.25;
+	@include desktop {
+		margin-bottom: 40px;
+	}
 }
 .features {
 	background-color: $main-color;
 	margin-bottom: 32px;
 	@include desktop {
-		padding-top: 20px;
+		padding-top: 10px;
+		padding-bottom: 7px;
+		margin-bottom: 42px;
 		.main-heading {
 			font-size: 20px;
 		}
@@ -567,6 +576,10 @@ a {
 		padding: 0;
 	}
 }
+.features__img-wrap {
+	margin-right: 16px;
+	padding-top: 9px;
+}
 .features__img {
 	margin: 0 auto 3px auto;
 }
@@ -579,6 +592,9 @@ a {
 .features__title {
 	font: bold 12px $main-font;
 	text-transform: uppercase;
+	@include desktop {
+		font-size: 13px;
+	}
 }
 .features__desc {
 	font-size: 12px;
@@ -641,7 +657,10 @@ a {
 	color: #fff;
 	font-size: 12px;
 	display: inline-block;
-	padding: 3px 15px
+	padding: 3px 15px;
+	@include desktop {
+		padding: 5px 11px;
+	}
 }
 .top-products__list {
 	padding-left: 0;
@@ -652,6 +671,7 @@ a {
 	@include desktop {
 		display: flex;
 		flex-wrap: wrap;
+		padding-top: 17px;
 	}
 }
 .product__link {
@@ -662,6 +682,7 @@ a {
 .top-products__item {
 	@include desktop {
 		width: 33%;
+		margin-bottom: 40px;
 	}
 }
 .product {
@@ -684,7 +705,10 @@ a {
 	display: block;
 	height: 140px;
 	@include desktop {
-		height: 325px;
+		height: auto;
+		max-width: 100%;
+		max-height: 325px;
+		margin-bottom: 15px;
 	}
 }
 .product__tile {
@@ -695,15 +719,24 @@ a {
 	text-transform: uppercase;
 	padding: 2px 17px;
 	margin-bottom: 6px;
+	@include desktop {
+		padding: 2px 40px;
+	}
 }
 .product__title {
 	font-size: 12px;
 	color: #999;
 	line-height: 1.5;
+	@include desktop {
+		font-size: 14px;
+	}
 }
 .product__price {
 	font-size: 12px;
 	display: inline-block;
+	@include desktop {
+		font-size: 14px;
+	}
 }
 .product__price_old {
 	text-decoration: line-through;
@@ -726,6 +759,10 @@ a {
 		background-repeat: no-repeat;
 		width: 11px;
 		height: 11px;
+	}
+	@include desktop {
+		font-size: 11px;
+		letter-spacing: 2px;
 	}
 }
 
@@ -759,10 +796,10 @@ a {
 			right: 0;
 		}
 		.slick-prev {
-			left: 130px;
+			left: 12%;
 		}
 		.slick-next {
-			right: 155px;
+			right: 12%;
 		}
 		.slick-prev:before,
 		.slick-next:before {
@@ -795,6 +832,9 @@ a {
 	@include desktop {
 		position: absolute;
 		bottom: 2px;
+		width: 100%;
+	}
+	@include desktop-w {
 		width: 570px;
 		left: 50%;
 		margin-left: -285px;
@@ -870,6 +910,10 @@ a {
 .brands__title {
 	font-size: 24px;
 	margin-bottom: 8px;
+	@include desktop {
+		font-size: 26px;
+		margin-bottom: 17px;
+	}
 }
 .brands__list {
 	display: flex;
@@ -916,11 +960,19 @@ a {
 	text-align: center;
 	padding-top: 26px;
 	padding-bottom: 38px;
+	@include desktop {
+		padding-top: 5px;
+		padding-bottom: 30px;
+	}
 }
 .partnership__title {
 	font-size: 24px;
 	line-height: 30px;
 	margin-bottom: 10px;
+	@include desktop {
+		font-size: 26px;
+		margin: 18px;
+	}
 }
 .partnership__desc {
 	font-size: 14px;
@@ -937,14 +989,24 @@ a {
 	border: 2px solid #fff;
 	border-radius: 20px;
 	padding: 7px 25px;
+	@include desktop {
+		font-size: 13px;
+		padding: 7px 38px;
+	}
 	&:first-child {
 		margin-right: 20px;
+		@include desktop {
+			margin-right: 30px;
+		}
 	}
 }
 
 .extracts {
 	padding-top: 40px;
 	padding-bottom: 18px;
+	@include desktop {
+		padding-top: 60px;
+	}
 	.container {
 		@include desktop {
 			display: flex;
@@ -1006,6 +1068,9 @@ a {
 	border-top: 1px solid #000;
 	padding-top: 14px;
 	padding-bottom: 45px;
+	@include desktop {
+		padding-bottom: 70px;
+	}
 }
 
 .social-gallery__img {
@@ -1022,12 +1087,20 @@ a {
 	background-color: $main-color;
 	padding-top: 20px;
 	padding-bottom: 38px;
+	@include desktop {
+		padding-top: 24px;
+		padding-bottom: 6px;
+	}
 	p {
 		font-size: 14px;
 		line-height: 18px;
 		margin-bottom: 18px;
 		float: left;
 		margin-right: 20px;
+		@include desktop {
+			letter-spacing: 0.5px;
+			margin-top: 9px;
+		}
 	}
 }
 .subscribe__form {
