@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
 	$('body').restive({
-		breakpoints: ['768', '10000'],
+		breakpoints: ['767', '10000'],
 		classes: ['mobile', 'desktop'],
 		turbo_classes: 'is_mobile=r_mobi,is_phone=r_phone,is_tablet=r_tablet,is_landscape=r_landscape',
 		force_dip: true
@@ -44,7 +44,7 @@ $(document).ready(function() {
 				}
 			},
 			{
-				breakpoint: 768,
+				breakpoint: 767,
 				settings: 'unslick'
 			}
 		]
@@ -53,7 +53,7 @@ $(document).ready(function() {
 		mobileFirst: true,
 		responsive: [
 			{
-				breakpoint: 768,
+				breakpoint: 767,
 				settings: {
 					centerMode: true,
 					slidesToShow: 1,
@@ -68,7 +68,7 @@ $(document).ready(function() {
 		slidesToScroll: 2,
 		responsive: [
 			{
-				breakpoint: 768,
+				breakpoint: 767,
 				settings: {
 					slidesToShow: 6,
 					centerMode: true,
@@ -82,7 +82,7 @@ $(document).ready(function() {
 		slidesToScroll: 2,
 		responsive: [
 			{
-				breakpoint: 768,
+				breakpoint: 767,
 				settings: 'unslick'
 			}
 		]
@@ -250,13 +250,16 @@ $(document).on('click', '.js-search-modal', function(event) {
 });
 /*************** Header search (end) ****************/
 
-$(document).ready(function() {
-	$('.coll-slide__title').hover(function() {
-		$(this).parents('.coll-slide__info').addClass('active');
-	}, function() {
-		$(this).parents('.coll-slide__info').removeClass('active');
-	});
+/*************** Showcases slider (start) ****************/
+$(document).on('mouseenter', '.coll-slide__title', function(event) {
+	event.preventDefault();
+	$(this).parents('.coll-slide__info').addClass('active');
 });
+$(document).on('mouseleave', '.coll-slide__info', function(event) {
+	event.preventDefault();
+	$(this).removeClass('active');
+});
+/*************** Showcases slider (end) ****************/
 
 /*************** Form validation (start) ****************/
 function validateForm(form) {

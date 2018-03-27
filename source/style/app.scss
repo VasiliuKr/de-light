@@ -118,7 +118,7 @@ a {
 					&:after {
 				    background-image: url(../img/arrow-white.svg) !important;
 						top: 17px;
-						right: -10px;
+						right: -5px;
 					}
 				}
 			}
@@ -256,6 +256,9 @@ a {
 			}
 			.header-nav-section .header-nav-link {
 				padding: 0;
+				&:hover {
+					opacity: 0.5;
+				}
 			}
 		}
 		.header-nav-section .header-nav-link {
@@ -361,6 +364,15 @@ a {
 	&.active {
 		.header-nav-item {
 			display: block;
+			@include desktop {
+				display: table-cell;
+				.header-nav-link.header-nav-link_main {
+					width: 100%;
+					line-height: 40px;
+					text-align: center;
+					padding: 0 5px;
+				}
+			}
 		}
 	}
 	.header-nav-item .header-nav,
@@ -378,9 +390,8 @@ a {
 
 	} 
 	@include desktop {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		display: table;
+		width: 100%;
 		height: 40px;
 		margin-top: 0;
 		margin-bottom: 0;
@@ -671,7 +682,7 @@ a {
 	@include desktop {
 		display: flex;
 		flex-wrap: wrap;
-		padding-top: 17px;
+		padding-top: 30px;
 	}
 }
 .product__link {
@@ -682,12 +693,20 @@ a {
 .top-products__item {
 	@include desktop {
 		width: 33%;
-		margin-bottom: 40px;
+		// margin-bottom: 40px;
 	}
 }
 .product {
 	position: relative;
 	padding: 7px 10px 0 10px;
+	@include desktop {
+		&:hover {
+			outline: 2px solid #000;
+			.product__buttons {
+				display: block;
+			}
+		}
+	}
 }
 .product__star {
 	position: absolute;
@@ -744,6 +763,7 @@ a {
 	display: inline-block;
 	@include desktop {
 		font-size: 14px;
+		margin-bottom: 50px;
 	}
 }
 .product__price_old {
@@ -751,6 +771,47 @@ a {
 }
 .product__price_new {
 	color: $alert-color;
+}
+.product__buttons {
+	display: none;
+	position: absolute;
+	bottom: 15px;
+	left: 0;
+	width: 100%;
+	@include desktop {
+		
+	}
+}
+.product__btn {
+	text-transform: uppercase;
+	width: 40%;
+	height: 25px;
+	outline: none;
+	cursor: pointer;
+	font-size: 13px;
+	transition: 0.3s;
+	&:first-child {
+		margin-right: 10%;
+	}
+	&.transparent {
+			background-color: transparent;
+			color: #000;
+			border: 2px solid #000;
+			&:hover {
+				color: #fff;
+				background-color: $alert-color;
+			}
+		}
+		&.green {
+			border: 2px solid $second-color;
+			background-color: $second-color;
+			color: #fff;
+			&:hover {
+				background-color: #fff;
+				color: $second-color;
+				border: 2px solid #second-color;
+			}
+		}
 }
 .product__recom {
 	font-size: 9px;
@@ -934,6 +995,9 @@ a {
 	padding-bottom: 20px;
 	@include desktop {
 		width: 25%;
+		&:hover {
+			opacity: 0.5;
+		}
 	}
 }
 .brand__img {
@@ -954,13 +1018,19 @@ a {
 	line-height: 1.5;
 	padding: 0 8px;
 }
-
+.partnership {
+	@include desktop {
+		background-color: #000;
+	}
+}
 .partnership__img {
 	height: 235px;
 	background-size: cover;
 	background-position: center;
 	@include desktop {
 		height: 510px;
+		margin: 0 auto;
+		max-width: 1200px;
 	}
 }
 .partnership__info {
@@ -1000,6 +1070,10 @@ a {
 	@include desktop {
 		font-size: 13px;
 		padding: 7px 38px;
+		&:hover {
+			background-color: #fff;
+			color: $alert-color;
+		}
 	}
 	&:first-child {
 		margin-right: 20px;
