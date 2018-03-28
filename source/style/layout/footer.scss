@@ -71,10 +71,11 @@
 	}
 }
 .socials__list {
-	padding-left: 0;
+	padding-left: 7px;
+	padding-top: 5px;
 	display: flex;
 	justify-content: space-between;
-	margin: 0 auto 22px auto;
+	margin: 0 auto 19px auto;
 	width: 190px;
 	@include desktop {
 		float: left;

@@ -63,9 +63,10 @@ a {
 
 .logo {
 	text-align: center;
-	padding-top: 28px;
+	padding-top: 13px;
 	@include desktop {
 		margin-bottom: 16px;
+		padding-top: 28px;
 	}
 	img {
 		width: 125px;
@@ -405,7 +406,7 @@ a {
 		height: 40px;
 		margin-top: 0;
 		margin-bottom: 0;
-		padding-left: 30px;
+		padding-left: 16px;
 		.header-nav-link {
 			padding: 11px 5px;
 			transition: 0.3s;
@@ -428,11 +429,15 @@ a {
 	font-weight: normal;
 	text-align: center;
 	margin-bottom: 18px;
+	margin-top: 2px;
+	@include desktop {
+		margin-top: 12px;
+	}
 }
 .search {
 	border: 1px solid #7f7f7f;
 	height: 50px;
-	margin-bottom: 22px;
+	margin-bottom: 24px;
 }
 .search-form {
 	@extend %clearfix;
@@ -460,10 +465,6 @@ a {
 	&:-ms-input-placeholder {
 		color: #000;
 	}
-	// &:focus::-webkit-input-placeholder { color:transparent; }
-	// &:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
-	// &:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
-	// &:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 }
 .seach-submit {
 	float: right;
@@ -499,7 +500,7 @@ a {
 .slider-main-item {
 	position: relative;
 	background-size: cover;
-	height: 190px;
+	height: 205px;
 	@include desktop {
 		height: 535px;
 	}
@@ -562,7 +563,8 @@ a {
 .slider-text {
 	font-size: 14px;
 	margin-top: 10px;
-	margin-bottom: 11px;
+	margin-bottom: 0;
+	line-height: 17px;
 	@include desktop {
 		margin-bottom: 40px;
 	}
@@ -581,12 +583,12 @@ a {
 }
 .features__list {
 	padding-left: 0;
-	margin: 14px 0 7px 0;
+	margin: 5px 0 14px 0;
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
 	@include desktop {
-		margin: 0;
+		margin: 0 auto;
 		padding-bottom: 20px;
 	}
 }
@@ -594,7 +596,7 @@ a {
 	width: 48%;
 	float: left;
 	text-align: center;
-	margin-bottom: 12px;
+	margin-bottom: 4px;
 	@include desktop {
 		width: 25%;
 		display: flex;
@@ -602,8 +604,11 @@ a {
 	}
 }
 .features__img-wrap {
-	margin-right: 16px;
+	margin-right: 6px;
 	padding-top: 9px;
+	@include desktop {
+		margin-right: 15px;
+	}
 }
 .features__img {
 	margin: 0 auto 3px auto;
@@ -623,13 +628,16 @@ a {
 }
 .features__desc {
 	font-size: 12px;
+	@include desktop {
+		font-size: 14px;
+	}
 }
 
 .tabs-wrap {
 	text-align: center;
 }
 .top-products {
-	margin-bottom: 22px;
+	margin-bottom: 17px;
 	.slick-prev,
 	.slick-next {
 		top: 35%;
@@ -686,6 +694,9 @@ a {
 	@include desktop {
 		padding: 5px 11px;
 	}
+}
+.top-products-wrap {
+	margin-bottom: 34px;
 }
 .top-products__list {
 	padding-left: 0;
@@ -853,9 +864,9 @@ a {
 	text-align: center;
 	.slick-prev,
 	.slick-next {
-		top: 26%;
+		top: 23%;
 		@include desktop {
-			top: 50%;
+			top: 53%;
 			width: 66px;
 			height: 66px;
 		}
@@ -933,6 +944,13 @@ a {
 }
 .coll-slide__tile {
 	margin-top: -14px;
+	@include desktop {
+		.tile_black {
+			font-size: 13px;
+			padding: 2px 40px;
+			letter-spacing: 1px;
+		}
+	}
 }
 .coll-slide__info {
 	background-color: $main-color;
@@ -992,6 +1010,9 @@ a {
 .brands {
 	text-align: center;
 	padding-top: 30px;
+	@include desktop {
+		padding-top: 42px;
+	}
 	.container {
 		padding-left: 0;
 		padding-right: 0;
@@ -1013,6 +1034,9 @@ a {
 	display: flex;
 	flex-wrap: wrap;
 	padding-bottom: 10px;
+	@include desktop {
+		padding-bottom: 50px;
+	}
 }
 .brand {
 	width: 50%;
@@ -1036,8 +1060,17 @@ a {
 .brand__logo-wrap {
 	margin-bottom: 10px;
 	height: 40px;
+	@include desktop {
+		vertical-align: middle;
+		height: 60px;
+		text-align: center;
+		display: table-cell;
+	}
 }
-
+.brand__logo {
+	max-height: 100%;
+	vertical-align: middle;
+}
 .brand__text {
 	font-size: 12px;
 	line-height: 1.5;
@@ -1112,7 +1145,7 @@ a {
 	padding-top: 40px;
 	padding-bottom: 18px;
 	@include desktop {
-		padding-top: 60px;
+		padding-top: 65px;
 	}
 	.container {
 		@include desktop {
@@ -1138,6 +1171,9 @@ a {
 	line-height: 1.5;
 }
 
+.social-galleries-wrap {
+	margin-bottom: 12px;
+}
 .social-gallery {
 	text-align: center;
 	.slick-prev {
@@ -1176,7 +1212,8 @@ a {
 	padding-top: 14px;
 	padding-bottom: 45px;
 	@include desktop {
-		padding-bottom: 70px;
+		padding-bottom: 56px;
+		padding-top: 20px;
 	}
 }
 
