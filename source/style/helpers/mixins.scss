@@ -23,7 +23,7 @@
 	}
 }
 @mixin desktop-w {
-	@media screen and (min-width: 925px) {
+	@media screen and (min-width: 1000px) {
 		@content;
 	}
 }

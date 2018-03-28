@@ -57,7 +57,7 @@ $(document).ready(function() {
 				settings: {
 					centerMode: true,
 					slidesToShow: 1,
-					centerPadding: '18%'
+					centerPadding: 'calc((100% - 750px)/2)'
 				}
 			}
 		]
@@ -247,6 +247,24 @@ $(document).on('click', '.js-search-modal', function(event) {
 			searchInput = searchContainer.find('.search-field');
 	searchContainer.toggleClass('active');
 	searchInput.focus();
+	$(document).mouseup(function (e){ // событие клика по веб-документу
+		if (!searchContainer.is(e.target) && searchContainer.has(e.target).length === 0) { // если клик был не по поиску и не по его дочерним элементам
+			searchContainer.removeClass('active'); // скрываем его
+		}
+	});
+});
+
+
+
+
+$(document).ready(function() {
+	$('.search-field').click(function(){
+		$(this).data('placeholder',$(this).attr('placeholder'));
+		$(this).attr('placeholder','');
+	});
+	$('.search-field').blur(function(){
+	$(this).attr('placeholder',$(this).data('placeholder'));
+	});
 });
 /*************** Header search (end) ****************/
 
