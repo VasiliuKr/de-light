@@ -8,6 +8,12 @@
 	}
 	@include desktop {
 		padding-top: 23px;
+		a {
+			transition: 0.3s;
+			&:hover {
+				opacity: 0.5;
+			}
+		}
 	}
 }
 .footer-left {

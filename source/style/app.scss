@@ -1250,14 +1250,28 @@ a {
 	}
 }
 .subscribe__form {
-	@extend %clearfix;
 	float: left;
+	&.error {
+		.subscribe__error {
+			display: block;
+		}
+	}
+	@include desktop {
+		margin-bottom: 15px;
+	}
+}
+.subscribe__wrap {
+	@extend %clearfix;
+	@include desktop {
+		margin-bottom: 5px;
+	}
 }
 .subscribe__input {
 	margin-bottom: 15px;
 	@include desktop {
 		width: 180px;
 		float: left;
+		margin-bottom: 0;
 		&:first-child {
 			border-right: none;
 		}
@@ -1279,4 +1293,9 @@ a {
 		width: 180px;
 		float: left;
 	}
+}
+.subscribe__error {
+	display: none;
+	color: $alert-color;
+	font-size: 14px;
 }

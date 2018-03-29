@@ -258,11 +258,11 @@ $(document).on('click', '.js-search-modal', function(event) {
 
 
 $(document).ready(function() {
-	$('.search-field').click(function(){
+	$('.search-field, .subscribe__input').click(function(){
 		$(this).data('placeholder',$(this).attr('placeholder'));
 		$(this).attr('placeholder','');
 	});
-	$('.search-field').blur(function(){
+	$('.search-field, .subscribe__input').blur(function(){
 	$(this).attr('placeholder',$(this).data('placeholder'));
 	});
 });
