@@ -595,13 +595,24 @@ a {
 }
 .features__item {
 	width: 48%;
-	float: left;
 	text-align: center;
 	margin-bottom: 4px;
 	@include desktop {
 		width: 25%;
 		display: flex;
 		padding: 0;
+		&:nth-child(1) {
+			order: 1;
+		}
+		&:nth-child(2) {
+			order: 4;
+		}
+		&:nth-child(3) {
+			order: 2;
+		}
+		&:nth-child(4) {
+			order: 3;
+		}
 	}
 }
 .features__img-wrap {
@@ -626,6 +637,9 @@ a {
 	text-transform: uppercase;
 	@include desktop {
 		font-size: 13px;
+		&:hover {
+			opacity: 0.5;
+		}
 	}
 }
 .features__desc {
@@ -811,34 +825,42 @@ a {
 }
 .product__btn {
 	text-transform: uppercase;
+	display: inline-block;
 	width: 40%;
 	height: 25px;
 	outline: none;
 	cursor: pointer;
-	font-size: 13px;
+	font-size: 11px;
 	transition: 0.3s;
 	&:first-child {
 		margin-right: 10%;
 	}
 	&.transparent {
-			background-color: transparent;
-			color: #000;
-			border: 2px solid #000;
-			&:hover {
-				color: #fff;
-				background-color: $alert-color;
-			}
-		}
-		&.green {
-			border: 2px solid $second-color;
-			background-color: $second-color;
+		background-color: transparent;
+		color: #000;
+		border: 2px solid #000;
+		&:hover {
 			color: #fff;
-			&:hover {
-				background-color: #fff;
-				color: $second-color;
-				border: 2px solid #second-color;
-			}
+			background-color: $alert-color;
 		}
+	}
+	&.green {
+		border: 2px solid $second-color;
+		background-color: $second-color;
+		color: #fff;
+		&:hover {
+			background-color: #fff;
+			color: $second-color;
+			border: 2px solid #second-color;
+		}
+	}
+	@include desktop {
+		padding-top: 3px;
+	}
+	@include desktop-w {
+		font-size: 13px;
+		padding-top: 2px;
+	}
 }
 .product__recom {
 	font-size: 9px;

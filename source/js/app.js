@@ -95,7 +95,17 @@ $(document).on('click', '.js-menu-link', function(event) {
 	event.preventDefault();
 	$(this).toggleClass('active');
 	$('.header-nav-wrap').toggle();
+
+	
 });
+
+/*$(document).mouseup(function (e){ // событие клика по веб-документу
+	console.log('clcl');
+	if (!$('.header-nav-wrap').is(e.target) && $('.header-nav-wrap').has(e.target).length === 0) { // если клик был не по поиску и не по его дочерним элементам
+		$('.header-nav-wrap').hide(); // скрываем его
+		// $this.toggleClass('active');
+	}
+});*/
 
 $(document).on('click', 'body.mobile .js-nav-link', function(event) {
 	event.preventDefault();
