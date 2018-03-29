@@ -68,24 +68,40 @@
 .icon-svg-lamp {
 	background-image: url(../img/lamp.svg);
 	background-repeat: no-repeat;
-	width: 75px;
-	height: 73px;
+	width: 12px;
+	height: 20px;
+	@include desktop {
+		width: 18px;
+		height: 26px;
+	}
 }
 .icon-svg-geo {
 	background-image: url(../img/geo.svg);
 	background-repeat: no-repeat;
-	width: 75px;
-	height: 73px;
+	width: 12px;
+	height: 20px;
+	@include desktop {
+		width: 18px;
+		height: 26px;
+	}
 }
 .icon-svg-rouble {
 	background-image: url(../img/rouble.svg);
 	background-repeat: no-repeat;
-	width: 75px;
-	height: 73px;
+	width: 12px;
+	height: 20px;
+	@include desktop {
+		width: 18px;
+		height: 26px;
+	}
 }
 .icon-svg-shipment {
 	background-image: url(../img/shipment.svg);
 	background-repeat: no-repeat;
-	width: 75px;
-	height: 73px;
+	width: 26px;
+	height: 15px;
+	@include desktop {
+		width: 34px;
+		height: 20px;
+	}
 }
