@@ -373,7 +373,8 @@ block content
 						a(href="#").header-nav-minor-link= val
 		
 	.container
-		h1.main-heading Интернет-магазин дизайнерских светильников, мебели и предметов интерьера
+		#main-heading_mobile
+			h1.main-heading Интернет-магазин дизайнерских светильников, мебели и предметов интерьера
 		.search
 			form.search-form
 				input.search-field(
@@ -409,6 +410,7 @@ block content
 
 	.features
 		.container
+			#main-heading_desktop
 			ul.features__list
 				li.features__item
 					.features__img-wrap
@@ -436,7 +438,9 @@ block content
 						.features__desc по всей России, по Москве 0 рублей
 
 	.top-products-wrap.tabs-wrap
-		.section-title.active.tile_black.js-tab-btn Хиты продаж
+		.prod-titles-wrap
+		.title-wrap_hit
+			.section-title.active.tile_black.js-tab-btn.title_hit Хиты продаж
 		.top-products.tab-content.active
 			ul.top-products__list
 				li.top-products__item
@@ -505,8 +509,9 @@ block content
 							.product__buttons
 								.product__btn.green Купить
 								.product__btn.transparent В избранное
-
-		.section-title.tile_black.js-tab-btn Рекомендации
+		
+		.title-wrap_recom
+			.section-title.tile_black.js-tab-btn.title_recom Рекомендации
 		.top-products.tab-content
 			ul.top-products__list
 				li.top-products__item
@@ -580,7 +585,8 @@ block content
 								.product__btn.green Купить
 								.product__btn.transparent В избранное
 
-		.section-title.tile_black.js-tab-btn Sale
+		.title-wrap_sale
+		.section-title.tile_black.js-tab-btn.title_sale Sale
 		.top-products.tab-content
 			ul.top-products__list
 				li.top-products__item
@@ -780,7 +786,8 @@ block content
 
 	.social-galleries-wrap.tabs-wrap
 		.social-gallery.tab-content.active
-			.section-title.tile_black.js-tab-btn.active @delight_lighting
+			.title-wrap_lighting
+				.section-title.tile_black.js-tab-btn.title_lighting.active @delight_lighting
 			.social-gallery__slider-wrap
 				.container
 					.social-gallery__slider#soc-gal-delight
@@ -802,7 +809,8 @@ block content
 							.social-gallery__img(style="background-image:url(assets/img/userfiles/brand-3.jpg);")
 
 		.social-gallery.tab-content
-			.section-title.tile_black.js-tab-btn.js-tab-btn-eichholtz @EICHHOLTZ.PROJECT
+			.title-wrap_eichprj
+				.section-title.tile_black.js-tab-btn.js-tab-btn-eichholtz.title_eichprj @EICHHOLTZ.PROJECT
 			.social-gallery__slider-wrap
 				.container
 					.social-gallery__slider#eicholtz-tab
