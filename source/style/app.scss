@@ -696,10 +696,12 @@ a {
 			}
 		}
 		.social-gallery {
-			display: none;
+			display: block;
+			height: 0;
+			overflow: hidden;
 			text-align: center;
 			&.active {
-				display: block;
+				height: auto;
 			}
 		}
 	}

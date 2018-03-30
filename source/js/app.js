@@ -52,17 +52,6 @@ $(document).ready(function() {
 					}
 				]
 			});
-			$('#eicholtz-tab').slick({
-				slidesToShow: 3,
-				mobileFirst: true,
-				slidesToScroll: 2,
-				responsive: [
-					{
-						breakpoint: 767,
-						settings: 'unslick'
-					}
-				]
-			});
 		}
 	}
 });
@@ -132,7 +121,10 @@ $(document).ready(function() {
 		responsive: [
 			{
 				breakpoint: 767,
-				settings: 'unslick'
+				settings: {
+					slidesToShow: 6,
+					centerMode: true,
+				}
 			}
 		]
 	});
@@ -290,11 +282,6 @@ $(document).on('click', '.js-tab-btn', function(event) {
 		
 		tabBtns.removeClass('active');
 		tabButton.addClass('active');
-		if (tabButton.hasClass('js-tab-btn-eichholtz')) {
-			$('#eicholtz-tab').slick({
-				slidesToShow: 6
-			});
-		}
 	}
 });
 /*************** Tabs (end) ****************/
