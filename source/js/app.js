@@ -28,7 +28,7 @@ $(document).ready(function() {
 		if (screenWidth > 767) {
 			$('#main-heading_mobile h1').prependTo('#main-heading_desktop');
 			$('.top-products-wrap').find('.section-title').prependTo('.prod-titles-wrap');
-			
+			$('.social-galleries-wrap').find('.section-title').prependTo('.social-galleries-wrap');
 		} else {
 			$('#main-heading_desktop h1').prependTo('#main-heading_mobile');
 			$('.prod-titles-wrap .title_hit').prependTo('.title-wrap_hit');
@@ -46,6 +46,17 @@ $(document).ready(function() {
 							slidesToShow: 3
 						}
 					},
+					{
+						breakpoint: 767,
+						settings: 'unslick'
+					}
+				]
+			});
+			$('#eicholtz-tab').slick({
+				slidesToShow: 3,
+				mobileFirst: true,
+				slidesToScroll: 2,
+				responsive: [
 					{
 						breakpoint: 767,
 						settings: 'unslick'
