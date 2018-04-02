@@ -897,8 +897,8 @@ a {
 		top: 23%;
 		@include desktop {
 			top: 53%;
-			width: 66px;
-			height: 66px;
+			width: 67px;
+			height: 67px;
 		}
 	}
 	@include desktop {
@@ -927,15 +927,13 @@ a {
 		}
 		.slick-prev:before,
 		.slick-next:before {
-			width: 30px;
-			height: 35px;
+			width: 67px;
+			height: 67px;
 		}
 		.slick-prev:before {
 			transform: rotate(180deg);
-			margin-left: 14px;
 		}
 		.slick-next:before {
-			margin-left: 20px;
 		}
 	}
 	@include desktop-w {
@@ -1226,14 +1224,8 @@ a {
 		}
 		.slick-prev:before,
 		.slick-next:before {
-			width: 30px;
-			height: 35px;
-		}
-		.slick-prev:before {
-			margin-left: 14px;
-		}
-		.slick-next:before {
-			margin-left: 20px;
+			width: 66px;
+			height: 66px;
 		}
 	}
 }
@@ -1320,6 +1312,10 @@ a {
 	@include desktop {
 		width: 180px;
 		float: left;
+		transition: 0.3s;
+		&:hover {
+			background-color: $second-color;
+		}
 	}
 }
 .subscribe__error {

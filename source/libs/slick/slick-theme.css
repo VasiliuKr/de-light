@@ -37,9 +37,8 @@
 
     cursor: pointer;
 
-    border-radius: 50%;
-    border: 1px solid #000;
-    background-color: #fff;
+    border: none;
+    background-color: transparent;
 
     color: transparent;
     outline: none;
@@ -68,16 +67,15 @@
 .slick-prev:before,
 .slick-next:before
 {
-    background-image: url(../../img/arrow.svg);
+    background-image: url(../../img/navigation.svg);
     width: 30px;
-    height: 17px;
+    height: 30px;
     background-repeat: no-repeat;
     background-position: center;
     display: block;
 }
 .slick-prev:before {
     transform: rotate(180deg);
-    margin-left: -2px;
 }
 .slick-prev
 {

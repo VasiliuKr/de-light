@@ -200,6 +200,12 @@
 	border-radius: 20px;
 	width: 190px;
 	text-align: left;
+	@include desktop {
+		&:hover {
+			background-color: #fff;
+			color: $alert-color;
+		}
+	}
 }
 .authorization__social {
 	float: right;
