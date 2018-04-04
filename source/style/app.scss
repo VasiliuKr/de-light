@@ -227,11 +227,10 @@ a {
 	}
 }
 .header-nav {
-	// display: none;
 	padding-left: 0;
 	@include desktop {
 		&.header-nav_desktop {
-			width: 100%;
+			width: calc(100% - 2px);
 			border: 1px solid #000;
 			box-sizing: content-box;
 			position: absolute;
@@ -262,7 +261,7 @@ a {
 			.header-nav-section .header-nav-link {
 				padding: 0;
 				&:hover {
-					opacity: 0.5;
+					text-decoration: underline;
 				}
 			}
 		}
@@ -292,6 +291,23 @@ a {
 		&.header-nav_light {
 			.header-nav-column {
 				min-height: 275px;
+				&:first-child {
+					height: 450px;
+					position: relative;
+					.header-nav-banner {
+						position: absolute;
+						width: 200px;
+						bottom: 50px;
+						margin-bottom: 0;
+						& ~ .header-nav-link {
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							height: 50px;
+							width: 100%;
+						}
+					}
+				}
 			}
 			.header-nav-banner_wide {
 				height: 175px;
@@ -300,6 +316,23 @@ a {
 		&.header-nav_furniture {
 			.header-nav-column {
 				min-height: 325px;
+				&:first-child {
+					height: 450px;
+					position: relative;
+					.header-nav-banner {
+						position: absolute;
+						width: 200px;
+						bottom: 50px;
+						margin-bottom: 0;
+						& ~ .header-nav-link {
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							height: 50px;
+							width: 100%;
+						}
+					}
+				}
 			}
 			.header-nav-banner_wide {
 				height: 125px;
@@ -308,6 +341,23 @@ a {
 		&.header-nav_decor {
 			.header-nav-column {
 				min-height: 450px;
+				&:first-child {
+					height: 450px;
+					position: relative;
+					.header-nav-banner {
+						position: absolute;
+						width: 200px;
+						bottom: 50px;
+						margin-bottom: 0;
+						& ~ .header-nav-link {
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							height: 50px;
+							width: 100%;
+						}
+					}
+				}
 			}
 		}
 		&.header-nav_brands {
@@ -642,7 +692,7 @@ a {
 	@include desktop {
 		font-size: 13px;
 		&:hover {
-			opacity: 0.5;
+			text-decoration: underline;
 		}
 	}
 }
@@ -740,7 +790,6 @@ a {
 .top-products__item {
 	@include desktop {
 		width: 33%;
-		// margin-bottom: 40px;
 	}
 }
 .product {
@@ -794,7 +843,10 @@ a {
 	padding: 2px 17px;
 	margin-bottom: 6px;
 	@include desktop {
-		padding: 2px 40px;
+		padding: 1px 0px;
+		width: 135px;
+		font-size: 10px;
+		letter-spacing: 0.5px;
 	}
 }
 .product__title {
@@ -811,6 +863,7 @@ a {
 	@include desktop {
 		font-size: 14px;
 		margin-bottom: 50px;
+		font-weight: bold;
 	}
 }
 .product__price_old {
@@ -1010,16 +1063,19 @@ a {
 	@include desktop {
 		background-color: rgba(255,255,255,0.6);
 		padding-top: 35px;
-		padding-bottom: 30px;
 	}
 }
 .coll-slide__desc {
 	font-size: 12px;
 	line-height: 1.5;
+	overflow: hidden;
+	height: 55px;
 	@include desktop {
 		visibility: hidden;
 		padding-left: 35px;
 		padding-right: 35px;
+		height: 45px;
+		font-size: 14px;
 	}
 }
 .coll-slide__link {
@@ -1028,6 +1084,7 @@ a {
 	vertical-align: top;
 	@include desktop {
 		visibility: hidden;
+		font-size: 14px;
 		color: $alert-color;
 		&:hover {
 			opacity: 0.5;
