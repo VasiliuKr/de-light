@@ -1041,7 +1041,7 @@ a {
 	@include desktop {
 		background-color: transparent;
 		padding-top: 0;
-		padding-bottom: 0;
+		padding-bottom: 15px;
 		transition: 0.3s;
 		.container {
 			padding-left: 0;
@@ -1063,6 +1063,7 @@ a {
 	@include desktop {
 		background-color: rgba(255,255,255,0.6);
 		padding-top: 35px;
+		padding-bottom: 30px;
 	}
 }
 .coll-slide__desc {
@@ -1076,6 +1077,7 @@ a {
 		padding-right: 35px;
 		height: 45px;
 		font-size: 14px;
+		margin-top: -20px;
 	}
 }
 .coll-slide__link {
