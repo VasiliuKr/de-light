@@ -1381,3 +1381,71 @@ a {
 	color: $alert-color;
 	font-size: 14px;
 }
+
+
+.breadcrumbs__list {
+	padding-left: 0;
+}
+.breadcrumbs__item {
+	display: inline-block;
+	color: #999;
+	font-size: 12px;
+	&:not(:last-child):after {
+		content: '>';
+	}
+}
+.fabric-feature__text {
+	font-size: 12px;
+	line-height: 18px;
+}
+.underlined {
+	text-decoration: underline;
+}
+
+.fabric-gallery__item {
+	height: 225px;
+	background-size: cover;
+	position: relative;
+}
+.fabric-gallery__tile {
+	position: absolute;
+	bottom: 0;
+	color: #fff;
+	background-color: rgba(0,0,0,0.6);
+	width: 100%;
+	font-size: 14px;
+	padding: 8px 0;
+	text-align: center;
+}
+.fabric-gallery__desc {
+	font-size: 12px;
+	line-height: 18px;
+	position: relative;
+	max-height: 150px;
+	overflow: hidden;
+	&.expanded {
+		max-height: none;
+		.fabric-gallery__btn-more {
+			position: relative;
+			display: block;
+			padding: 0;
+		}
+	}
+}
+.fabric-gallery__btn-more {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-color: #fff;
+	padding: 0 13px;
+	cursor: pointer;
+}
+
+.sort-panel {
+	margin: 0 -8px;
+}
+.sort-panel__field {
+	width: 50%;
+	float: left;
+	padding: 0 8px;
+}

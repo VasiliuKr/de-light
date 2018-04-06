@@ -123,6 +123,10 @@ $(document).ready(function() {
 			}
 		]
 	});
+	$('.fabric-gallery').slick({
+		dots: true,
+		arrows: false
+	});
 });
 /**************** Slick sliders (end) *****************/
 
@@ -368,3 +372,25 @@ $(document).keydown(function(event) {
 	}
 });
 /*************** Close authorization and search forms by ESC (end) ****************/
+
+/************** Fabric text spoiler (start) ***************/
+$(document).on('click', '.js-more-text', function(event) {
+	event.preventDefault();
+	var $this = $(this),
+			elemExp = $this.parent('div');
+	if($this.text() == "читать дальше") {
+		$this.text("скрыть текст");
+	} else {
+		$this.text("читать дальше");
+	}		
+	elemExp.toggleClass('expanded');
+	
+	
+});
+/*************** Fabric text spoiler (end) ****************/
+
+$(document).ready(function() {
+	$('.sort-panel__select').select2({
+		placeholder: "Показать:"
+	});
+});
