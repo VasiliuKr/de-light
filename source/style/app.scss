@@ -784,6 +784,15 @@ a {
 	&:focus {
 		outline: none !important;
 	}
+	@include desktop {
+		position: relative;
+		display: block;
+		&:hover {
+			.product__props {
+				display: block;
+			}
+		}
+	}
 }
 .top-products__item {
 	@include desktop {
@@ -792,10 +801,12 @@ a {
 }
 .product {
 	position: relative;
-	padding: 7px 10px 0 10px;
+	padding: 7px 20px 0 20px;
 	@include desktop {
 		&:hover {
 			outline: 2px solid #000;
+			background-color: #fff;
+			z-index: 5;
 			.product__buttons {
 				display: block;
 			}
@@ -804,6 +815,7 @@ a {
 }
 .product__star {
 	position: absolute;
+	z-index: 1;
 	right: -10px;
 	top: -10px;
 	padding-top: 22px;
@@ -815,6 +827,8 @@ a {
 	@include desktop {
 		padding-top: 32px;
 		font-size: 11px;
+		right: -23px;
+		top: -23px;
 		&.icon-svg-star,
 		&.icon-svg-star-red {
 			width: 104px;
@@ -831,6 +845,17 @@ a {
 		max-height: 325px;
 		margin-bottom: 15px;
 	}
+}
+.product__props {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+}
+.product__prop {
+	font-size: 12px;
+	line-height: 16px;
 }
 .product__tile {
 	border: 1px solid #999;
@@ -861,7 +886,7 @@ a {
 	display: inline-block;
 	@include desktop {
 		font-size: 14px;
-		margin-bottom: 50px;
+		margin-bottom: 55px;
 		font-weight: bold;
 	}
 }
@@ -878,21 +903,22 @@ a {
 	left: 0;
 	width: 100%;
 	@include desktop {
-		
+		width: calc(100% - 40px);
+		z-index: 5;
+		left: 20px;
+		bottom: 20px;
 	}
 }
 .product__btn {
 	text-transform: uppercase;
 	display: inline-block;
-	width: 40%;
+	width: 100%;
 	height: 25px;
 	outline: none;
 	cursor: pointer;
 	font-size: 11px;
+	border-radius: 11px;
 	transition: 0.3s;
-	&:first-child {
-		margin-right: 10%;
-	}
 	&.transparent {
 		background-color: transparent;
 		color: #000;
