@@ -13,11 +13,27 @@ header.header
 				a(href="#").js-user-auth.authorized
 					.icon-svg-lk
 					.user-top__name Елена
-			.search-top
-				a(href="#").js-search-modal
-					.icon-svg-search2
-			.phone-top
-				a(href="tel:+74957872477") 8 (495) 787-2477
+
+			if title != 'De-light.ru'
+				.search-top.not-index
+					a(href="#").js-search-modal
+						.icon-svg-search2
+			else
+				.search-top
+					a(href="#").js-search-modal
+						.icon-svg-search2
+
+			if title != 'De-light.ru'
+				a(href="index.html")
+					.logo-mobile-menu
+
+			if title != 'De-light.ru'
+				.phone-top.not-index
+					a(href="tel:+74957872477") 8 (495) 787-2477
+			else
+				.phone-top
+					a(href="tel:+74957872477") 8 (495) 787-2477
+					
 			.mail-top
 				a(href="mailto:info@de-light.ru") info@de-light.ru
 			.authorization

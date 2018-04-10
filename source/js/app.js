@@ -374,23 +374,44 @@ $(document).keydown(function(event) {
 /*************** Close authorization and search forms by ESC (end) ****************/
 
 /************** Fabric text spoiler (start) ***************/
-$(document).on('click', '.js-more-text', function(event) {
+$(document).on('click', '.js-more-btn', function(event) {
 	event.preventDefault();
 	var $this = $(this),
-			elemExp = $this.parent('div');
-	if($this.text() == "читать дальше") {
-		$this.text("скрыть текст");
+			elemExp = $this.parent('div'),
+			btnText = $this.find('.more-text');
+	if(btnText.text() == "читать дальше") {
+		btnText.text("скрыть текст");
 	} else {
-		$this.text("читать дальше");
+		btnText.text("читать дальше");
 	}		
 	elemExp.toggleClass('expanded');
-	
-	
 });
 /*************** Fabric text spoiler (end) ****************/
 
+
+/************** Sorting panel (start) ***************/
+function formatState (state) {
+	if (!state.id) {
+		return state.text;
+	}
+	var $state = $('<span>Показать: ' + state.text + '</span>');
+	return $state;
+};
+function formatState2 (state) {
+	if (!state.id) {
+		return state.text;
+	}
+	var $state = $('<span>Сортировать: ' + state.text + '</span>');
+	return $state;
+};
 $(document).ready(function() {
-	$('.sort-panel__select').select2({
-		placeholder: "Показать:"
+	$('.sort-panel__select_store').select2({
+		placeholder: "Показать:",
+		templateSelection: formatState
+	});
+	$('.sort-panel__select_sort').select2({
+		placeholder: "Сортировать:",
+		templateSelection: formatState2
 	});
 });
+/************** Sorting panel (start) ***************/

@@ -97,11 +97,23 @@
 	float: left;
 	margin-left: 18px;
 	line-height: 50px;
+	&.not-index {
+		font-size: 12px;
+	}
 	@include desktop {
 		line-height: 40px;
 		margin-right: 28px;
 		margin-left: 0;
 	}
+}
+.logo-mobile-menu {
+	background-image: url(../img/tmp/mob-menu-logo.png);
+	width: 50px;
+	height: 50px;
+	background-repeat: no-repeat;
+	background-position: center;
+	float: left;
+	border-right: 1px solid rgba(255, 255, 255, 0.5);
 }
 .mail-top {
 	display: none;
@@ -166,6 +178,12 @@
 }
 .search-top {
 	display: none;
+	&.not-index {
+		display: block;
+		float: right;
+		margin-right: 17px;
+		padding-top: 17px;
+	}
 	@include desktop {
 		display: block;
 		float: right;
@@ -229,23 +247,36 @@ form.error .authorization__error {
 }
 
 .search.search_top {
-	height: 65px;
-	width: 440px;
+	height: 50px;
 	position: absolute;
-	right: 20px;
-	top: 50px;
+	right: 15px;
+	left: 15px;
+	top: 63px;
 	margin-bottom: 0;
 	display: none;
+	@include desktop {
+		height: 65px;
+		width: 440px;
+		right: 20px;
+		top: 50px;
+	}
 	&.active {
 		display: block;
 	}
 	.search-field {
-		height: 63px;
-		width: calc(100% - 65px);
+		height: 48px;
+		@include desktop {
+			height: 63px;
+			width: calc(100% - 65px);
+		}
 	}
 	.seach-submit {
-		width: 65px;
-		height: 63px;
+		width: 50px;
+		height: 48px;
 		background-color: $second-color;
+		@include desktop {
+			width: 65px;
+			height: 63px;
+		}
 	}
 }
