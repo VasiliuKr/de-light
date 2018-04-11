@@ -53,7 +53,7 @@ block content
 	.sort-panel
 		.container
 			.sort-panel__field
-				select.sort-panel__select.sort-panel__select_store
+				select.sort-panel__select#sort-panel__select_store
 					option
 					option(value="all") все
 					option(value="in-store") в наличии
@@ -70,257 +70,283 @@ block content
 					option(value="date") по дате добавления
 
 	.pagination
-		a(href="#").pagination__prev <
-		a(href="#").pagination__first 1
-		a(href="#").pagination__dots ...
-		a(href="#") 144
-		a(href="#").pagination__current 145
-		a(href="#") 146
-		a(href="#").pagination__dots ...
-		a(href="#").pagination__last 284
-		a(href="#").pagination__next >
+		.container
+			a(href="#").pagination__link.pagination__prev <
+			a(href="#").pagination__link.pagination__first 1
+			a(href="#").pagination__link.pagination__dots ...
+			a(href="#").pagination__link 144
+			a(href="#").pagination__link.pagination__current 145
+			a(href="#").pagination__link 146
+			a(href="#").pagination__link.pagination__dots ...
+			a(href="#").pagination__link.pagination__last 284
+			a(href="#").pagination__link.pagination__next >
 
 	.filter-panel
-		form.filter-panel__form
-			.filter-panel__field
-				select.filter-panel__select
-					option(value="on-ceil") На потолок
-					option(value="lustre") Люстра
-					option(value="hang-lamp") Подвесной светильник
-					option(value="ceil-lamp") Потолочный светильник
-					option(value="on-wall") На стену
-					option(value="wall-lamp") Настенный светильник
-					option(value="pict-light") Подсветка для картин
-					option(value="on-desk") На стол
-					option(value="table-lamp") Настольная лампа
-					option(value="desk-lamp") Лампа для рабочего стола
-					option(value="on-floor") На пол
-					option(value="floor-lamp") Торшер
-					option(value="tech-light") Технический свет
-					option(value="illum") Подсветка
-					option(value="build-lamp") Встраиваемый свет
-					option(value="spot") Спот
-					option(value="outside") На улицу
-					option(value="wall-torch") Настенный фонарь
-					option(value="hang-torch") Подвесной фонарь
-					option(value="street-light") Уличный светильник
-					option(value="details") Детали
-					option(value="lamp-shade") Абажур
-					option(value="components") Комплектующие
-					option(value="plafon") Плафон
-					option(value="retro-wire") Ретро проводка
-					option(value="constructor") Конструктор
+		.fp-title-wrap
+			.filter-panel__title Фильтры
+				.plus-minus
+		.container
+			form.filter-panel__form
+				.filter-panel__field
+					select.filter-panel__select
+						option(value="on-ceil") На потолок
+						option(value="lustre") Люстра
+						option(value="hang-lamp") Подвесной светильник
+						option(value="ceil-lamp") Потолочный светильник
+						option(value="on-wall") На стену
+						option(value="wall-lamp") Настенный светильник
+						option(value="pict-light") Подсветка для картин
+						option(value="on-desk") На стол
+						option(value="table-lamp") Настольная лампа
+						option(value="desk-lamp") Лампа для рабочего стола
+						option(value="on-floor") На пол
+						option(value="floor-lamp") Торшер
+						option(value="tech-light") Технический свет
+						option(value="illum") Подсветка
+						option(value="build-lamp") Встраиваемый свет
+						option(value="spot") Спот
+						option(value="outside") На улицу
+						option(value="wall-torch") Настенный фонарь
+						option(value="hang-torch") Подвесной фонарь
+						option(value="street-light") Уличный светильник
+						option(value="details") Детали
+						option(value="lamp-shade") Абажур
+						option(value="components") Комплектующие
+						option(value="plafon") Плафон
+						option(value="retro-wire") Ретро проводка
+						option(value="constructor") Конструктор
+				
+				.filter-panel__field
+					.filter__title Светильники
+					ul.filter__list
+						li.filter__item.filter__item_parent
+							.parent-self
+								input(type="checkbox" id="filter-on-ceil").filter-item__chekbox
+								label(for="filter-on-ceil").filter-item__label На потолок
+							ul.filter__list_child
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-lustre").filter-item__chekbox
+									label(for="filter-lustre").filter-item__label Люстра
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-hang-lamp").filter-item__chekbox
+									label(for="filter-hang-lamp").filter-item__label Подвесной светильник
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-ceil-lamp").filter-item__chekbox
+									label(for="filter-ceil-lamp").filter-item__label Потолочный светильник
+						li.filter__item.filter__item_child
+							input(type="checkbox" id="filter-lamps").filter-item__chekbox
+							label(for="filter-lamps").filter-item__label Лампочки
 
-			.filter-panel__field.filter-price
-				.filter-range
-					.filter-range__left
-						.filter-range__title от
-						input(type="text" name="min" value="").filter-range__input
-					span.filter-range__dash &#8212;
-					.filter-range__right
-						.filter-range__title до
-						input(type="text" name="max" value="70000").filter-range__input
-						span.filter-range__measure ₽
-				.checkbox-wrap
-					input(type="checkbox" id="discount").filter__checkbox
-					label(for="discount").filter__label только со скидкой
-				input(type="submit" value="Применить").filter-range__btn
+				.filter-panel__field.filter-price
+					.filter-range
+						.filter-range__left
+							.filter-range__title от
+							input(type="text" name="min" value="").filter-range__input
+						span.filter-range__dash &#8212;
+						.filter-range__right
+							.filter-range__title до
+							input(type="text" name="max" value="70000").filter-range__input
+							span.filter-range__measure ₽
+					.checkbox-wrap
+						input(type="checkbox" id="discount").filter__checkbox
+						label(for="discount").filter__label только со скидкой
+					input(type="submit" value="Применить").filter-range__btn
 
-			.filter-panel__field.filter-size
-				.filter-range
-					.filter-range__left
-						.filter-range__title Ширина
-						input(type="text" name="min" value="20").filter-range__input
-					span.filter-range__dash &#8212;
-					.filter-range__right
-						.filter-range__title  
-						input(type="text" name="max" value="60").filter-range__input
-						span.filter-range__measure см
-				.filter-range
-					.filter-range__left
-						.filter-range__title Глубина
-						input(type="text" name="min" value="20").filter-range__input
-					span.filter-range__dash &#8212;
-					.filter-range__right
-						.filter-range__title  
-						input(type="text" name="max" value="60").filter-range__input
-						span.filter-range__measure см
-				.filter-range
-					.filter-range__left
-						.filter-range__title Высота
-						input(type="text" name="min" value="20").filter-range__input
-					span.filter-range__dash &#8212;
-					.filter-range__right
-						.filter-range__title  
-						input(type="text" name="max" value="60").filter-range__input
-						span.filter-range__measure см
-				input(type="submit" value="Применить").filter-range__btn
+				.filter-panel__field.filter-size
+					.filter-range
+						.filter-range__left
+							.filter-range__title Ширина
+							input(type="text" name="min" value="20").filter-range__input
+						span.filter-range__dash &#8212;
+						.filter-range__right
+							.filter-range__title  
+							input(type="text" name="max" value="60").filter-range__input
+							span.filter-range__measure см
+					.filter-range
+						.filter-range__left
+							.filter-range__title Глубина
+							input(type="text" name="min" value="20").filter-range__input
+						span.filter-range__dash &#8212;
+						.filter-range__right
+							.filter-range__title  
+							input(type="text" name="max" value="60").filter-range__input
+							span.filter-range__measure см
+					.filter-range
+						.filter-range__left
+							.filter-range__title Высота
+							input(type="text" name="min" value="20").filter-range__input
+						span.filter-range__dash &#8212;
+						.filter-range__right
+							.filter-range__title  
+							input(type="text" name="max" value="60").filter-range__input
+							span.filter-range__measure см
+					input(type="submit" value="Применить").filter-range__btn
 
-			.filter-panel__field.filter-color
-				.checkbox-wrap
-					input(type="checkbox" id="white").filter__checkbox
-					label(for="white").filter__label Белый
-				.checkbox-wrap
-					input(type="checkbox" id="yellow").filter__checkbox
-					label(for="yellow").filter__label Желтый
-				.checkbox-wrap
-					input(type="checkbox" id="golden").filter__checkbox
-					label(for="golden").filter__label Золотой
-				.checkbox-wrap
-					input(type="checkbox" id="brown").filter__checkbox
-					label(for="brown").filter__label Коричневый
-				.checkbox-wrap
-					input(type="checkbox" id="red").filter__checkbox
-					label(for="red").filter__label Красный
-				.checkbox-wrap
-					input(type="checkbox" id="multicolor").filter__checkbox
-					label(for="multicolor").filter__label Мультиколор
-				.checkbox-wrap
-					input(type="checkbox" id="orange").filter__checkbox
-					label(for="orange").filter__label Оранжевый
-				.checkbox-wrap
-					input(type="checkbox" id="transparent").filter__checkbox
-					label(for="transparent").filter__label Прозрачный
-				.checkbox-wrap
-					input(type="checkbox" id="pink").filter__checkbox
-					label(for="pink").filter__label Розовый
-				.checkbox-wrap
-					input(type="checkbox" id="silver").filter__checkbox
-					label(for="silver").filter__label Серебряный
-				.checkbox-wrap
-					input(type="checkbox" id="gray").filter__checkbox
-					label(for="gray").filter__label Серый
-				input(type="submit" value="Применить").filter-range__btn
+				.filter-panel__field.filter-color
+					.checkbox-wrap
+						input(type="checkbox" id="white").filter__checkbox
+						label(for="white").filter__label Белый
+					.checkbox-wrap
+						input(type="checkbox" id="yellow").filter__checkbox
+						label(for="yellow").filter__label Желтый
+					.checkbox-wrap
+						input(type="checkbox" id="golden").filter__checkbox
+						label(for="golden").filter__label Золотой
+					.checkbox-wrap
+						input(type="checkbox" id="brown").filter__checkbox
+						label(for="brown").filter__label Коричневый
+					.checkbox-wrap
+						input(type="checkbox" id="red").filter__checkbox
+						label(for="red").filter__label Красный
+					.checkbox-wrap
+						input(type="checkbox" id="multicolor").filter__checkbox
+						label(for="multicolor").filter__label Мультиколор
+					.checkbox-wrap
+						input(type="checkbox" id="orange").filter__checkbox
+						label(for="orange").filter__label Оранжевый
+					.checkbox-wrap
+						input(type="checkbox" id="transparent").filter__checkbox
+						label(for="transparent").filter__label Прозрачный
+					.checkbox-wrap
+						input(type="checkbox" id="pink").filter__checkbox
+						label(for="pink").filter__label Розовый
+					.checkbox-wrap
+						input(type="checkbox" id="silver").filter__checkbox
+						label(for="silver").filter__label Серебряный
+					.checkbox-wrap
+						input(type="checkbox" id="gray").filter__checkbox
+						label(for="gray").filter__label Серый
+					input(type="submit" value="Применить").filter-range__btn
 
-			.filter-panel__field.filter-material
-				.checkbox-wrap
-					input(type="checkbox" id="acryl").filter__checkbox
-					label(for="acryl").filter__label Акрил
-				.checkbox-wrap
-					input(type="checkbox" id="alebastr").filter__checkbox
-					label(for="alebastr").filter__label Алебастр
-				.checkbox-wrap
-					input(type="checkbox" id="allum").filter__checkbox
-					label(for="allum").filter__label Алюминий
-				.checkbox-wrap
-					input(type="checkbox" id="beton").filter__checkbox
-					label(for="beton").filter__label Бетон
-				.checkbox-wrap
-					input(type="checkbox" id="gips").filter__checkbox
-					label(for="gips").filter__label Гипс
-				.checkbox-wrap
-					input(type="checkbox" id="glina").filter__checkbox
-					label(for="glina").filter__label Глина
-				.checkbox-wrap
-					input(type="checkbox" id="granit").filter__checkbox
-					label(for="granit").filter__label Гранит
-				.checkbox-wrap
-					input(type="checkbox" id="wood").filter__checkbox
-					label(for="wood").filter__label Дерево
-				.checkbox-wrap
-					input(type="checkbox" id="keramika").filter__checkbox
-					label(for="keramika").filter__label Керамика
-				.checkbox-wrap
-					input(type="checkbox" id="kozha").filter__checkbox
-					label(for="kozha").filter__label Кожа
-				.checkbox-wrap
-					input(type="checkbox" id="mdf").filter__checkbox
-					label(for="mdf").filter__label Мдф
-				input(type="submit" value="Применить").filter-range__btn
+				.filter-panel__field.filter-material
+					.checkbox-wrap
+						input(type="checkbox" id="acryl").filter__checkbox
+						label(for="acryl").filter__label Акрил
+					.checkbox-wrap
+						input(type="checkbox" id="alebastr").filter__checkbox
+						label(for="alebastr").filter__label Алебастр
+					.checkbox-wrap
+						input(type="checkbox" id="allum").filter__checkbox
+						label(for="allum").filter__label Алюминий
+					.checkbox-wrap
+						input(type="checkbox" id="beton").filter__checkbox
+						label(for="beton").filter__label Бетон
+					.checkbox-wrap
+						input(type="checkbox" id="gips").filter__checkbox
+						label(for="gips").filter__label Гипс
+					.checkbox-wrap
+						input(type="checkbox" id="glina").filter__checkbox
+						label(for="glina").filter__label Глина
+					.checkbox-wrap
+						input(type="checkbox" id="granit").filter__checkbox
+						label(for="granit").filter__label Гранит
+					.checkbox-wrap
+						input(type="checkbox" id="wood").filter__checkbox
+						label(for="wood").filter__label Дерево
+					.checkbox-wrap
+						input(type="checkbox" id="keramika").filter__checkbox
+						label(for="keramika").filter__label Керамика
+					.checkbox-wrap
+						input(type="checkbox" id="kozha").filter__checkbox
+						label(for="kozha").filter__label Кожа
+					.checkbox-wrap
+						input(type="checkbox" id="mdf").filter__checkbox
+						label(for="mdf").filter__label Мдф
+					input(type="submit" value="Применить").filter-range__btn
 
-			.container
-				ul.products__list
-					li.products__item
-						.product
-							.product__star.icon-svg-star-red -14%
-							a(href="#").product__link
-								img(src="assets/img/userfiles/product-5.jpg" alt="").product__img
-								.product__props
-									.product__prop ВхШхГ: 50 х 40 х 40 см
-									.product__prop Лампочки: 2 х 50 Вт
-							.product__tile В наличии
-							.product__title Настенный светильник Eichholtz 114783
-							.product__price.product__price_old 10 300 ₽
-							.product__price.product__price_new 8 200 ₽
-							.product__buttons
-								.product__btn.green Купить
-					li.products__item
-						.product
-							.product__star.icon-svg-star-red -20%
-							a(href="#").product__link
-								img(src="assets/img/userfiles/product-6.jpg" alt="").product__img
-								.product__props
-									.product__prop ВхШхГ: 50 х 40 х 40 см
-									.product__prop Лампочки: 2 х 50 Вт
-							.product__tile В наличии
-							.product__title Бра Schuller 50-9327
-							.product__price.product__price_old 255 300 ₽
-							.product__price.product__price_new 205 700 ₽
-							.product__buttons
-								.product__btn.green Купить
-					li.products__item
-						.product
-							.product__star.icon-svg-star-red -10%
-							a(href="#").product__link
-								img(src="assets/img/userfiles/product-1.jpg" alt="").product__img
-								.product__props
-									.product__prop ВхШхГ: 50 х 40 х 40 см
-									.product__prop Лампочки: 2 х 50 Вт
-							.product__tile В наличии
-							.product__title Настенный светильник Eichholtz 114783
-							.product__price.product__price_old 10 300 ₽
-							.product__price.product__price_new 9 300 ₽
-							.product__buttons
-								.product__btn.green Купить
-					li.products__item
-						.product
-							.product__star.icon-svg-star-red -14%
-							a(href="#").product__link
-								img(src="assets/img/userfiles/product-3.jpg" alt="").product__img
-								.product__props
-									.product__prop ВхШхГ: 50 х 40 х 40 см
-									.product__prop Лампочки: 2 х 50 Вт
-							.product__tile В наличии
-							.product__title Настенный светильник Eichholtz 114783
-							.product__price.product__price_old 10 300 ₽
-							.product__price.product__price_new 8 200 ₽
-							.product__buttons
-								.product__btn.green Купить
-					li.products__item
-						.product
-							.product__star.icon-svg-star-red -20%
-							a(href="#").product__link
-								img(src="assets/img/userfiles/product-4.jpg" alt="").product__img
-								.product__props
-									.product__prop ВхШхГ: 50 х 40 х 40 см
-									.product__prop Лампочки: 2 х 50 Вт
-							.product__tile В наличии
-							.product__title Бра Schuller 50-9327
-							.product__price.product__price_old 255 300 ₽
-							.product__price.product__price_new 205 700 ₽
-							.product__buttons
-								.product__btn.green Купить
-					li.products__item
-						.product
-							.product__star.icon-svg-star-red -10%
-							a(href="#").product__link
-								img(src="assets/img/userfiles/product-2.jpg" alt="").product__img
-								.product__props
-									.product__prop ВхШхГ: 50 х 40 х 40 см
-									.product__prop Лампочки: 2 х 50 Вт
-							.product__tile В наличии
-							.product__title Настенный светильник Eichholtz 114783
-							.product__price.product__price_old 10 300 ₽
-							.product__price.product__price_new 9 300 ₽
-							.product__buttons
-								.product__btn.green Купить
+	.container
+		ul.products__list
+			li.products__item
+				.product
+					.product__star.icon-svg-star-red -14%
+					a(href="#").product__link
+						img(src="assets/img/userfiles/product-5.jpg" alt="").product__img
+						.product__props
+							.product__prop ВхШхГ: 50 х 40 х 40 см
+							.product__prop Лампочки: 2 х 50 Вт
+					.product__tile В наличии
+					.product__title Настенный светильник Eichholtz 114783
+					.product__price.product__price_old 10 300 ₽
+					.product__price.product__price_new 8 200 ₽
+					.product__buttons
+						.product__btn.green Купить
+			li.products__item
+				.product
+					.product__star.icon-svg-star-red -20%
+					a(href="#").product__link
+						img(src="assets/img/userfiles/product-6.jpg" alt="").product__img
+						.product__props
+							.product__prop ВхШхГ: 50 х 40 х 40 см
+							.product__prop Лампочки: 2 х 50 Вт
+					.product__tile В наличии
+					.product__title Бра Schuller 50-9327
+					.product__price.product__price_old 255 300 ₽
+					.product__price.product__price_new 205 700 ₽
+					.product__buttons
+						.product__btn.green Купить
+			li.products__item
+				.product
+					.product__star.icon-svg-star-red -10%
+					a(href="#").product__link
+						img(src="assets/img/userfiles/product-1.jpg" alt="").product__img
+						.product__props
+							.product__prop ВхШхГ: 50 х 40 х 40 см
+							.product__prop Лампочки: 2 х 50 Вт
+					.product__tile В наличии
+					.product__title Настенный светильник Eichholtz 114783
+					.product__price.product__price_old 10 300 ₽
+					.product__price.product__price_new 9 300 ₽
+					.product__buttons
+						.product__btn.green Купить
+			li.products__item
+				.product
+					.product__star.icon-svg-star-red -14%
+					a(href="#").product__link
+						img(src="assets/img/userfiles/product-3.jpg" alt="").product__img
+						.product__props
+							.product__prop ВхШхГ: 50 х 40 х 40 см
+							.product__prop Лампочки: 2 х 50 Вт
+					.product__tile В наличии
+					.product__title Настенный светильник Eichholtz 114783
+					.product__price.product__price_old 10 300 ₽
+					.product__price.product__price_new 8 200 ₽
+					.product__buttons
+						.product__btn.green Купить
+			li.products__item
+				.product
+					.product__star.icon-svg-star-red -20%
+					a(href="#").product__link
+						img(src="assets/img/userfiles/product-4.jpg" alt="").product__img
+						.product__props
+							.product__prop ВхШхГ: 50 х 40 х 40 см
+							.product__prop Лампочки: 2 х 50 Вт
+					.product__tile В наличии
+					.product__title Бра Schuller 50-9327
+					.product__price.product__price_old 255 300 ₽
+					.product__price.product__price_new 205 700 ₽
+					.product__buttons
+						.product__btn.green Купить
+			li.products__item
+				.product
+					.product__star.icon-svg-star-red -10%
+					a(href="#").product__link
+						img(src="assets/img/userfiles/product-2.jpg" alt="").product__img
+						.product__props
+							.product__prop ВхШхГ: 50 х 40 х 40 см
+							.product__prop Лампочки: 2 х 50 Вт
+					.product__tile В наличии
+					.product__title Настенный светильник Eichholtz 114783
+					.product__price.product__price_old 10 300 ₽
+					.product__price.product__price_new 9 300 ₽
+					.product__buttons
+						.product__btn.green Купить
 
-			.subscribe
-				.container
-					p Подпишитесь на новости и закрытые распродажи DeLight
-					form.subscribe__form
-						.subscribe__wrap
-							input(type="email" name="email" placeholder="e-mail *").subscribe__input.text-input
-							input(type="text" name="name" placeholder="имя").subscribe__input.text-input
-							button(type="submit").subscribe__btn.js-submit Подписаться
-						.subscribe__error Неверный e-mail или имя
+	.subscribe
+		.container
+			p Подпишитесь на новости и закрытые распродажи DeLight
+			form.subscribe__form
+				.subscribe__wrap
+					input(type="email" name="email" placeholder="e-mail *").subscribe__input.text-input
+					input(type="text" name="name" placeholder="имя").subscribe__input.text-input
+					button(type="submit").subscribe__btn.js-submit Подписаться
+				.subscribe__error Неверный e-mail или имя

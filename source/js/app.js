@@ -405,13 +405,18 @@ function formatState2 (state) {
 	return $state;
 };
 $(document).ready(function() {
-	$('.sort-panel__select_store').select2({
+	$('#sort-panel__select_store').select2({
+		dropdownParent: $('.sort-panel'),
 		placeholder: "Показать:",
-		templateSelection: formatState
+		templateSelection: formatState,
+		minimumResultsForSearch: Infinity
 	});
 	$('.sort-panel__select_sort').select2({
+		dropdownParent: $('.sort-panel'),
 		placeholder: "Сортировать:",
-		templateSelection: formatState2
+		templateSelection: formatState2,
+		minimumResultsForSearch: Infinity
 	});
+	$(".select2-search, .select2-focusser").remove();
 });
 /************** Sorting panel (start) ***************/

@@ -1448,6 +1448,9 @@ a {
 	}
 }
 
+.fabric {
+	margin-bottom: 24px;
+}
 .fabric__title {
 	font-size: 24px;
 	text-align: center;
@@ -1547,7 +1550,7 @@ a {
 }
 
 .sort-panel {
-	margin: 0 -8px;
+	margin: 0 -8px 20px -8px;
 }
 .sort-panel__field {
 	width: 50%;
@@ -1562,8 +1565,8 @@ a {
 			border: 1px solid $alert-color;
 			border-radius: 0;
 			font-size: 12px;
-			height: 39px;
-			padding: 5px 10px 0 15px;
+			height: 30px;
+			padding: 0px 10px 0 15px;
 			.select2-selection__arrow {
 				width: 20px;
 				b {
@@ -1573,9 +1576,109 @@ a {
 			}
 		}
 	}
+	.select2-dropdown {
+		border-radius: 0;
+		border: 1px solid #999;
+	}
+	.select2-container--open .select2-dropdown--below {
+		top: 0;
+		padding-top: 5px;
+	}
+	.select2-results__option {
+		padding: 5px 7px;
+		font-size: 14px;
+		line-height: 16px;
+	}
 }
-.select2-dropdown {
-	border-radius: 0;
-	border: 1px solid #999;
-}
+
 /********* Customizing select2 (end) **********/
+
+.pagination {
+	margin-bottom: 12px;
+	text-align: center;
+	color: #999;
+}
+.pagination__link {
+	margin-right: 13px;
+	&:hover {
+		color: $second-color;
+	}
+	&.pagination__current {
+		color: $second-color;
+	}
+}
+
+.fp-title-wrap {
+	background-color: #000;
+	padding: 10px 0;
+	text-align: center;
+}
+.filter-panel__title {
+	margin: 0 auto;
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 12px;
+	text-align: center;
+	padding-right: 7px;
+	display: inline-block;
+	.plus-minus {
+		background-color: #fff;
+		position: relative;
+		right: -7px;
+		top: -2px;
+		&:after {
+			background-color: #fff;
+		}
+	}
+}
+.filter__title {
+	background-color: $main-color;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 4px 10px;
+	cursor: pointer;
+	position: relative;
+	&:after {
+		content: "";
+		border-color: #000 transparent transparent transparent;
+		border-style: solid;
+		border-width: 5px 4px 0 4px;
+		height: 0;
+		right: 10px;
+		position: absolute;
+		top: 10px;
+	}
+}
+.filter__list {
+	margin: 0;
+	padding-left: 0;
+	font-size: 14px;	
+	line-height: 21px;
+}
+.filter__list_child {
+	padding-left: 0;
+	.filter__item_child {
+		padding-left: 20px;
+	}
+}
+.filter-item__chekbox {
+	position: absolute;
+	opacity: 0;
+}
+.filter-item__label {
+	position: relative;
+	&:after {
+		content: "";
+		border-color: #000 transparent transparent transparent;
+		border-style: solid;
+		border-width: 5px 4px 0 4px;
+		height: 0;
+		right: -20px;
+		position: absolute;
+		top: 7px;
+		cursor: pointer;
+	}
+}
+.filter-item__chekbox:checked + .filter-item__label {
+	color: $second-color;
+}
