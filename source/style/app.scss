@@ -13,6 +13,9 @@ html,
 body {
 	height: 100%;
 }
+html.ov-hidden {
+	overflow: hidden;
+}
 div, p {
 	line-height: 1.4;
 }
@@ -991,7 +994,7 @@ a {
 			width: calc((100% - 750px)/2);
 			height: 100%;
 			z-index: 5;
-			background-color: rgba(255,255,255,0.5);
+			background-color: rgba(255,255,255,0.65);
 		}
 		&:before {
 			left: 0;

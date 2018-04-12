@@ -136,12 +136,14 @@ $(document).on('click', '.js-menu-link', function(event) {
 	$(this).toggleClass('active');
 	$('.header-nav-wrap').toggle();
 	$('.wrapper .content').toggleClass('mob-menu-active');
+	$('html').toggleClass('ov-hidden');
 
 	//скрытие мобильного меню по тапу вне меню
 	$('.content.mob-menu-active').mouseup(function (e){
 		if (!$('.header-nav-wrap').is(e.target) && $('.header-nav-wrap').has(e.target).length === 0) {
 			$('.header-nav-wrap').hide(); 
 			$('.js-menu-link').removeClass('active');
+			$('html').removeClass('ov-hidden');
 		}
 	});
 });
