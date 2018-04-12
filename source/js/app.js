@@ -421,4 +421,29 @@ $(document).ready(function() {
 	});
 	$(".select2-search, .select2-focusser").remove();
 });
-/************** Sorting panel (start) ***************/
+/************** Sorting panel (end) ***************/
+
+
+/************** Filter panel (start) ***************/
+$(document).on('click', '.js-mob-filter', function(event) {
+	event.preventDefault();
+	var $this = $(this),
+			filter = $this.siblings('.filter-wrap');
+	filter.toggleClass('opened');
+	$this.toggleClass('opened');
+});
+$(document).on('click', '.js-filter-spoil', function(event) {
+	event.preventDefault();
+	var $this = $(this),
+			filterList = $this.siblings('.filter__list');
+	filterList.toggleClass('opened');
+	$this.toggleClass('opened');
+});
+
+$(document).on('click', '.js-filter-list-spoil', function(event) {
+	event.preventDefault();
+	var $this = $(this),
+			container = $this.parents('.filter__item_parent');
+	container.toggleClass('expanded');
+});
+/*************** Filter panel (end) ****************/

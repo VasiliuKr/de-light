@@ -52,22 +52,23 @@ block content
 	
 	.sort-panel
 		.container
-			.sort-panel__field
-				select.sort-panel__select#sort-panel__select_store
-					option
-					option(value="all") все
-					option(value="in-store") в наличии
-					option(value="delivery-lt") доставка < 45 дней
+			.sort-panel-inner
+				.sort-panel__field
+					select.sort-panel__select#sort-panel__select_store
+						option
+						option(value="all") все
+						option(value="in-store") в наличии
+						option(value="delivery-lt") доставка < 45 дней
 
-			.sort-panel__field
-				select.sort-panel__select.sort-panel__select_sort
-					option
-					option(value="all") по артикулу
-					option(value="usd-price") по цене $
-					option(value="rub-price") по цене руб
-					option(value="popularity") по популярности	
-					option(value="recomms") по рекомендациям
-					option(value="date") по дате добавления
+				.sort-panel__field
+					select.sort-panel__select.sort-panel__select_sort
+						option
+						option(value="all") по артикулу
+						option(value="usd-price") по цене $
+						option(value="rub-price") по цене руб
+						option(value="popularity") по популярности	
+						option(value="recomms") по рекомендациям
+						option(value="date") по дате добавления
 
 	.pagination
 		.container
@@ -82,47 +83,20 @@ block content
 			a(href="#").pagination__link.pagination__next >
 
 	.filter-panel
-		.fp-title-wrap
+		.fp-title-wrap.js-mob-filter
 			.filter-panel__title Фильтры
 				.plus-minus
-		.container
+		.container.filter-wrap
 			form.filter-panel__form
-				.filter-panel__field
-					select.filter-panel__select
-						option(value="on-ceil") На потолок
-						option(value="lustre") Люстра
-						option(value="hang-lamp") Подвесной светильник
-						option(value="ceil-lamp") Потолочный светильник
-						option(value="on-wall") На стену
-						option(value="wall-lamp") Настенный светильник
-						option(value="pict-light") Подсветка для картин
-						option(value="on-desk") На стол
-						option(value="table-lamp") Настольная лампа
-						option(value="desk-lamp") Лампа для рабочего стола
-						option(value="on-floor") На пол
-						option(value="floor-lamp") Торшер
-						option(value="tech-light") Технический свет
-						option(value="illum") Подсветка
-						option(value="build-lamp") Встраиваемый свет
-						option(value="spot") Спот
-						option(value="outside") На улицу
-						option(value="wall-torch") Настенный фонарь
-						option(value="hang-torch") Подвесной фонарь
-						option(value="street-light") Уличный светильник
-						option(value="details") Детали
-						option(value="lamp-shade") Абажур
-						option(value="components") Комплектующие
-						option(value="plafon") Плафон
-						option(value="retro-wire") Ретро проводка
-						option(value="constructor") Конструктор
 				
 				.filter-panel__field
-					.filter__title Светильники
+					.filter__title.js-filter-spoil Светильники
 					ul.filter__list
 						li.filter__item.filter__item_parent
 							.parent-self
 								input(type="checkbox" id="filter-on-ceil").filter-item__chekbox
 								label(for="filter-on-ceil").filter-item__label На потолок
+								span.filter-item__spoil.js-filter-list-spoil
 							ul.filter__list_child
 								li.filter__item.filter__item_child
 									input(type="checkbox" id="filter-lustre").filter-item__chekbox
@@ -133,16 +107,347 @@ block content
 								li.filter__item.filter__item_child
 									input(type="checkbox" id="filter-ceil-lamp").filter-item__chekbox
 									label(for="filter-ceil-lamp").filter-item__label Потолочный светильник
+						li.filter__item.filter__item_parent
+							.parent-self
+								input(type="checkbox" id="filter-on-wall").filter-item__chekbox
+								label(for="filter-on-wall").filter-item__label На стену
+								span.filter-item__spoil.js-filter-list-spoil
+							ul.filter__list_child
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-wall-lamp").filter-item__chekbox
+									label(for="filter-wall-lamp").filter-item__label Настенный светильник
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-pict-light").filter-item__chekbox
+									label(for="filter-pict-light").filter-item__label Подсветка для картин
+						li.filter__item.filter__item_parent
+							.parent-self
+								input(type="checkbox" id="filter-on-desk").filter-item__chekbox
+								label(for="filter-on-desk").filter-item__label На стол
+								span.filter-item__spoil.js-filter-list-spoil
+							ul.filter__list_child
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-table-lamp").filter-item__chekbox
+									label(for="filter-table-lamp").filter-item__label Настольная лампа
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-desk-lamp").filter-item__chekbox
+									label(for="filter-desk-lamp").filter-item__label Лампа для рабочего стола
+						li.filter__item.filter__item_parent
+							.parent-self
+								input(type="checkbox" id="filter-on-floor").filter-item__chekbox
+								label(for="filter-on-floor").filter-item__label На пол
+								span.filter-item__spoil.js-filter-list-spoil
+							ul.filter__list_child
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-floor-lamp").filter-item__chekbox
+									label(for="filter-floor-lamp").filter-item__label Торшер
+						li.filter__item.filter__item_parent
+							.parent-self
+								input(type="checkbox" id="filter-tech-light").filter-item__chekbox
+								label(for="filter-tech-light").filter-item__label Технический свет
+								span.filter-item__spoil.js-filter-list-spoil
+							ul.filter__list_child
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-illum").filter-item__chekbox
+									label(for="filter-illum").filter-item__label Подсветка
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-build-lamp").filter-item__chekbox
+									label(for="filter-build-lamp").filter-item__label Встраиваемый свет
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-spot").filter-item__chekbox
+									label(for="filter-spot").filter-item__label Спот
+						li.filter__item.filter__item_parent
+							.parent-self
+								input(type="checkbox" id="filter-outside").filter-item__chekbox
+								label(for="filter-outside").filter-item__label На улицу
+								span.filter-item__spoil.js-filter-list-spoil
+							ul.filter__list_child
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-wall-torch").filter-item__chekbox
+									label(for="filter-wall-torch").filter-item__label Настенный фонарь
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-hang-torch").filter-item__chekbox
+									label(for="filter-hang-torch").filter-item__label Подвесной фонарь
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-street-light").filter-item__chekbox
+									label(for="filter-street-light").filter-item__label Уличный светильник
+						li.filter__item.filter__item_parent
+							.parent-self
+								input(type="checkbox" id="filter-details").filter-item__chekbox
+								label(for="filter-details").filter-item__label Детали
+								span.filter-item__spoil.js-filter-list-spoil
+							ul.filter__list_child
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-lamp-shade").filter-item__chekbox
+									label(for="filter-lamp-shade").filter-item__label Абажур
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-components").filter-item__chekbox
+									label(for="filter-components").filter-item__label Комплектующие
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-plafon").filter-item__chekbox
+									label(for="filter-plafon").filter-item__label Плафон
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-retro-wire").filter-item__chekbox
+									label(for="filter-retro-wire").filter-item__label Ретро проводка
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-constructor").filter-item__chekbox
+									label(for="filter-constructor").filter-item__label Конструктор
 						li.filter__item.filter__item_child
 							input(type="checkbox" id="filter-lamps").filter-item__chekbox
 							label(for="filter-lamps").filter-item__label Лампочки
 
+				.filter-panel__field
+					.filter__title.js-filter-spoil Мебель
+					ul.filter__list
+						li.filter__item.filter__item_child
+							input(type="checkbox" id="filter-bed").filter-item__chekbox
+							label(for="filter-bed").filter-item__label Кровать
+						li.filter__item.filter__item_parent
+							.parent-self
+								input(type="checkbox" id="filter-soft-furn").filter-item__chekbox
+								label(for="filter-soft-furn").filter-item__label Мягкая мебель
+								span.filter-item__spoil.js-filter-list-spoil
+							ul.filter__list_child
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-bench").filter-item__chekbox
+									label(for="filter-bench").filter-item__label Банкетка
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-sofa").filter-item__chekbox
+									label(for="filter-sofa").filter-item__label Диван
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-armchair").filter-item__chekbox
+									label(for="filter-armchair").filter-item__label Кресло
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-couch").filter-item__chekbox
+									label(for="filter-couch").filter-item__label Кушетка
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-puff").filter-item__chekbox
+									label(for="filter-puff").filter-item__label Пуф
+						li.filter__item.filter__item_parent
+							.parent-self
+								input(type="checkbox" id="filter-tables").filter-item__chekbox
+								label(for="filter-tables").filter-item__label Столы и консоли
+								span.filter-item__spoil.js-filter-list-spoil
+							ul.filter__list_child
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-coffee-table").filter-item__chekbox
+									label(for="filter-coffee-table").filter-item__label Журнальный столик
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-column").filter-item__chekbox
+									label(for="filter-column").filter-item__label Колонна
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-console").filter-item__chekbox
+									label(for="filter-console").filter-item__label Консоль
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-dinner-table").filter-item__chekbox
+									label(for="filter-dinner-table").filter-item__label Обеденный стол
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-desk").filter-item__chekbox
+									label(for="filter-desk").filter-item__label Письменный стол
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-bar-stand").filter-item__chekbox
+									label(for="filter-bar-stand").filter-item__label Барная стойка
+						li.filter__item.filter__item_parent
+							.parent-self
+								input(type="checkbox" id="filter-chairs").filter-item__chekbox
+								label(for="filter-chairs").filter-item__label Стулья
+								span.filter-item__spoil.js-filter-list-spoil
+							ul.filter__list_child
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-chair").filter-item__chekbox
+									label(for="filter-chair").filter-item__label Стул
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-stool").filter-item__chekbox
+									label(for="filter-stool").filter-item__label Табурет
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-bar-chair").filter-item__chekbox
+									label(for="filter-bar-chair").filter-item__label Барный стул
+						li.filter__item.filter__item_parent
+							.parent-self
+								input(type="checkbox" id="filter-store-furn").filter-item__chekbox
+								label(for="filter-store-furn").filter-item__label Мебель для хранения
+								span.filter-item__spoil.js-filter-list-spoil
+							ul.filter__list_child
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-cupboard").filter-item__chekbox
+									label(for="filter-cupboard").filter-item__label Барный шкаф, буфет
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-showcase").filter-item__chekbox
+									label(for="filter-showcase").filter-item__label Витрина
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-dresser").filter-item__chekbox
+									label(for="filter-dresser").filter-item__label Комод
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-rack").filter-item__chekbox
+									label(for="filter-rack").filter-item__label Стеллаж
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-chest").filter-item__chekbox
+									label(for="filter-chest").filter-item__label Сундук
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-bedside").filter-item__chekbox
+									label(for="filter-bedside").filter-item__label Тумба
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-wardrobe").filter-item__chekbox
+									label(for="filter-wardrobe").filter-item__label Шкаф
+						li.filter__item.filter__item_child
+							input(type="checkbox" id="filter-cover").filter-item__chekbox
+							label(for="filter-cover").filter-item__label Ширма
+						li.filter__item.filter__item_child
+							input(type="checkbox" id="filter-nursery").filter-item__chekbox
+							label(for="filter-nursery").filter-item__label Детская
+						li.filter__item.filter__item_child
+							input(type="checkbox" id="filter-outdoor-furn").filter-item__chekbox
+							label(for="filter-outdoor-furn").filter-item__label Уличная
+
+				.filter-panel__field
+					.filter__title.js-filter-spoil Декор
+					ul.filter__list
+						li.filter__item.filter__item_child
+							input(type="checkbox" id="filter-new-year").filter-item__chekbox
+							label(for="filter-new-year").filter-item__label Новый год
+						li.filter__item.filter__item_child
+							input(type="checkbox" id="filter-vase").filter-item__chekbox
+							label(for="filter-vase").filter-item__label Ваза
+						li.filter__item.filter__item_child
+							input(type="checkbox" id="filter-mirror").filter-item__chekbox
+							label(for="filter-mirror").filter-item__label Зеркало
+						li.filter__item.filter__item_child
+							input(type="checkbox" id="filter-carpet").filter-item__chekbox
+							label(for="filter-carpet").filter-item__label Ковер
+						li.filter__item.filter__item_parent
+							.parent-self
+								input(type="checkbox" id="filter-floor-decor").filter-item__chekbox
+								label(for="filter-floor-decor").filter-item__label Напольный декор
+								span.filter-item__spoil.js-filter-list-spoil
+							ul.filter__list_child
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-dec-column").filter-item__chekbox
+									label(for="filter-dec-column").filter-item__label Колонна
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-lad-tel-fount").filter-item__chekbox
+									label(for="filter-lad-tel-fount").filter-item__label Лестница, телескоп, фонтан
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-easel").filter-item__chekbox
+									label(for="filter-easel").filter-item__label Мольберт
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-for-frplc").filter-item__chekbox
+									label(for="filter-for-frplc").filter-item__label Для камина
+						li.filter__item.filter__item_parent
+							.parent-self
+								input(type="checkbox" id="filter-wall-decor").filter-item__chekbox
+								label(for="filter-wall-decor").filter-item__label Настенный декор
+								span.filter-item__spoil.js-filter-list-spoil
+							ul.filter__list_child
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-dec-pict").filter-item__chekbox
+									label(for="filter-dec-pict").filter-item__label Картина, постер
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-dec-panno").filter-item__chekbox
+									label(for="filter-dec-panno").filter-item__label Декоративное панно
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-horns").filter-item__chekbox
+									label(for="filter-horns").filter-item__label Рога
+						li.filter__item.filter__item_child
+							input(type="checkbox" id="filter-dec-gifts").filter-item__chekbox
+							label(for="filter-dec-gifts").filter-item__label Подарки
+						li.filter__item.filter__item_parent
+							.parent-self
+								input(type="checkbox" id="filter-floor-crockery").filter-item__chekbox
+								label(for="filter-floor-crockery").filter-item__label Посуда, сервировка
+								span.filter-item__spoil.js-filter-list-spoil
+							ul.filter__list_child
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-platter").filter-item__chekbox
+									label(for="filter-platter").filter-item__label Блюдо, ваза
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-glass").filter-item__chekbox
+									label(for="filter-glass").filter-item__label Бокал, стакан
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-salver").filter-item__chekbox
+									label(for="filter-salver").filter-item__label Поднос
+						li.filter__item.filter__item_child
+							input(type="checkbox" id="filter-photo-frame").filter-item__chekbox
+							label(for="filter-photo-frame").filter-item__label Рамка для фото
+						li.filter__item.filter__item_parent
+							.parent-self
+								input(type="checkbox" id="filter-floor-candlesticks").filter-item__chekbox
+								label(for="filter-floor-candlesticks").filter-item__label Подсвечники
+								span.filter-item__spoil.js-filter-list-spoil
+							ul.filter__list_child
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-chandelier").filter-item__chekbox
+									label(for="filter-chandelier").filter-item__label Канделябр
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-candlestick").filter-item__chekbox
+									label(for="filter-candlestick").filter-item__label Подсвечник
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-candle").filter-item__chekbox
+									label(for="filter-candle").filter-item__label Свеча
+						li.filter__item.filter__item_child
+							input(type="checkbox" id="filter-figures").filter-item__chekbox
+							label(for="filter-figures").filter-item__label Статуэтки и фигурки
+						li.filter__item.filter__item_child
+							input(type="checkbox" id="filter-textile").filter-item__chekbox
+							label(for="filter-textile").filter-item__label Текстиль
+						li.filter__item.filter__item_parent
+							.parent-self
+								input(type="checkbox" id="filter-strg-order").filter-item__chekbox
+								label(for="filter-strg-order").filter-item__label Хранение и порядок
+								span.filter-item__spoil.js-filter-list-spoil
+							ul.filter__list_child
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-hanger-stand").filter-item__chekbox
+									label(for="filter-hanger-stand").filter-item__label Вешалка, подставка
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-ubrella-stand").filter-item__chekbox
+									label(for="filter-ubrella-stand").filter-item__label Подставка для зонтов
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-goat-bucket").filter-item__chekbox
+									label(for="filter-goat-bucket").filter-item__label Козина, ведро
+						li.filter__item.filter__item_parent
+							.parent-self
+								input(type="checkbox" id="filter-flowers").filter-item__chekbox
+								label(for="filter-flowers").filter-item__label Цветы
+								span.filter-item__spoil.js-filter-list-spoil
+							ul.filter__list_child
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-art-flowers").filter-item__chekbox
+									label(for="filter-art-flowers").filter-item__label Искусственные цветы
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-pots-decor").filter-item__chekbox
+									label(for="filter-pots-decor").filter-item__label Кашпо и декор
+						li.filter__item.filter__item_child
+							input(type="checkbox" id="filter-clock").filter-item__chekbox
+							label(for="filter-clock").filter-item__label Часы
+						li.filter__item.filter__item_parent
+							.parent-self
+								input(type="checkbox" id="filter-wine-cigar").filter-item__chekbox
+								label(for="filter-wine-cigar").filter-item__label Для вина и сигар
+								span.filter-item__spoil.js-filter-list-spoil
+							ul.filter__list_child
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-ice-bucket").filter-item__chekbox
+									label(for="filter-ice-bucket").filter-item__label Ведро для льда
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-ashtray").filter-item__chekbox
+									label(for="filter-ashtray").filter-item__label Пепельница
+								li.filter__item.filter__item_child
+									input(type="checkbox" id="filter-bottle-stand").filter-item__chekbox
+									label(for="filter-bottle-stand").filter-item__label Подставка для бутылок
+						li.filter__item.filter__item_child
+							input(type="checkbox" id="filter-books-papers").filter-item__chekbox
+							label(for="filter-books-papers").filter-item__label Для книг и бумаг
+						li.filter__item.filter__item_child
+							input(type="checkbox" id="filter-dec-diff").filter-item__chekbox
+							label(for="filter-dec-diff").filter-item__label Разное
+
 				.filter-panel__field.filter-price
+					.filter__title.js-filter-spoil Цена
+						span.filter-title__measure , ₽
 					.filter-range
 						.filter-range__left
 							.filter-range__title от
 							input(type="text" name="min" value="").filter-range__input
-						span.filter-range__dash &#8212;
+						.filter-range__dash
 						.filter-range__right
 							.filter-range__title до
 							input(type="text" name="max" value="70000").filter-range__input
@@ -152,107 +457,124 @@ block content
 						label(for="discount").filter__label только со скидкой
 					input(type="submit" value="Применить").filter-range__btn
 
-				.filter-panel__field.filter-size
-					.filter-range
-						.filter-range__left
-							.filter-range__title Ширина
-							input(type="text" name="min" value="20").filter-range__input
-						span.filter-range__dash &#8212;
-						.filter-range__right
-							.filter-range__title  
-							input(type="text" name="max" value="60").filter-range__input
-							span.filter-range__measure см
-					.filter-range
-						.filter-range__left
-							.filter-range__title Глубина
-							input(type="text" name="min" value="20").filter-range__input
-						span.filter-range__dash &#8212;
-						.filter-range__right
-							.filter-range__title  
-							input(type="text" name="max" value="60").filter-range__input
-							span.filter-range__measure см
-					.filter-range
-						.filter-range__left
-							.filter-range__title Высота
-							input(type="text" name="min" value="20").filter-range__input
-						span.filter-range__dash &#8212;
-						.filter-range__right
-							.filter-range__title  
-							input(type="text" name="max" value="60").filter-range__input
-							span.filter-range__measure см
-					input(type="submit" value="Применить").filter-range__btn
-
 				.filter-panel__field.filter-color
-					.checkbox-wrap
-						input(type="checkbox" id="white").filter__checkbox
-						label(for="white").filter__label Белый
-					.checkbox-wrap
-						input(type="checkbox" id="yellow").filter__checkbox
-						label(for="yellow").filter__label Желтый
-					.checkbox-wrap
-						input(type="checkbox" id="golden").filter__checkbox
-						label(for="golden").filter__label Золотой
-					.checkbox-wrap
-						input(type="checkbox" id="brown").filter__checkbox
-						label(for="brown").filter__label Коричневый
-					.checkbox-wrap
-						input(type="checkbox" id="red").filter__checkbox
-						label(for="red").filter__label Красный
-					.checkbox-wrap
-						input(type="checkbox" id="multicolor").filter__checkbox
-						label(for="multicolor").filter__label Мультиколор
-					.checkbox-wrap
-						input(type="checkbox" id="orange").filter__checkbox
-						label(for="orange").filter__label Оранжевый
-					.checkbox-wrap
-						input(type="checkbox" id="transparent").filter__checkbox
-						label(for="transparent").filter__label Прозрачный
-					.checkbox-wrap
-						input(type="checkbox" id="pink").filter__checkbox
-						label(for="pink").filter__label Розовый
-					.checkbox-wrap
-						input(type="checkbox" id="silver").filter__checkbox
-						label(for="silver").filter__label Серебряный
-					.checkbox-wrap
-						input(type="checkbox" id="gray").filter__checkbox
-						label(for="gray").filter__label Серый
+					.filter__title.js-filter-spoil Цвет
+					ul.filter__list
+						li.filter__item
+							.checkbox-wrap
+								input(type="checkbox" id="white").filter__checkbox
+								label(for="white").filter__label Белый
+						li.filter__item
+							.checkbox-wrap
+								input(type="checkbox" id="yellow").filter__checkbox
+								label(for="yellow").filter__label Желтый
+						li.filter__item
+							.checkbox-wrap
+								input(type="checkbox" id="golden").filter__checkbox
+								label(for="golden").filter__label Золотой
+						li.filter__item
+							.checkbox-wrap
+								input(type="checkbox" id="brown").filter__checkbox
+								label(for="brown").filter__label Коричневый
+						li.filter__item
+							.checkbox-wrap
+								input(type="checkbox" id="red").filter__checkbox
+								label(for="red").filter__label Красный
+						li.filter__item
+							.checkbox-wrap
+								input(type="checkbox" id="multicolor").filter__checkbox
+								label(for="multicolor").filter__label Мультиколор
+						li.filter__item
+							.checkbox-wrap
+								input(type="checkbox" id="orange").filter__checkbox
+								label(for="orange").filter__label Оранжевый
+						li.filter__item
+							.checkbox-wrap
+								input(type="checkbox" id="transparent").filter__checkbox
+								label(for="transparent").filter__label Прозрачный
+						li.filter__item
+							.checkbox-wrap
+								input(type="checkbox" id="pink").filter__checkbox
+								label(for="pink").filter__label Розовый
+						li.filter__item
+							.checkbox-wrap
+								input(type="checkbox" id="silver").filter__checkbox
+								label(for="silver").filter__label Серебряный
+						li.filter__item
+							.checkbox-wrap
+								input(type="checkbox" id="gray").filter__checkbox
+								label(for="gray").filter__label Серый
 					input(type="submit" value="Применить").filter-range__btn
 
 				.filter-panel__field.filter-material
-					.checkbox-wrap
-						input(type="checkbox" id="acryl").filter__checkbox
-						label(for="acryl").filter__label Акрил
-					.checkbox-wrap
-						input(type="checkbox" id="alebastr").filter__checkbox
-						label(for="alebastr").filter__label Алебастр
-					.checkbox-wrap
-						input(type="checkbox" id="allum").filter__checkbox
-						label(for="allum").filter__label Алюминий
-					.checkbox-wrap
-						input(type="checkbox" id="beton").filter__checkbox
-						label(for="beton").filter__label Бетон
-					.checkbox-wrap
-						input(type="checkbox" id="gips").filter__checkbox
-						label(for="gips").filter__label Гипс
-					.checkbox-wrap
-						input(type="checkbox" id="glina").filter__checkbox
-						label(for="glina").filter__label Глина
-					.checkbox-wrap
-						input(type="checkbox" id="granit").filter__checkbox
-						label(for="granit").filter__label Гранит
-					.checkbox-wrap
-						input(type="checkbox" id="wood").filter__checkbox
-						label(for="wood").filter__label Дерево
-					.checkbox-wrap
-						input(type="checkbox" id="keramika").filter__checkbox
-						label(for="keramika").filter__label Керамика
-					.checkbox-wrap
-						input(type="checkbox" id="kozha").filter__checkbox
-						label(for="kozha").filter__label Кожа
-					.checkbox-wrap
-						input(type="checkbox" id="mdf").filter__checkbox
-						label(for="mdf").filter__label Мдф
+					.filter__title.js-filter-spoil Материал
+					ul.filter__list
+						li.filter__item
+							.checkbox-wrap
+								input(type="checkbox" id="acryl").filter__checkbox
+								label(for="acryl").filter__label Акрил
+						li.filter__item
+							.checkbox-wrap
+								input(type="checkbox" id="alebastr").filter__checkbox
+								label(for="alebastr").filter__label Алебастр
+						li.filter__item
+							.checkbox-wrap
+								input(type="checkbox" id="allum").filter__checkbox
+								label(for="allum").filter__label Алюминий
+						li.filter__item
+							.checkbox-wrap
+								input(type="checkbox" id="beton").filter__checkbox
+								label(for="beton").filter__label Бетон
+						li.filter__item
+							.checkbox-wrap
+								input(type="checkbox" id="gips").filter__checkbox
+								label(for="gips").filter__label Гипс
+						li.filter__item
+							.checkbox-wrap
+								input(type="checkbox" id="glina").filter__checkbox
+								label(for="glina").filter__label Глина
+						li.filter__item
+							.checkbox-wrap
+								input(type="checkbox" id="granit").filter__checkbox
+								label(for="granit").filter__label Гранит
+						li.filter__item
+							.checkbox-wrap
+								input(type="checkbox" id="wood").filter__checkbox
+								label(for="wood").filter__label Дерево
+						li.filter__item
+							.checkbox-wrap
+								input(type="checkbox" id="keramika").filter__checkbox
+								label(for="keramika").filter__label Керамика
+						li.filter__item
+							.checkbox-wrap
+								input(type="checkbox" id="kozha").filter__checkbox
+								label(for="kozha").filter__label Кожа
+						li.filter__item
+							.checkbox-wrap
+								input(type="checkbox" id="mdf").filter__checkbox
+								label(for="mdf").filter__label Мдф
 					input(type="submit" value="Применить").filter-range__btn
+
+				.filter-panel__field.filter-size
+					.filter__title.js-filter-spoil Размер
+						span.filter-title__measure , см
+					.filter-size__prop
+						.filter-range__title В:
+						input(type="text" name="min" value="20").filter-range__input
+						.filter-range__dash
+						input(type="text" name="max" value="60").filter-range__input
+					.filter-size__prop
+						.filter-range__title Ш:
+						input(type="text" name="min" value="20").filter-range__input
+						.filter-range__dash
+						input(type="text" name="max" value="60").filter-range__input
+					.filter-size__prop
+						.filter-range__title Г:
+						input(type="text" name="min" value="20").filter-range__input
+						.filter-range__dash
+						input(type="text" name="max" value="60").filter-range__input
+				input(type="submit" value="Применить").filter-form__submit
+
 
 	.container
 		ul.products__list
