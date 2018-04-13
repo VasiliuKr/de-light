@@ -114,6 +114,9 @@
 	background-position: center;
 	float: left;
 	border-right: 1px solid rgba(255, 255, 255, 0.5);
+	@include desktop {
+		display: none;
+	}
 }
 .mail-top {
 	display: none;
@@ -183,6 +186,9 @@
 		float: right;
 		margin-right: 17px;
 		padding-top: 17px;
+		@include desktop {
+			padding-top: 11px;
+		}
 	}
 	@include desktop {
 		display: block;

@@ -78,6 +78,40 @@ a {
 		}
 	}
 }
+.content-head {
+	@extend %clearfix;
+	padding: 20px 0;
+	display: none;
+	@include desktop {
+		display: block;
+	}
+}
+.content-head__left {
+	width: 90%;
+	float: left;
+	text-align: center;
+	span {
+		font: italic 15px/20px 'PT Serif Caption', serif;
+	}
+}
+.content-head__logo {
+	display: inline-block;
+	margin-left: 20px;
+	margin-right: 20px;
+	vertical-align: middle;
+}
+.content-head__right {
+	width: 10%;
+	float: left;
+}
+.content-head__nav {
+	margin: 0;
+	font-size: 12px;
+	line-height: 20px;
+}
+.content-head__item a:hover {
+	text-decoration: underline;
+}
 .header-nav-wrap {
 	background-color: #222;
 	position: fixed;
@@ -126,6 +160,9 @@ a {
 					
 				}
 			}
+		}
+		&.not-index {
+			margin-bottom: 0;
 		}
 	}
 }
@@ -1017,8 +1054,6 @@ a {
 		.slick-prev:before {
 			transform: rotate(180deg);
 		}
-		.slick-next:before {
-		}
 	}
 	@include desktop-w {
 		.slick-prev {
@@ -1458,16 +1493,62 @@ a {
 .fabric__title {
 	font-size: 24px;
 	text-align: center;
+	@include desktop {
+		font-size: 26px;
+	}
+}
+.fabric-features-wrap {
+	@extend %clearfix;
+}
+.fabric-features__left {
+	display: none;
+	@extend %clearfix;
+	@include desktop {
+		display: block;
+		float: left;
+		width: 32%;
+	}
+}
+.fabric__logo-wrap {
+	float: left;
+	width: 56%;
+}
+.fabric__logo {
+	max-width: 100%;
+}
+.fabric__cv {
+	float: right;
+	width: 34%;
+	font-size: 14px;
+}
+.fabric-features__right {
+	@include desktop {
+		float: right;
+		width: 63%;
+	}
+}
+.fabric-features {
+	@include desktop {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
 }
 .fabric-feature__item {
 	@extend %clearfix;
 	margin-bottom: 17px;
+	@include desktop {
+		width: 33%;
+	}
 }
 .fabric-feature__text {
 	font-size: 12px;
 	line-height: 18px;
 	float: left;
 	width: calc(100% - 45px);
+	@include desktop {
+		font-size: 14px;
+	}
 }
 .underlined {
 	text-decoration: underline;
@@ -1489,10 +1570,65 @@ a {
 .f-icon-pdf {
 	background-image: url(../img/tmp/pdf.png);
 }
+.fabric-gallery {
+	@include desktop {
+		margin-bottom: 16px;
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			display: block;
+			top: 0;
+			width: calc((100% - 1000px)/2);
+			height: 100%;
+			z-index: 5;
+			background-color: rgba(255,255,255,0.65);
+		}
+		&:before {
+			left: 0;
+		}
+		&:after {
+			right: 0;
+		}
+		.slick-next {
+			right: 38px;
+		}
+		.slick-prev:before,
+		.slick-next:before {
+			width: 67px;
+			height: 67px;
+		}
+		.slick-prev:before {
+			transform: rotate(180deg);
+		}
+	}
+	@include desktop-w {
+		.slick-prev {
+			left: calc((100% - 1030px)/2);
+		}
+		.slick-next {
+			right: calc((100% - 950px)/2);
+		}
+	}
+}
 .fabric-gallery__item {
 	height: 225px;
 	background-size: cover;
 	position: relative;
+	@include desktop {
+		height: 350px;
+	}
+}
+.fabric-gallery__item-inner {
+	@include desktop {
+		height: 350px;
+		width: 50%;
+		float: left;
+		background-size: cover;
+		.fabric-gallery__tile {
+			width: 50%;
+		}
+	}
 }
 .fabric-gallery__tile {
 	position: absolute;
@@ -1503,6 +1639,10 @@ a {
 	font-size: 14px;
 	padding: 8px 0;
 	text-align: center;
+	@include desktop {
+		padding: 10px 0;
+		font-size: 16px;
+	}
 }
 .fabric-gallery__desc {
 	font-size: 12px;
@@ -1521,6 +1661,9 @@ a {
 			}
 		}
 	}
+	@include desktop {
+		max-height: none;
+	}
 }
 .fabric-gallery__btn-more {
 	position: absolute;
@@ -1530,6 +1673,9 @@ a {
 	padding: 0 13px;
 	cursor: pointer;
 	text-decoration: underline;
+	@include desktop {
+		display: none;
+	}
 	.more-text {
 		margin-right: 6px;
 	}
@@ -1555,10 +1701,16 @@ a {
 
 .sort-panel {
 	margin-bottom: 20px;
+	@include desktop {
+		width: 530px;
+		float: left;
+		margin-right: 30px;
+	}
 }
 .sort-panel-inner {
 	margin-left: -8px;
 	margin-right: -8px;
+	@extend %clearfix;
 }
 .sort-panel__field {
 	width: 50%;
@@ -1605,6 +1757,10 @@ a {
 	margin-bottom: 12px;
 	text-align: center;
 	color: #999;
+	@include desktop {
+		width: 260px;
+		float: left;
+	}
 }
 .pagination__link {
 	margin-right: 13px;
@@ -1627,12 +1783,19 @@ a {
 	&.opened {
 		display: block;
 	}
+	@include desktop {
+		display: block;
+		position: relative;
+	}
 }
 .fp-title-wrap {
 	background-color: #000;
 	padding: 10px 0;
 	text-align: center;
 	cursor: pointer;
+	@include desktop {
+		display: none;
+	}
 	&.opened {
 		.plus-minus:after {
 			transform: rotate(0deg);
@@ -1641,6 +1804,10 @@ a {
 }
 .filter-panel__field {
 	margin-bottom: 13px;
+	@include desktop {
+		display: inline-block;
+		margin-right: 40px;
+	}
 	&.filter-price {
 		@extend %clearfix;
 		.filter__title {
@@ -1648,8 +1815,15 @@ a {
 			width: 23%;
 			float: left;
 			padding-left: 0;
+			@include desktop {
+				float: none;
+				width: auto;
+			}
 			&:after {
 				display: none;
+				@include desktop {
+					display: block;
+				}
 			}
 		}
 		.filter-range__measure {
@@ -1676,9 +1850,6 @@ a {
 		}
 		.checkbox-wrap {
 			display: none;
-			@include desktop {
-				display: block;
-			}
 		}
 	}
 	&.filter-size {
@@ -1689,8 +1860,15 @@ a {
 			width: 50%;
 			padding-left: 0;
 			height: 27px;
+			@include desktop {
+				float: none;
+				width: auto;
+			}
 			&:after {
 				display: none;
+				@include desktop {
+					display: block;
+				}
 			}
 		}
 		.filter-range__title {
@@ -1714,6 +1892,17 @@ a {
 	width: 50%;
 	height: 27px;
 	margin-bottom: 10px;
+}
+.filter-inner {
+	@include desktop {
+		display: none;
+		position: absolute;
+		background-color: #fff;
+		border: 1px solid #999;
+		&.opened {
+			display: block;
+		}
+	}
 }
 .filter-panel__title {
 	margin: 0 auto;
@@ -1740,6 +1929,15 @@ a {
 	padding: 4px 10px;
 	cursor: pointer;
 	position: relative;
+	@include desktop {
+		background-color: unset;
+		font-size: 13px;
+		text-transform: uppercase;
+		font-weight: bold;
+		&.opened {
+			border-bottom: 1px solid #000;
+		}
+	}
 	&:after {
 		content: "";
 		border-color: #000 transparent transparent transparent;
@@ -1750,6 +1948,9 @@ a {
 		position: absolute;
 		top: 10px;
 		transition: 0.3s;
+		@include desktop {
+			right: -5px;
+		}
 	}
 	&.opened:after {
 		transform: rotate(-180deg);
@@ -1757,6 +1958,9 @@ a {
 }
 .filter-title__measure {
 	font-weight: normal;
+	@include desktop {
+		display: none;
+	}
 }
 .filter__list {
 	margin: 0;
@@ -1765,6 +1969,11 @@ a {
 	font-size: 14px;	
 	line-height: 21px;
 	display: none;
+	@include desktop {
+		position: absolute;
+		background-color: #fff;
+		border: 1px solid #999;
+	}
 	&.opened {
 		display: block;
 	}
@@ -1858,9 +2067,6 @@ a {
 }
 .filter-range__btn {
 	display: none;
-	@include desktop {
-		display: inline;
-	}
 }
 
 .filter__label {
@@ -1915,4 +2121,7 @@ a {
 	text-align: center;
 	bottom: -36px;
 	cursor: pointer;
+	@include desktop {
+		display: none;
+	}
 }

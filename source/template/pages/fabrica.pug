@@ -2,9 +2,23 @@ extends ../_template
 
 block variables
 	- var title = 'Fabrica'
+	- var page = 'not-index'
 
 block logo
-	div another logotip
+	.content-head.container
+		.content-head__left
+			span Интернет-магазин дизайнерских светильников,
+			a(href="#").content-head__logo
+				img(src="assets/img/tmp/logo-small.png")
+			span мебели и предметов интерьера
+		.content-head__right
+			ul.content-head__nav
+				li.content-head__item
+					a(href="#") Оплата
+				li.content-head__item
+					a(href="#") Доставка
+				li.content-head__item
+					a(href="#") Гарантии
 
 block content
 	.breadcrumbs
@@ -22,36 +36,49 @@ block content
 	.fabric
 		.container
 			.fabric__title Eichholtz
-			.fabric-features
-				.fabric-feature__item
-					.fabric-feature__icon.f-icon-geo
-					.fabric-feature__text Монобрендовый бутик в ТВЦ Экспострой
-				.fabric-feature__item
-					.fabric-feature__icon.f-icon-mark
-					.fabric-feature__text
-						span.underlined Официальный дилер 
-						|Eichholtz
-				.fabric-feature__item
-					.fabric-feature__icon.f-icon-pdf
-					.fabric-feature__text
-						span.underlined Электронные каталоги 
-						|Eichholtz
+			.fabric-features-wrap
+				.fabric-features__left
+					.fabric__logo-wrap
+						img(src="assets/img/userfiles/brand-1.png").fabric__logo
+					.fabric__cv Нидерланды,<br> с 1966 г.
+				.fabric-features__right
+					.fabric-features
+						.fabric-feature__item
+							.fabric-feature__icon.f-icon-geo
+							.fabric-feature__text Монобрендовый бутик в ТВЦ Экспострой
+						.fabric-feature__item
+							.fabric-feature__icon.f-icon-mark
+							.fabric-feature__text
+								span.underlined Официальный дилер 
+								|Eichholtz
+						.fabric-feature__item
+							.fabric-feature__icon.f-icon-pdf
+							.fabric-feature__text
+								span.underlined Электронные каталоги 
+								|Eichholtz
 		.fabric-gallery
 			.fabric-gallery__item(style="background-image:url(assets/img/userfiles/1.jpg);")
 				.fabric-gallery__tile Мебель Eichholtz
+			.fabric-gallery__item
+				.fabric-gallery__item-inner(style="background-image:url(assets/img/userfiles/brand-1.jpg);")
+					.fabric-gallery__tile Светильники Eichholtz
+				.fabric-gallery__item-inner(style="background-image:url(assets/img/userfiles/brand-1.jpg);")
+					.fabric-gallery__tile Светильники Eichholtz
 			.fabric-gallery__item(style="background-image:url(assets/img/userfiles/slide-1.jpg);")
 				.fabric-gallery__tile Светильники Eichholtz
 			.fabric-gallery__item(style="background-image:url(assets/img/userfiles/1.jpg);")
-				.fabric-gallery__tile Настольные лампы Eichholtz
+				.fabric-gallery__tile Мебель Eichholtz
+			.fabric-gallery__item(style="background-image:url(assets/img/userfiles/slide-1.jpg);")
+				.fabric-gallery__tile Мебель Eichholtz
 
 		.container
 			.fabric-gallery__desc Акция до 30 ноября: -20% на все светильники Schobbek в наличии и под заказ. Хрустальные люстры и бра Schonbek вы можете купить или посмотреть из наличия в Москве в наших салонах, так же мы осуществляем доставку по всей России. В 1870 году Адольф Шонбек, которому тогда было 24 года, оставил стекольный завод своей семьи в Богемии (современная Чехия), чтобы начать собственный бизнес. Он хотел заставить хрусталь показать себя в полной красе, и сосредоточил свои усилия на многообещающем тандеме: хрусталь и свет. Сегодня все светильники разрабатываются и производятся в Соединенных Штатах. За свою 140-летнюю историю фабрика Schonbek стала ведущим производителем элитных хрустальных светильников, высокое качество и скрупулезная ручная работа делают светильник шедевром, порой освещающим путь не одному поколению. Хрустальные люстры Schonbek можно увидеть по всему миру, начиная от Белого дома и заканчивая Букингемским дворцом. В 2007 году Schonbek стал членом компании Swarovski.
 				.fabric-gallery__btn-more.js-more-btn
 					span.more-text читать дальше
 					span.plus-minus
-	
-	.sort-panel
-		.container
+
+	.container
+		.sort-panel
 			.sort-panel-inner
 				.sort-panel__field
 					select.sort-panel__select#sort-panel__select_store
@@ -70,8 +97,7 @@ block content
 						option(value="recomms") по рекомендациям
 						option(value="date") по дате добавления
 
-	.pagination
-		.container
+		.pagination
 			a(href="#").pagination__link.pagination__prev <
 			a(href="#").pagination__link.pagination__first 1
 			a(href="#").pagination__link.pagination__dots ...
@@ -443,19 +469,20 @@ block content
 				.filter-panel__field.filter-price
 					.filter__title.js-filter-spoil Цена
 						span.filter-title__measure , ₽
-					.filter-range
-						.filter-range__left
-							.filter-range__title от
-							input(type="text" name="min" value="").filter-range__input
-						.filter-range__dash
-						.filter-range__right
-							.filter-range__title до
-							input(type="text" name="max" value="70000").filter-range__input
-							span.filter-range__measure ₽
-					.checkbox-wrap
-						input(type="checkbox" id="discount").filter__checkbox
-						label(for="discount").filter__label только со скидкой
-					input(type="submit" value="Применить").filter-range__btn
+					.filter-inner
+						.filter-range
+							.filter-range__left
+								.filter-range__title от
+								input(type="text" name="min" value="").filter-range__input
+							.filter-range__dash
+							.filter-range__right
+								.filter-range__title до
+								input(type="text" name="max" value="70000").filter-range__input
+								span.filter-range__measure ₽
+						.checkbox-wrap
+							input(type="checkbox" id="discount").filter__checkbox
+							label(for="discount").filter__label только со скидкой
+						input(type="submit" value="Применить").filter-range__btn
 
 				.filter-panel__field.filter-color
 					.filter__title.js-filter-spoil Цвет
@@ -558,21 +585,22 @@ block content
 				.filter-panel__field.filter-size
 					.filter__title.js-filter-spoil Размер
 						span.filter-title__measure , см
-					.filter-size__prop
-						.filter-range__title В:
-						input(type="text" name="min" value="20").filter-range__input
-						.filter-range__dash
-						input(type="text" name="max" value="60").filter-range__input
-					.filter-size__prop
-						.filter-range__title Ш:
-						input(type="text" name="min" value="20").filter-range__input
-						.filter-range__dash
-						input(type="text" name="max" value="60").filter-range__input
-					.filter-size__prop
-						.filter-range__title Г:
-						input(type="text" name="min" value="20").filter-range__input
-						.filter-range__dash
-						input(type="text" name="max" value="60").filter-range__input
+					.filter-inner
+						.filter-size__prop
+							.filter-range__title В:
+							input(type="text" name="min" value="20").filter-range__input
+							.filter-range__dash
+							input(type="text" name="max" value="60").filter-range__input
+						.filter-size__prop
+							.filter-range__title Ш:
+							input(type="text" name="min" value="20").filter-range__input
+							.filter-range__dash
+							input(type="text" name="max" value="60").filter-range__input
+						.filter-size__prop
+							.filter-range__title Г:
+							input(type="text" name="min" value="20").filter-range__input
+							.filter-range__dash
+							input(type="text" name="max" value="60").filter-range__input
 				input(type="submit" value="Применить").filter-form__submit
 
 

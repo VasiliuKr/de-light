@@ -124,8 +124,21 @@ $(document).ready(function() {
 		]
 	});
 	$('.fabric-gallery').slick({
+		mobileFirst: true,
 		dots: true,
-		arrows: false
+		arrows: false,
+		responsive: [
+			{
+				breakpoint: 767,
+				settings: {
+					dots: false,
+					arrows: true,
+					slidesToShow: 2,
+					centerMode: true,
+					centerPadding: 'calc((100% - 1000px)/2)'
+				}
+			}
+		]
 	});
 });
 /**************** Slick sliders (end) *****************/
@@ -435,7 +448,7 @@ $(document).on('click', '.js-mob-filter', function(event) {
 $(document).on('click', '.js-filter-spoil', function(event) {
 	event.preventDefault();
 	var $this = $(this),
-			filterList = $this.siblings('.filter__list');
+			filterList = $this.siblings('.filter__list, .filter-inner');
 	filterList.toggleClass('opened');
 	$this.toggleClass('opened');
 });
