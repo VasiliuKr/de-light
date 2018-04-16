@@ -448,7 +448,7 @@ $(document).on('click', '.js-mob-filter', function(event) {
 $(document).on('click', '.js-filter-spoil', function(event) {
 	event.preventDefault();
 	var $this = $(this),
-			filterList = $this.siblings('.filter__list, .filter-inner');
+			filterList = $this.siblings('.filter-inner');
 	filterList.toggleClass('opened');
 	$this.toggleClass('opened');
 });
@@ -458,5 +458,37 @@ $(document).on('click', '.js-filter-list-spoil', function(event) {
 	var $this = $(this),
 			container = $this.parents('.filter__item_parent');
 	container.toggleClass('expanded');
+});
+
+$(document).on('change', '.js-filter-checkbox', function(event) {
+	var $this = $(this),
+			container = $this.parents('.filter-inner'),
+			filterTitle = container.siblings('.filter__title'),
+			checkboxes = container.find('input[type="checkbox"]'),
+			activeCheck = false;
+	$.each(checkboxes, function (index, val) {
+		var element = $(val);
+		if (element.prop('checked')) {
+			activeCheck = true;
+		}
+	});
+	if (activeCheck) {
+		filterTitle.addClass('filtered');
+	} else {
+		filterTitle.removeClass('filtered');
+	}
+});
+
+$(document).on('click', '.js-filter-reset', function(event) {
+	event.stopPropagation(); // отменяем "всплытие" .js-filter-spoil
+	console.log('click');
+	var $this = $(this),
+			filterTitle = $this.parents('.filter__title'),
+			checkboxes = filterTitle.siblings('.filter-inner').find('input[type="checkbox"]');
+	$.each(checkboxes, function(index, el) {
+		var element = $(el);
+		element.prop('checked', false);
+	});
+	filterTitle.removeClass('filtered');
 });
 /*************** Filter panel (end) ****************/
