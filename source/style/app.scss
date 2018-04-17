@@ -2367,3 +2367,47 @@ a {
 		display: none;
 	}
 }
+
+.btn-up {
+	position: fixed;
+	height: 66px;
+	width: 66px;
+	background-color: #000;
+	background-image: url(../img/arrow-white.svg);
+	background-repeat: no-repeat;
+	bottom: 10px;
+	z-index: 10;
+	cursor: pointer;
+	border-radius: 50%;
+	background-size: 32%;
+	transform: rotate(270deg);
+	background-position: 55%;
+	display: none;
+}
+.btn-clbck-fix {
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	background-color: #000;
+	background-repeat: no-repeat;
+	bottom: 0;
+	z-index: 10;
+	background-image: url(../img/tmp/phone.png);
+	right: 50px;
+	background-position: center;
+}
+.btn-qstn-fix {
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	background-color: #000;
+	background-repeat: no-repeat;
+	bottom: 0;
+	z-index: 10;
+	background-image: url(../img/tmp/message.png);
+	right: 0;
+	background-position: center;
+	border-left: 1px solid #fff;
+}

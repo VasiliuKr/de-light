@@ -523,3 +523,17 @@ $(document).on('click', '.js-main-filter-reset', function(event) {
 	$('.filter__title-tags').text('');
 });
 /*************** Filter panel (end) ****************/
+
+$(function() {
+	$(window).scroll(function() {
+		if($(this).scrollTop() != 0) {
+			$('.js-btn-up').fadeIn();
+		} else {
+			$('.js-btn-up').fadeOut();
+		}
+	});
+	
+	$('.js-btn-up').click(function() {
+		$('body,html').animate({scrollTop:0},800);
+	});
+});
