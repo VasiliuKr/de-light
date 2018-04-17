@@ -1505,6 +1505,7 @@ a {
 .fabric__title {
 	font-size: 24px;
 	text-align: center;
+	font-weight: normal;
 	@include desktop {
 		font-size: 26px;
 	}
@@ -2192,8 +2193,7 @@ a {
 		display: block;
 	}
 }
-.filter-color,
-.filter-material {
+.filter-with-btn {
 	.filter-inner {
 		@include desktop {
 			.filter-range__btn {
@@ -2396,6 +2396,10 @@ a {
 	background-image: url(../img/tmp/phone.png);
 	right: 50px;
 	background-position: center;
+	display: none;
+	@include desktop {
+		display: block;
+	}
 }
 .btn-qstn-fix {
 	position: fixed;
@@ -2410,4 +2414,27 @@ a {
 	right: 0;
 	background-position: center;
 	border-left: 1px solid #fff;
+	display: none;
+	@include desktop {
+		display: block;
+	}
+}
+.category__list {
+	border-top: 1px solid #000;
+	text-align: center;
+	@include desktop {
+		display: none;
+	}
+}
+.category__item {
+	border-bottom: 1px solid #999;
+	font-size: 14px;
+	padding: 8px 0;
+	&.category__item_main {
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	&.active {
+		color: $second-color;
+	}
 }

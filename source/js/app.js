@@ -504,6 +504,7 @@ $(document).on('change', '.js-filter-checkbox', function(event) {
 	} else {
 		filterTags.text('(' + checkedCheckboxes.length + ')');
 	}
+	tagsText = '';
 });
 
 $(document).on('click', '.js-filter-reset', function(event) {
@@ -524,6 +525,7 @@ $(document).on('click', '.js-main-filter-reset', function(event) {
 });
 /*************** Filter panel (end) ****************/
 
+/************** Fixed buttons (start) ***************/
 $(function() {
 	$(window).scroll(function() {
 		if($(this).scrollTop() != 0) {
@@ -532,8 +534,9 @@ $(function() {
 			$('.js-btn-up').fadeOut();
 		}
 	});
-	
+
 	$('.js-btn-up').click(function() {
 		$('body,html').animate({scrollTop:0},800);
 	});
 });
+/*************** Fixed buttons (end) ****************/
