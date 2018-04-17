@@ -140,6 +140,12 @@ $(document).ready(function() {
 			}
 		]
 	});
+	$('.fabric-carousel').slick({
+		dots: false,
+		arrows: false,
+		slidesToShow: 1,
+		autoplay: true
+	});
 });
 /**************** Slick sliders (end) *****************/
 
@@ -448,10 +454,18 @@ $(document).on('click', '.js-mob-filter', function(event) {
 $(document).on('click', '.js-filter-spoil', function(event) {
 	event.preventDefault();
 	var $this = $(this),
-			filterList = $this.siblings('.filter-inner');
+			filterList = $this.siblings('.filter-inner'),
+			filterPanel = $this.parents('.filter-panel__field'),
+			filterPanels = filterPanel.siblings('.filter-panel__field'),
+			filterTitles = filterPanels.find('.filter__title'),
+			filterLists = filterPanels.find('.filter-inner');
+	filterTitles.removeClass('opened');
+	filterLists.removeClass('opened');
 	filterList.toggleClass('opened');
 	$this.toggleClass('opened');
+	
 });
+
 
 $(document).on('click', '.js-filter-list-spoil', function(event) {
 	event.preventDefault();
@@ -465,10 +479,18 @@ $(document).on('change', '.js-filter-checkbox', function(event) {
 			container = $this.parents('.filter-inner'),
 			filterTitle = container.siblings('.filter__title'),
 			checkboxes = container.find('input[type="checkbox"]'),
-			activeCheck = false;
+			activeCheck = false,
+			checkedCheckboxes = [],
+			filterTitleText = filterTitle.find('.filter__title-text'),
+			filterTags = filterTitle.find('.filter__title-tags'),
+			tagsWidth = filterTitle.width() - filterTitleText.width() - 30,
+			availLettersAmount = Math.floor(tagsWidth / 10);
 	$.each(checkboxes, function (index, val) {
-		var element = $(val);
+		var element = $(val),
+				label = element.next('label').text();
 		if (element.prop('checked')) {
+			checkedCheckboxes.push(label);
+			tagsText = checkedCheckboxes.join(", ");
 			activeCheck = true;
 		}
 	});
@@ -477,11 +499,15 @@ $(document).on('change', '.js-filter-checkbox', function(event) {
 	} else {
 		filterTitle.removeClass('filtered');
 	}
+	if (tagsText.length < availLettersAmount) {
+		filterTags.text(tagsText);
+	} else {
+		filterTags.text('(' + checkedCheckboxes.length + ')');
+	}
 });
 
 $(document).on('click', '.js-filter-reset', function(event) {
 	event.stopPropagation(); // отменяем "всплытие" .js-filter-spoil
-	console.log('click');
 	var $this = $(this),
 			filterTitle = $this.parents('.filter__title'),
 			checkboxes = filterTitle.siblings('.filter-inner').find('input[type="checkbox"]');
@@ -490,5 +516,10 @@ $(document).on('click', '.js-filter-reset', function(event) {
 		element.prop('checked', false);
 	});
 	filterTitle.removeClass('filtered');
+});
+$(document).on('click', '.js-main-filter-reset', function(event) {
+	event.stopPropagation(); // отменяем "всплытие" .js-mob-filter
+	$('.filter-panel__form')[0].reset();
+	$('.filter__title-tags').text('');
 });
 /*************** Filter panel (end) ****************/

@@ -70,10 +70,39 @@ block content
 				.fabric-gallery__tile Мебель Eichholtz
 			.fabric-gallery__item(style="background-image:url(assets/img/userfiles/slide-1.jpg);")
 				.fabric-gallery__tile Мебель Eichholtz
-
 		.container
-			.fabric-gallery__desc Акция до 30 ноября: -20% на все светильники Schobbek в наличии и под заказ. Хрустальные люстры и бра Schonbek вы можете купить или посмотреть из наличия в Москве в наших салонах, так же мы осуществляем доставку по всей России. В 1870 году Адольф Шонбек, которому тогда было 24 года, оставил стекольный завод своей семьи в Богемии (современная Чехия), чтобы начать собственный бизнес. Он хотел заставить хрусталь показать себя в полной красе, и сосредоточил свои усилия на многообещающем тандеме: хрусталь и свет. Сегодня все светильники разрабатываются и производятся в Соединенных Штатах. За свою 140-летнюю историю фабрика Schonbek стала ведущим производителем элитных хрустальных светильников, высокое качество и скрупулезная ручная работа делают светильник шедевром, порой освещающим путь не одному поколению. Хрустальные люстры Schonbek можно увидеть по всему миру, начиная от Белого дома и заканчивая Букингемским дворцом. В 2007 году Schonbek стал членом компании Swarovski.
-				.fabric-gallery__btn-more.js-more-btn
+			.fabric__desc Акция до 30 ноября: -20% на все светильники Schobbek в наличии и под заказ. Хрустальные люстры и бра Schonbek вы можете купить или посмотреть из наличия в Москве в наших салонах, так же мы осуществляем доставку по всей России. В 1870 году Адольф Шонбек, которому тогда было 24 года, оставил стекольный завод своей семьи в Богемии (современная Чехия), чтобы начать собственный бизнес. Он хотел заставить хрусталь показать себя в полной красе, и сосредоточил свои усилия на многообещающем тандеме: хрусталь и свет. Сегодня все светильники разрабатываются и производятся в Соединенных Штатах. За свою 140-летнюю историю фабрика Schonbek стала ведущим производителем элитных хрустальных светильников, высокое качество и скрупулезная ручная работа делают светильник шедевром, порой освещающим путь не одному поколению. Хрустальные люстры Schonbek можно увидеть по всему миру, начиная от Белого дома и заканчивая Букингемским дворцом. В 2007 году Schonbek стал членом компании Swarovski.
+				.fabric__btn-more.js-more-btn
+					span.more-text читать дальше
+					span.plus-minus
+
+	.fabric.fabric_var2
+		.container
+			.fabric__title Eichholtz
+			.fabric-features-wrap
+				.fabric-features__left
+					.fabric__logo-wrap
+						img(src="assets/img/userfiles/brand-1.png").fabric__logo
+					.fabric__cv Нидерланды,<br> с 1966 г.
+				.fabric-features__right
+					.fabric-features
+						.fabric-feature__item
+							.fabric-feature__icon.f-icon-mark
+							.fabric-feature__text
+								span.underlined Официальный дилер 
+								|Eichholtz
+						.fabric-feature__item
+							.fabric-feature__icon.f-icon-pdf
+							.fabric-feature__text
+								span.underlined Электронные каталоги 
+								|Eichholtz
+			.fabric-carousel
+				.fabric-carousel__item(style="background-image:url(assets/img/userfiles/1.jpg);")
+				.fabric-carousel__item(style="background-image:url(assets/img/userfiles/slide-1.jpg);")
+				.fabric-carousel__item(style="background-image:url(assets/img/userfiles/1.jpg);")
+				.fabric-carousel__item(style="background-image:url(assets/img/userfiles/slide-1.jpg);")
+			.fabric__desc Акция до 30 ноября: -20% на все светильники Schobbek в наличии и под заказ. Хрустальные люстры и бра Schonbek вы можете купить или посмотреть из наличия в Москве в наших салонах, так же мы осуществляем доставку по всей России. В 1870 году Адольф Шонбек, которому тогда было 24 года, оставил стекольный завод своей семьи в Богемии (современная Чехия), чтобы начать собственный бизнес. Он хотел заставить хрусталь показать себя в полной красе, и сосредоточил свои усилия на многообещающем тандеме: хрусталь и свет. Сегодня все светильники разрабатываются и производятся в Соединенных Штатах. За свою 140-летнюю историю фабрика Schonbek стала ведущим производителем элитных хрустальных светильников, высокое качество и скрупулезная ручная работа делают светильник шедевром, порой освещающим путь не одному поколению. Хрустальные люстры Schonbek можно увидеть по всему миру, начиная от Белого дома и заканчивая Букингемским дворцом. В 2007 году Schonbek стал членом компании Swarovski.
+				.fabric__btn-more.js-more-btn
 					span.more-text читать дальше
 					span.plus-minus
 
@@ -112,6 +141,7 @@ block content
 		.fp-title-wrap.js-mob-filter
 			.filter-panel__title Фильтры
 				.plus-minus
+			.filter-panel__reset.js-main-filter-reset Сбросить
 		.container.filter-wrap
 			form.filter-panel__form
 				.filter-panel__field
@@ -493,7 +523,9 @@ block content
 						input(type="submit" value="Применить").filter-range__btn
 
 				.filter-panel__field.filter-color
-					.filter__title.js-filter-spoil Цвет
+					.filter__title.js-filter-spoil 
+						span.filter__title-text Цвет
+						span.filter__title-tags 
 						.filter-field__reset.js-filter-reset
 							span
 					.filter-inner
@@ -545,7 +577,9 @@ block content
 						input(type="submit" value="Применить").filter-range__btn
 
 				.filter-panel__field.filter-material
-					.filter__title.js-filter-spoil Материал
+					.filter__title.js-filter-spoil
+						span.filter__title-text Материал
+						span.filter__title-tags 
 						.filter-field__reset.js-filter-reset
 							span
 					.filter-inner
