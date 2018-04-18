@@ -451,6 +451,7 @@ $(document).on('click', '.js-mob-filter', function(event) {
 	filter.toggleClass('opened');
 	$this.toggleClass('opened');
 });
+
 $(document).on('click', '.js-filter-spoil', function(event) {
 	event.preventDefault();
 	var $this = $(this),
@@ -459,11 +460,14 @@ $(document).on('click', '.js-filter-spoil', function(event) {
 			filterPanels = filterPanel.siblings('.filter-panel__field'),
 			filterTitles = filterPanels.find('.filter__title'),
 			filterLists = filterPanels.find('.filter-inner');
+	
 	filterTitles.removeClass('opened');
 	filterLists.removeClass('opened');
 	filterList.toggleClass('opened');
 	$this.toggleClass('opened');
-	
+	if ($this.hasClass('opened')) {
+		filterList.find('.filter__list').jScrollPane();
+	}
 });
 
 
@@ -472,6 +476,7 @@ $(document).on('click', '.js-filter-list-spoil', function(event) {
 	var $this = $(this),
 			container = $this.parents('.filter__item_parent');
 	container.toggleClass('expanded');
+	$this.parents('.filter__list').jScrollPane();
 });
 
 $(document).on('change', '.js-filter-checkbox', function(event) {
@@ -523,6 +528,7 @@ $(document).on('click', '.js-main-filter-reset', function(event) {
 	$('.filter-panel__form')[0].reset();
 	$('.filter__title-tags').text('');
 });
+
 /*************** Filter panel (end) ****************/
 
 /************** Fixed buttons (start) ***************/
