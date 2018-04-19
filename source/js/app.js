@@ -52,6 +52,29 @@ $(document).ready(function() {
 });
 /*************** Page rebuilding (end) ****************/
 
+/************** Media Query JS (matchMedia) (start) ***************/
+if (matchMedia) {
+	const mq = window.matchMedia( "(min-width: 768px)" );
+	mq.addListener(WidthChange); // media query event handler (workes after changing browser width)
+
+	// workes only after page loading or reloading
+	if (!mq.matches) {
+		console.log('width is less than 768px');
+	} else {
+		console.log('width is at least 768px');
+	}
+}
+
+// media query change
+function WidthChange(mq) {
+	if (mq.matches) {
+		
+	} else {
+		
+	}
+}
+/*************** Media Query JS (matchMedia) (end) ****************/
+
 /*************** Slick sliders (start) ****************/
 $(document).ready(function() {
 	$('.slider-main').slick({
@@ -459,13 +482,14 @@ $(document).on('click', '.js-filter-spoil', function(event) {
 			filterPanel = $this.parents('.filter-panel__field'),
 			filterPanels = filterPanel.siblings('.filter-panel__field'),
 			filterTitles = filterPanels.find('.filter__title'),
-			filterLists = filterPanels.find('.filter-inner');
+			filterLists = filterPanels.find('.filter-inner'),
+			mq = window.matchMedia( "(min-width: 768px)" );
 	
 	filterTitles.removeClass('opened');
 	filterLists.removeClass('opened');
 	filterList.toggleClass('opened');
 	$this.toggleClass('opened');
-	if ($this.hasClass('opened')) {
+	if ($this.hasClass('opened') && mq.matches && filterList.height() > 349) {
 		filterList.find('.filter__list').jScrollPane();
 	}
 });
@@ -474,9 +498,13 @@ $(document).on('click', '.js-filter-spoil', function(event) {
 $(document).on('click', '.js-filter-list-spoil', function(event) {
 	event.preventDefault();
 	var $this = $(this),
-			container = $this.parents('.filter__item_parent');
+			container = $this.parents('.filter__item_parent'),
+			mq = window.matchMedia( "(min-width: 768px)" );
 	container.toggleClass('expanded');
-	$this.parents('.filter__list').jScrollPane();
+	if (mq.matches && $this.parents('.filter-inner').hasClass('opened')) {
+		$this.parents('.filter__list').jScrollPane();
+	}
+	
 });
 
 $(document).on('change', '.js-filter-checkbox', function(event) {
@@ -534,7 +562,7 @@ $(document).on('click', '.js-main-filter-reset', function(event) {
 /************** Fixed buttons (start) ***************/
 $(function() {
 	$(window).scroll(function() {
-		if($(this).scrollTop() != 0) {
+		if($(this).scrollTop() != 0 && $('body').hasClass('desktop')) {
 			$('.js-btn-up').fadeIn();
 		} else {
 			$('.js-btn-up').fadeOut();
