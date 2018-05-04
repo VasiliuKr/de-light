@@ -27,21 +27,22 @@ html
 		<![endif]-->
 
 	body
-		include common/_header
-		.wrapper
-			.content
-				
-				block logo
-				include common/_header-nav
-				block content
+		.body-inner
+			include common/_header
+			.wrapper
+				.content
+					
+					block logo
+					include common/_header-nav
+					block content
 
-			include common/_footer
-		include common/_fixed-buttons
-		script(src='/assets/js/foundation.js')
-		script(src='/assets/libs/restive/restive.min.js')
-		script(src='/assets/libs/sticky/jquery.sticky.js')
-		script(src='/assets/libs/slick/slick.min.js')
-		script(src='/assets/libs/jscrollpane/jquery.mousewheel.js')
-		script(src='/assets/libs/jscrollpane/jquery.jscrollpane.min.js')
-		script(src='/assets/libs/select2/select2.full.js')
-		script(src='/assets/js/app.js')
+				include common/_footer
+			include common/_fixed-buttons
+			script(src='/assets/js/foundation.js')
+			script(src='/assets/libs/restive/restive.min.js')
+			script(src='/assets/libs/sticky/jquery.sticky.js')
+			script(src='/assets/libs/slick/slick.min.js')
+			script(src='/assets/libs/jscrollpane/jquery.mousewheel.js')
+			script(src='/assets/libs/jscrollpane/jquery.jscrollpane.min.js')
+			script(src='/assets/libs/select2/select2.full.js')
+			script(src='/assets/js/app.js')
