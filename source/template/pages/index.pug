@@ -25,12 +25,30 @@ block content
 					value=""
 				)
 
+	//-
+		.slider-main
+			.slider-main-item(style="background-image:url(assets/img/userfiles/1.jpg);")
+				a(href="#").slider-main-link Выбрать
+			.slider-main-item(style="background-image:url(assets/img/userfiles/slide-1.jpg);")
+				a(href="#").slider-main-link Выбрать
+			.slider-main-item(style="background-image:url(assets/img/userfiles/1.jpg);")
+				a(href="#").slider-main-link Выбрать
+	
 	.slider-main
-		.slider-main-item(style="background-image:url(assets/img/userfiles/1.jpg);")
+		.slider-main-item
+			picture
+				source(media="(max-width: 450px)" srcset="assets/img/userfiles/2.jpg ")
+				img( src="assets/img/userfiles/1.jpg", alt="").slider-main-item__img
 			a(href="#").slider-main-link Выбрать
-		.slider-main-item(style="background-image:url(assets/img/userfiles/slide-1.jpg);")
+		.slider-main-item
+			picture
+				source(media="(max-width: 450px)" srcset="assets/img/userfiles/3.jpg ")
+				img(src="assets/img/userfiles/slide-1.jpg", alt="").slider-main-item__img
 			a(href="#").slider-main-link Выбрать
-		.slider-main-item(style="background-image:url(assets/img/userfiles/1.jpg);")
+		.slider-main-item
+			picture
+				source(media="(max-width: 450px)" srcset="assets/img/userfiles/6.jpg ")
+				img(src="assets/img/userfiles/1.jpg", alt="").slider-main-item__img
 			a(href="#").slider-main-link Выбрать
 			
 	.container

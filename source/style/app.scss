@@ -602,6 +602,10 @@ a {
 		height: 535px;
 	}
 }
+.slider-main-item__img {
+	width: 100%;
+	height: auto;
+}
 .slider-main-link {
 	display: none;
 	@include desktop {
